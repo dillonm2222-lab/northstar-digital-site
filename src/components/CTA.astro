@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  buttonText?: string;
+  buttonHref?: string;
+}
+
+const {
+  title,
+  description,
+  buttonText = 'Book a free consult',
+  buttonHref = '/contact'
+} = Astro.props;
+---
+
+<section class="px-4 py-20 md:px-6">
+  <div class="mx-auto max-w-6xl rounded-2xl bg-[#0B2545] px-6 py-12 text-white shadow-lg md:flex md:items-center md:justify-between md:gap-8 md:px-12">
+    <div class="max-w-2xl space-y-3">
+      <h2 class="text-3xl font-semibold md:text-4xl">{title}</h2>
+      <p class="text-base text-[#DCE9FF] md:text-lg">{description}</p>
+    </div>
+    <a
+      href={buttonHref}
+      class="mt-6 inline-flex rounded-xl bg-[#2E8BFF] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1E7AEB] md:mt-0"
+    >
+      {buttonText}
+    </a>
+  </div>
+</section>

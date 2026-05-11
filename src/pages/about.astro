@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CTA from '../components/CTA.astro';
+import { siteConfig } from '../data/site';
+
+const pageTitle = 'About | North Star Digital';
+const description =
+  'Meet the founder of North Star Digital and learn about the values and methodology behind growth-focused websites, CRM systems, SEO, and automation.';
+---
+
+<BaseLayout title={pageTitle} description={description} path="/about">
+  <section class="px-4 pb-16 pt-16 md:px-6 md:pb-20 md:pt-20">
+    <div class="mx-auto w-full max-w-6xl">
+      <SectionHeading
+        eyebrow="About"
+        title="A long-term partner for business growth systems"
+        description={`${siteConfig.legalName} is based in ${siteConfig.location} and helps growth-minded businesses build clearer, more scalable digital operations.`}
+      />
+    </div>
+  </section>
+
+  <section class="bg-[#F4F6FA] px-4 py-20 md:px-6">
+    <div class="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-2 md:items-start">
+      <article class="space-y-5 rounded-2xl border border-[#DEE6F2] bg-white p-8 shadow-sm">
+        <h2 class="text-2xl font-semibold text-[#0B2545]">Founder story</h2>
+        <p class="text-sm leading-relaxed text-[#44506A]">
+          I started North Star Digital to bridge strategy and execution for small and mid-sized businesses. Many teams have strong services but disconnected digital systems. My role is to design systems that bring clarity to your growth process and support steady, compounding results.
+        </p>
+        <p class="text-sm leading-relaxed text-[#44506A]">
+          As a business systems designer, I focus on practical improvements your team can actually use: better website structure, cleaner CRM workflows, stronger SEO direction, and automations that reduce manual friction.
+        </p>
+      </article>
+      <aside class="rounded-2xl border border-[#DEE6F2] bg-white p-8 shadow-sm">
+        <img
+          src="/founder-placeholder.svg"
+          alt="Placeholder portrait for North Star Digital founder"
+          loading="lazy"
+          class="w-full rounded-xl border border-[#E4E8F0] object-cover"
+          width="800"
+          height="600"
+        />
+      </aside>
+    </div>
+  </section>
+
+  <section class="px-4 py-20 md:px-6">
+    <div class="mx-auto w-full max-w-6xl space-y-8">
+      <SectionHeading eyebrow="Values" title="How we work together" />
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="rounded-xl border border-[#E3E8F1] p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-[#0B2545]">Clarity</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[#44506A]">Simple priorities, clear messaging, and systems your team can confidently run.</p>
+        </article>
+        <article class="rounded-xl border border-[#E3E8F1] p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-[#0B2545]">Measurable results</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[#44506A]">Every recommendation ties back to metrics that matter for growth and retention.</p>
+        </article>
+        <article class="rounded-xl border border-[#E3E8F1] p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-[#0B2545]">Long-term partnership</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[#44506A]">We optimize in cycles so your systems keep improving as your business evolves.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#F4F6FA] px-4 py-20 md:px-6">
+    <div class="mx-auto w-full max-w-6xl rounded-2xl border border-[#DEE6F2] bg-white p-8 shadow-sm">
+      <h2 class="text-2xl font-semibold text-[#0B2545]">Methodology</h2>
+      <ol class="mt-5 space-y-3 text-sm leading-relaxed text-[#44506A]">
+        <li>1. Audit your current website, lead flow, CRM process, and marketing operations.</li>
+        <li>2. Prioritize the highest-leverage opportunities based on business impact.</li>
+        <li>3. Implement improvements with clear milestones and practical handoff documentation.</li>
+        <li>4. Measure outcomes and iterate for continuous growth.</li>
+      </ol>
+    </div>
+  </section>
+
+  <CTA
+    title="Want a partner focused on long-term performance?"
+    description="Let us walk through your current systems and identify where focused improvements can create the biggest gains."
+  />
+</BaseLayout>

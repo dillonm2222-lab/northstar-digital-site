@@ -1,0 +1,57 @@
+---
+import { navLinks } from '../data/site';
+---
+
+<header class="sticky top-0 z-40 border-b border-[#E4E8F0] bg-white/90 backdrop-blur">
+  <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 md:px-6">
+    <a href="/" class="flex items-center gap-3 text-base font-semibold text-[#0B2545]">
+      <img src="/north-star-mark.svg" alt="North Star Digital logo mark" width="28" height="28" />
+      <span>North Star Digital</span>
+    </a>
+
+    <button
+      type="button"
+      id="nav-toggle"
+      class="inline-flex items-center rounded-lg border border-[#D6DEEA] p-2 text-[#0B2545] hover:bg-[#F4F6FA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2E8BFF] md:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <span class="sr-only">Toggle navigation menu</span>
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+
+    <nav class="hidden md:block" aria-label="Primary">
+      <ul class="flex items-center gap-7 text-sm font-medium">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="text-[#1A1F2E] transition hover:text-[#2E8BFF]">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+  <nav id="mobile-nav" class="hidden border-t border-[#E4E8F0] bg-white px-4 py-4 md:hidden" aria-label="Mobile">
+    <ul class="space-y-3 text-sm font-medium">
+      {navLinks.map((link) => (
+        <li>
+          <a href={link.href} class="block rounded-md px-2 py-1.5 text-[#1A1F2E] transition hover:bg-[#F4F6FA] hover:text-[#0B2545]">{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const navToggle = document.querySelector('#nav-toggle');
+  const mobileNav = document.querySelector('#mobile-nav');
+
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      mobileNav.classList.toggle('hidden');
+    });
+  }
+</script>

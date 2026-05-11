@@ -1,0 +1,30 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<footer class="border-t border-[#E4E8F0] bg-[#0B2545] text-white">
+  <div class="mx-auto grid w-full max-w-6xl gap-10 px-4 py-14 md:grid-cols-3 md:px-6">
+    <div class="space-y-3">
+      <h2 class="text-lg font-semibold">{siteConfig.name}</h2>
+      <p class="text-sm text-[#D8E5FF]">{siteConfig.tagline}</p>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-[#C5D9FF]">Services</h3>
+      <ul class="mt-3 space-y-2 text-sm text-[#EAF1FF]">
+        <li>Website Design & Development</li>
+        <li>CRM Systems</li>
+        <li>SEO Strategy</li>
+        <li>Marketing Automations</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-[#C5D9FF]">Connect</h3>
+      <ul class="mt-3 space-y-2 text-sm text-[#EAF1FF]">
+        <li><a href={`mailto:${siteConfig.email}`} class="hover:text-[#2E8BFF]">{siteConfig.email}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-[#234163] px-4 py-5 text-center text-xs text-[#D8E5FF] md:px-6">
+    © 2026 North Star Digital LLC
+  </div>
+</footer>
