@@ -1,74 +1,159 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeading from '../components/SectionHeading.astro';
 
-const pageTitle = 'Contact | North Star Digital';
+const pageTitle = 'Contact | North Star Digital — Pewaukee, WI';
 const description =
-  'Book a free consult with North Star Digital. Share your website, CRM, SEO, or automation needs and start building a stronger growth system.';
+  'Get a free website review and consultation from North Star Digital. We serve Pewaukee, Waukesha, and Milwaukee small businesses. Call (262) 555-0100 or fill out the form.';
+
+const phone = '(262) 555-0100';
+const phoneHref = 'tel:+12625550100';
 ---
 
 <BaseLayout title={pageTitle} description={description} path="/contact">
-  <section class="px-4 pb-16 pt-16 md:px-6 md:pb-20 md:pt-20">
-    <div class="mx-auto w-full max-w-6xl">
-      <SectionHeading
-        eyebrow="Contact"
-        title="Book a free consult"
-        description="Tell us what you are working on and we will follow up with next steps."
-      />
+
+  <!-- HERO -->
+  <section class="bg-[#0B2545] px-4 py-16 md:py-20">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Let's Talk</p>
+      <h1 class="text-4xl font-bold text-white md:text-5xl">Get Your Free Consultation</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-[#8EA8C3]">
+        No pressure. No sales pitch. We'll take a look at your current online presence and tell you honestly what it would take to get more calls coming in.
+      </p>
+      <div class="mt-8">
+        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
+          📞 Call Now — {phone}
+        </a>
+      </div>
     </div>
   </section>
 
-  <section class="bg-[#F4F6FA] px-4 py-20 md:px-6">
-    <div class="mx-auto w-full max-w-3xl rounded-2xl border border-[#DEE6F2] bg-white p-8 shadow-sm">
-      <!-- TODO: Replace TODO_FORMSPREE_ID with your real form ID.
-           Steps: sign up at formspree.io → New Form → copy the ID from the endpoint URL. -->
-      <form action="https://formspree.io/f/TODO_FORMSPREE_ID" method="POST" class="space-y-5">
-        <div class="grid gap-5 md:grid-cols-2">
-          <div>
-            <label for="name" class="mb-1 block text-sm font-medium text-[#0B2545]">Name</label>
-            <input id="name" name="Name" type="text" required class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E]" />
-          </div>
-          <div>
-            <label for="email" class="mb-1 block text-sm font-medium text-[#0B2545]">Email</label>
-            <input id="email" name="Email" type="email" required class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E]" />
-          </div>
-          <div>
-            <label for="phone" class="mb-1 block text-sm font-medium text-[#0B2545]">Phone (optional)</label>
-            <input id="phone" name="Phone" type="tel" class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E]" />
-          </div>
-          <div>
-            <label for="business-name" class="mb-1 block text-sm font-medium text-[#0B2545]">Business Name</label>
-            <input id="business-name" name="Business Name" type="text" required class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E]" />
-          </div>
-        </div>
+  <!-- CONTACT SECTION -->
+  <section class="px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid gap-12 md:grid-cols-2 md:items-start">
+
+        <!-- LEFT: Why contact us -->
         <div>
-          <label for="help-with" class="mb-1 block text-sm font-medium text-[#0B2545]">What you need help with</label>
-          <select id="help-with" name="What you need help with" required class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E]">
-            <option value="">Select an option</option>
-            <option value="Website">Website</option>
-            <option value="CRM">CRM</option>
-            <option value="SEO">SEO</option>
-            <option value="Automation">Automation</option>
-            <option value="Not sure">Not sure</option>
-          </select>
+          <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">What to Expect</p>
+          <h2 class="text-3xl font-bold text-[#0B2545]">Here's How It Works</h2>
+          <p class="mt-4 text-base leading-relaxed text-[#44506A]">
+            Fill out the form and we'll get back to you within one business day. Or just call — we pick up.
+          </p>
+          <div class="mt-8 space-y-6">
+            <div class="flex gap-4">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2E8BFF] text-sm font-bold text-white">1</div>
+              <div>
+                <h3 class="font-bold text-[#0B2545]">We Review Your Online Presence</h3>
+                <p class="mt-1 text-sm leading-relaxed text-[#44506A]">Before the call, we look at your current website, Google ranking, and local presence so we're not wasting your time.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2E8BFF] text-sm font-bold text-white">2</div>
+              <div>
+                <h3 class="font-bold text-[#0B2545]">We Tell You What's Missing</h3>
+                <p class="mt-1 text-sm leading-relaxed text-[#44506A]">We give you an honest breakdown — what's costing you leads, what's working, and what we'd fix first.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2E8BFF] text-sm font-bold text-white">3</div>
+              <div>
+                <h3 class="font-bold text-[#0B2545]">You Decide If It's a Fit</h3>
+                <p class="mt-1 text-sm leading-relaxed text-[#44506A]">No contracts forced on you. If we're the right team, great. If not, you leave with useful information either way.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct contact info -->
+          <div class="mt-10 rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+            <p class="text-sm font-bold text-[#0B2545]">Prefer to just call?</p>
+            <a href={phoneHref} class="mt-2 block text-2xl font-bold text-[#2E8BFF] hover:underline">{phone}</a>
+            <p class="mt-1 text-sm text-[#44506A]">Dillon or his Dad will pick up. Mon–Fri, 8am–6pm CT.</p>
+            <p class="mt-3 text-xs text-[#44506A]">📍 Serving Pewaukee, Waukesha, Milwaukee & surrounding areas</p>
+          </div>
         </div>
-        <div>
-          <label for="message" class="mb-1 block text-sm font-medium text-[#0B2545]">Message</label>
-          <textarea
-            id="message"
-            name="Message"
-            rows="6"
-            required
-            class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E]"
-          ></textarea>
+
+        <!-- RIGHT: Form -->
+        <div class="rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
+          <p class="mb-6 text-lg font-bold text-[#0B2545]">Send Us a Message</p>
+          <!-- TODO: Replace TODO_FORMSPREE_ID with your real form ID.
+               Steps: sign up at formspree.io → New Form → copy the ID from the endpoint URL. -->
+          <form action="https://formspree.io/f/TODO_FORMSPREE_ID" method="POST" class="space-y-5">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="name" class="mb-1 block text-sm font-medium text-[#0B2545]">Your Name <span class="text-red-500">*</span></label>
+                <input id="name" name="Name" type="text" required placeholder="Mike Johnson" class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] placeholder:text-[#AAB4C4] focus:border-[#2E8BFF] focus:outline-none" />
+              </div>
+              <div>
+                <label for="business-name" class="mb-1 block text-sm font-medium text-[#0B2545]">Business Name <span class="text-red-500">*</span></label>
+                <input id="business-name" name="Business Name" type="text" required placeholder="Johnson Plumbing" class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] placeholder:text-[#AAB4C4] focus:border-[#2E8BFF] focus:outline-none" />
+              </div>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="phone" class="mb-1 block text-sm font-medium text-[#0B2545]">Phone Number</label>
+                <input id="phone" name="Phone" type="tel" placeholder="(262) 000-0000" class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] placeholder:text-[#AAB4C4] focus:border-[#2E8BFF] focus:outline-none" />
+              </div>
+              <div>
+                <label for="email" class="mb-1 block text-sm font-medium text-[#0B2545]">Email <span class="text-red-500">*</span></label>
+                <input id="email" name="Email" type="email" required placeholder="mike@johnsonplumbing.com" class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] placeholder:text-[#AAB4C4] focus:border-[#2E8BFF] focus:outline-none" />
+              </div>
+            </div>
+            <div>
+              <label for="help-with" class="mb-1 block text-sm font-medium text-[#0B2545]">What do you need help with? <span class="text-red-500">*</span></label>
+              <select id="help-with" name="What you need help with" required class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] focus:border-[#2E8BFF] focus:outline-none">
+                <option value="">Select one...</option>
+                <option value="New Website">New Website</option>
+                <option value="Website Redesign">Website Redesign</option>
+                <option value="Local SEO">Local SEO / Google Rankings</option>
+                <option value="CRM">CRM & Lead Management</option>
+                <option value="Automation">Marketing Automation</option>
+                <option value="Full Package">Full Package (Website + SEO + CRM)</option>
+                <option value="Not sure">Not sure — just want advice</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="mb-1 block text-sm font-medium text-[#0B2545]">Tell us about your business <span class="text-red-500">*</span></label>
+              <textarea
+                id="message"
+                name="Message"
+                rows="4"
+                required
+                placeholder="What does your business do, where are you located, and what's the biggest problem you're trying to solve?"
+                class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] placeholder:text-[#AAB4C4] focus:border-[#2E8BFF] focus:outline-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full rounded-xl bg-[#2E8BFF] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#1E7AEB]"
+            >
+              Send My Free Consultation Request →
+            </button>
+            <p class="text-center text-xs text-[#44506A]">We respond within 1 business day. No spam, ever.</p>
+          </form>
         </div>
-        <button
-          type="submit"
-          class="inline-flex rounded-xl bg-[#2E8BFF] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1E7AEB]"
-        >
-          Send message
-        </button>
-      </form>
+
+      </div>
     </div>
   </section>
+
+  <!-- TRUST BAR -->
+  <section class="bg-[#F4F6FA] px-4 py-12">
+    <div class="mx-auto max-w-4xl">
+      <div class="grid gap-6 text-center md:grid-cols-3">
+        <div>
+          <p class="text-3xl font-bold text-[#0B2545]">24 hrs</p>
+          <p class="mt-1 text-sm text-[#44506A]">Response time or less</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-[#0B2545]">2–3 wks</p>
+          <p class="mt-1 text-sm text-[#44506A]">Average website launch time</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-[#0B2545]">Local</p>
+          <p class="mt-1 text-sm text-[#44506A]">Pewaukee, WI — not a call center</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
