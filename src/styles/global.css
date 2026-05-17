@@ -4,6 +4,7 @@
   --color-bg: #ffffff;
   --color-primary: #0b2545;
   --color-accent: #2e8bff;
+  --color-teal: #06D6FF;
   --color-surface: #f4f6fa;
   --color-text: #1a1f2e;
 }
@@ -28,10 +29,15 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
-/* ── Animations ── */
+/* ── Keyframes ── */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeIn {
@@ -41,12 +47,12 @@ textarea:focus-visible {
 
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 0 0 rgba(46, 139, 255, 0); }
-  50%       { box-shadow: 0 0 24px 4px rgba(46, 139, 255, 0.35); }
+  50%       { box-shadow: 0 0 28px 6px rgba(46, 139, 255, 0.4); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+@keyframes pulse-glow-teal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(6, 214, 255, 0); }
+  50%       { box-shadow: 0 0 20px 4px rgba(6, 214, 255, 0.3); }
 }
 
 @keyframes shimmer {
@@ -54,31 +60,55 @@ textarea:focus-visible {
   100% { background-position: 200% center; }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.7s ease both;
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.04; }
+  50%       { opacity: 0.07; }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.7s ease both;
+@keyframes tealScan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
 }
 
-.animate-delay-100 { animation-delay: 0.1s; }
-.animate-delay-200 { animation-delay: 0.2s; }
-.animate-delay-300 { animation-delay: 0.3s; }
-.animate-delay-400 { animation-delay: 0.4s; }
-.animate-delay-500 { animation-delay: 0.5s; }
-
-.btn-glow {
-  animation: pulse-glow 2.5s ease-in-out infinite;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
 }
 
-.float {
-  animation: float 4s ease-in-out infinite;
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(6, 214, 255, 0.3); }
+  50%       { border-color: rgba(6, 214, 255, 0.8); }
+}
+
+/* ── Hero ── */
+.hero-glow {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(46, 139, 255, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 85% 80%, rgba(6, 214, 255, 0.1) 0%, transparent 60%),
+    #0B2545;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(6, 214, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 214, 255, 0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+.hero-grid-perspective {
+  background-image:
+    linear-gradient(rgba(6, 214, 255, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 214, 255, 0.10) 1px, transparent 1px);
+  background-size: 48px 48px;
+  transform: perspective(600px) rotateX(20deg) scale(1.4);
+  transform-origin: top center;
+  animation: gridPulse 4s ease-in-out infinite;
 }
 
 /* ── Gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #2E8BFF 0%, #7BC8FF 50%, #2E8BFF 100%);
+  background: linear-gradient(135deg, #2E8BFF 0%, #06D6FF 50%, #2E8BFF 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -86,24 +116,118 @@ textarea:focus-visible {
   animation: shimmer 3s linear infinite;
 }
 
-/* ── Hero background glow ── */
-.hero-glow {
-  background:
-    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(46, 139, 255, 0.18) 0%, transparent 70%),
-    #0B2545;
+.gradient-text-teal {
+  background: linear-gradient(135deg, #06D6FF 0%, #2E8BFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animations ── */
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.7s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+.animate-delay-600 { animation-delay: 0.6s; }
+
+/* ── Scroll reveal (set by JS) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Glow buttons ── */
+.btn-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.btn-glow-teal {
+  animation: pulse-glow-teal 2.5s ease-in-out infinite;
 }
 
 /* ── Card hover lift ── */
 .card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(11, 37, 69, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-/* ── Divider gradient ── */
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(11, 37, 69, 0.13);
+  border-color: rgba(6, 214, 255, 0.35) !important;
+}
+
+.card-hover-blue:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(46, 139, 255, 0.18);
+}
+
+/* ── Teal divider ── */
 .divider-glow {
   height: 2px;
-  background: linear-gradient(90deg, transparent, #2E8BFF, transparent);
+  background: linear-gradient(90deg, transparent, #06D6FF, #2E8BFF, #06D6FF, transparent);
+  opacity: 0.6;
+}
+
+.divider-glow-subtle {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6, 214, 255, 0.4), transparent);
+}
+
+/* ── Teal badge ── */
+.badge-teal {
+  color: #06D6FF;
+  border-color: rgba(6, 214, 255, 0.35);
+  background: rgba(6, 214, 255, 0.07);
+}
+
+/* ── Teal icon bg ── */
+.icon-teal {
+  background: rgba(6, 214, 255, 0.1);
+  color: #06D6FF;
+}
+
+/* ── Counter ── */
+.counter-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Float ── */
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── Teal border glow ── */
+.border-glow-teal {
+  animation: borderGlow 2.5s ease-in-out infinite;
+  border: 1px solid rgba(6, 214, 255, 0.3);
 }

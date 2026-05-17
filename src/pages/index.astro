@@ -14,14 +14,21 @@ const phoneHref = 'tel:+12622540128';
 
   <!-- ═══ HERO ═══ -->
   <section class="hero-glow relative overflow-hidden px-4 py-20 md:py-32">
-    <!-- Background grid pattern -->
-    <div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(#2E8BFF 1px, transparent 1px), linear-gradient(90deg, #2E8BFF 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <!-- Star canvas — fades in on load -->
+    <canvas id="star-canvas" class="pointer-events-none absolute inset-0 h-full w-full opacity-0" style="transition: opacity 1.2s ease;"></canvas>
+    <!-- Glowing perspective grid -->
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+      <div class="hero-grid-perspective absolute inset-x-0 bottom-0 h-[60%]"></div>
+      <div class="hero-grid absolute inset-0 opacity-50"></div>
+    </div>
     <!-- Glow orbs -->
-    <div class="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E8BFF] opacity-10 blur-3xl"></div>
-    <div class="pointer-events-none absolute bottom-0 right-0 h-48 w-48 translate-x-1/4 translate-y-1/4 rounded-full bg-[#2E8BFF] opacity-10 blur-3xl"></div>
+    <div class="pointer-events-none absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-[#2E8BFF] opacity-10 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-[#06D6FF] opacity-10 blur-3xl"></div>
+    <!-- Teal scan line -->
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#06D6FF] to-transparent opacity-60"></div>
 
     <div class="relative mx-auto max-w-5xl text-center">
-      <p class="animate-fade-in-up mb-4 inline-block rounded-full border border-[#2E8BFF]/40 bg-[#2E8BFF]/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">
+      <p class="animate-fade-in-up badge-teal mb-4 inline-block rounded-full border px-4 py-1 text-xs font-semibold uppercase tracking-widest">
         📍 Pewaukee & Milwaukee, Wisconsin
       </p>
       <h1 class="animate-fade-in-up animate-delay-100 text-4xl font-bold leading-tight text-white md:text-6xl">
@@ -34,46 +41,44 @@ const phoneHref = 'tel:+12622540128';
       <div class="animate-fade-in-up animate-delay-300 mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a
           href={phoneHref}
-          class="btn-glow inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white shadow-lg transition hover:bg-[#1E7AEB] hover:scale-105"
-          style="transition: all 0.2s ease;"
+          class="btn-glow inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-[#1E7AEB]"
         >
           <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
           Call Now — {phone}
         </a>
         <a
           href="/contact"
-          class="inline-flex rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition hover:border-[#2E8BFF] hover:bg-white/10"
+          class="inline-flex rounded-xl border-2 border-[#06D6FF]/40 px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:border-[#06D6FF] hover:bg-[#06D6FF]/10"
         >
           Get a Free Quote Today
         </a>
       </div>
       <p class="animate-fade-in-up animate-delay-400 mt-4 text-sm text-[#8EA8C3]">Free consultation · No contracts · Results in 30 days</p>
 
-      <!-- Stats row -->
+      <!-- Stats row with counters -->
       <div class="animate-fade-in-up animate-delay-500 mx-auto mt-14 grid max-w-2xl grid-cols-3 gap-4 border-t border-white/10 pt-10">
         <div>
-          <p class="text-2xl font-bold text-white">30 days</p>
+          <p class="counter-num text-2xl font-bold text-white" data-target="30" data-suffix=" days">0 days</p>
           <p class="mt-1 text-xs text-[#8EA8C3]">Average time to results</p>
         </div>
         <div>
-          <p class="text-2xl font-bold text-white">$299/mo</p>
+          <p class="text-2xl font-bold text-[#06D6FF]">$299<span class="text-base font-normal text-[#8EA8C3]">/mo</span></p>
           <p class="mt-1 text-xs text-[#8EA8C3]">Starting price</p>
         </div>
         <div>
-          <p class="text-2xl font-bold text-white">Local</p>
-          <p class="mt-1 text-xs text-[#8EA8C3]">Pewaukee, WI team</p>
+          <p class="counter-num text-2xl font-bold text-white" data-target="100" data-suffix="%">0%</p>
+          <p class="mt-1 text-xs text-[#8EA8C3]">Wisconsin focused</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══ SOCIAL PROOF BAR ═══ -->
-  <section class="border-y border-[#E3E8F1] bg-[#F4F6FA] px-4 py-6">
+  <div class="divider-glow"></div>
+  <section class="border-b border-[#E3E8F1] bg-[#F4F6FA] px-4 py-5">
     <div class="mx-auto max-w-5xl">
       <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-semibold text-[#44506A]">
-        <span class="flex items-center gap-2">
-          <span class="text-[#2E8BFF]">★★★★★</span> 5-Star Rated
-        </span>
+        <span class="flex items-center gap-2"><span class="text-[#06D6FF]">★★★★★</span> 5-Star Rated</span>
         <span class="hidden text-[#DDE5F2] md:block">|</span>
         <span>✓ Local Wisconsin Business</span>
         <span class="hidden text-[#DDE5F2] md:block">|</span>
@@ -85,42 +90,43 @@ const phoneHref = 'tel:+12622540128';
       </div>
     </div>
   </section>
+  <div class="divider-glow"></div>
 
   <!-- ═══ SERVICES ═══ -->
   <section class="px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
-      <div class="mb-12 text-center">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">What We Do</p>
+      <div class="reveal mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">What We Do</p>
         <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Everything Your Business Needs to Grow Online</h2>
         <p class="mx-auto mt-4 max-w-2xl text-base text-[#44506A]">One team. One price. Everything handled so you can focus on running your business.</p>
       </div>
       <div class="grid gap-6 md:grid-cols-2">
-        <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
-          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#EBF3FF] text-[#2E8BFF]">
+        <div class="card-hover reveal rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl icon-teal">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" /></svg>
           </div>
           <h3 class="text-xl font-bold text-[#0B2545]">High-Converting Websites</h3>
           <p class="mt-2 text-sm leading-relaxed text-[#44506A]">We build fast, mobile-ready websites designed to turn visitors into phone calls. Not just pretty — built to get you more jobs.</p>
           <p class="mt-4 text-sm font-semibold text-[#2E8BFF]">Starting at $399 one-time or included in plans →</p>
         </div>
-        <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
-          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#EBF3FF] text-[#2E8BFF]">
+        <div class="card-hover reveal rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm" style="transition-delay:0.1s">
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl icon-teal">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
           </div>
           <h3 class="text-xl font-bold text-[#0B2545]">Local SEO</h3>
           <p class="mt-2 text-sm leading-relaxed text-[#44506A]">Show up when people in Pewaukee, Waukesha, and Milwaukee search for your services. Be found before your competitors.</p>
           <p class="mt-4 text-sm font-semibold text-[#2E8BFF]">Included in Growth + Pro plans →</p>
         </div>
-        <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
-          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#EBF3FF] text-[#2E8BFF]">
+        <div class="card-hover reveal rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm" style="transition-delay:0.2s">
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl icon-teal">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" /></svg>
           </div>
           <h3 class="text-xl font-bold text-[#0B2545]">CRM & Lead Management</h3>
           <p class="mt-2 text-sm leading-relaxed text-[#44506A]">Never lose a lead again. We set up a simple system to track every inquiry, follow up automatically, and close more jobs.</p>
           <p class="mt-4 text-sm font-semibold text-[#2E8BFF]">Included in Growth + Pro plans →</p>
         </div>
-        <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
-          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#EBF3FF] text-[#2E8BFF]">
+        <div class="card-hover reveal rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm" style="transition-delay:0.3s">
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl icon-teal">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
           </div>
           <h3 class="text-xl font-bold text-[#0B2545]">Marketing Automation</h3>
@@ -132,48 +138,48 @@ const phoneHref = 'tel:+12622540128';
   </section>
 
   <!-- ═══ HOW IT WORKS ═══ -->
-  <section class="bg-[#0B2545] px-4 py-20 md:py-24">
-    <div class="mx-auto max-w-5xl">
-      <div class="mb-12 text-center">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Simple Process</p>
+  <section class="hero-glow relative overflow-hidden px-4 py-20 md:py-24">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="hero-grid absolute inset-0"></div>
+    </div>
+    <div class="relative mx-auto max-w-5xl">
+      <div class="reveal mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Simple Process</p>
         <h2 class="text-3xl font-bold text-white md:text-4xl">Up and Running in 3 Steps</h2>
         <p class="mx-auto mt-4 max-w-xl text-base text-[#8EA8C3]">No confusing onboarding. No back-and-forth for months. We move fast.</p>
       </div>
       <div class="grid gap-8 md:grid-cols-3">
-        <div class="text-center">
-          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#2E8BFF] text-xl font-bold text-white">1</div>
+        <div class="reveal text-center">
+          <div class="btn-glow-teal mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-[#06D6FF]/40 bg-[#06D6FF]/10 text-xl font-bold text-[#06D6FF]">1</div>
           <h3 class="text-lg font-bold text-white">Free Call</h3>
           <p class="mt-2 text-sm leading-relaxed text-[#8EA8C3]">We talk about your business, your goals, and what's holding you back. No pressure, no pitch — just an honest conversation.</p>
         </div>
-        <div class="text-center">
-          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#2E8BFF] text-xl font-bold text-white">2</div>
+        <div class="reveal text-center" style="transition-delay:0.15s">
+          <div class="btn-glow-teal mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-[#06D6FF]/40 bg-[#06D6FF]/10 text-xl font-bold text-[#06D6FF]">2</div>
           <h3 class="text-lg font-bold text-white">We Build It</h3>
           <p class="mt-2 text-sm leading-relaxed text-[#8EA8C3]">Our team builds your website, sets up your CRM, and configures your automations. You review, we refine, and we go live fast.</p>
         </div>
-        <div class="text-center">
-          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#2E8BFF] text-xl font-bold text-white">3</div>
+        <div class="reveal text-center" style="transition-delay:0.3s">
+          <div class="btn-glow-teal mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-[#06D6FF]/40 bg-[#06D6FF]/10 text-xl font-bold text-[#06D6FF]">3</div>
           <h3 class="text-lg font-bold text-white">Your Phone Rings</h3>
           <p class="mt-2 text-sm leading-relaxed text-[#8EA8C3]">Your new system is live and working. Leads come in, follow-ups go out, and you focus on doing the work you're great at.</p>
         </div>
       </div>
-      <div class="mt-12 text-center">
-        <a
-          href={phoneHref}
-          class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]"
-        >
+      <div class="reveal mt-12 text-center">
+        <a href={phoneHref} class="btn-glow inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition-all duration-200 hover:scale-105 hover:bg-[#1E7AEB]">
           Call Now — {phone}
         </a>
-        <p class="mt-3 text-sm text-[#8EA8C3]">Or <a href="/contact" class="underline hover:text-white">fill out our quick form</a> and we'll call you</p>
+        <p class="mt-3 text-sm text-[#8EA8C3]">Or <a href="/contact" class="text-[#06D6FF] underline hover:text-white">fill out our quick form</a> and we'll call you</p>
       </div>
     </div>
   </section>
 
-  <!-- ═══ WHY NSD / FATHER-SON STORY ═══ -->
+  <!-- ═══ WHY NSD ═══ -->
   <section class="px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
       <div class="grid gap-12 md:grid-cols-2 md:items-center">
-        <div>
-          <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Who We Are</p>
+        <div class="reveal-left">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Who We Are</p>
           <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">A Local Team That Actually Cares</h2>
           <p class="mt-4 text-base leading-relaxed text-[#44506A]">
             North Star Digital is a father-son digital agency based right here in Pewaukee, Wisconsin. We're not a faceless corporation or an overseas agency. We're your neighbors — and we're building this business the same way you built yours: one client at a time, with real relationships and real results.
@@ -181,36 +187,27 @@ const phoneHref = 'tel:+12622540128';
           <p class="mt-4 text-base leading-relaxed text-[#44506A]">
             We started NSD because we saw too many good local businesses getting left behind online — paying for websites that don't work, missing calls because they have no follow-up, and watching competitors rank above them on Google.
           </p>
-          <p class="mt-4 text-base leading-relaxed text-[#44506A]">
-            We fix that. Fast.
-          </p>
+          <p class="mt-4 text-base font-semibold text-[#0B2545]">We fix that. Fast.</p>
           <div class="mt-8 flex flex-wrap gap-4">
-            <a
-              href={phoneHref}
-              class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]"
-            >
-              Call Us Today
-            </a>
-            <a href="/about" class="inline-flex rounded-xl border border-[#2E8BFF] px-6 py-3 text-sm font-semibold text-[#2E8BFF] transition hover:bg-[#F0F6FF]">
-              Our Story
-            </a>
+            <a href={phoneHref} class="btn-glow inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition-all duration-200 hover:scale-105 hover:bg-[#1E7AEB]">Call Us Today</a>
+            <a href="/about" class="inline-flex rounded-xl border border-[#06D6FF]/40 px-6 py-3 text-sm font-semibold text-[#2E8BFF] transition-all duration-200 hover:border-[#06D6FF] hover:bg-[#06D6FF]/5">Our Story →</a>
           </div>
         </div>
-        <div class="space-y-4">
-          <div class="rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
-            <p class="text-sm font-bold text-[#0B2545]">📍 Local — We're in Pewaukee</p>
+        <div class="reveal space-y-4">
+          <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+            <p class="text-sm font-bold text-[#0B2545]"><span class="text-[#06D6FF]">📍</span> Local — We're in Pewaukee</p>
             <p class="mt-1 text-sm text-[#44506A]">We serve Pewaukee, Waukesha, Brookfield, and the greater Milwaukee area. You can actually meet us.</p>
           </div>
-          <div class="rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
-            <p class="text-sm font-bold text-[#0B2545]">⚡ Fast — Results in 30 Days</p>
+          <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+            <p class="text-sm font-bold text-[#0B2545]"><span class="text-[#06D6FF]">⚡</span> Fast — Results in 30 Days</p>
             <p class="mt-1 text-sm text-[#44506A]">We don't drag projects out for months. Most clients see a live website and working systems within 2–3 weeks.</p>
           </div>
-          <div class="rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
-            <p class="text-sm font-bold text-[#0B2545]">💰 Fair — Transparent Pricing</p>
+          <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+            <p class="text-sm font-bold text-[#0B2545]"><span class="text-[#06D6FF]">💰</span> Fair — Transparent Pricing</p>
             <p class="mt-1 text-sm text-[#44506A]">No surprise bills. No confusing add-ons. One price covers everything in your plan — hosting, support, and all.</p>
           </div>
-          <div class="rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
-            <p class="text-sm font-bold text-[#0B2545]">🤝 Honest — We'll Tell You the Truth</p>
+          <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+            <p class="text-sm font-bold text-[#0B2545]"><span class="text-[#06D6FF]">🤝</span> Honest — We'll Tell You the Truth</p>
             <p class="mt-1 text-sm text-[#44506A]">If something isn't working, we'll tell you. We're here for your long-term growth, not just your first invoice.</p>
           </div>
         </div>
@@ -220,26 +217,27 @@ const phoneHref = 'tel:+12622540128';
 
   <!-- ═══ TESTIMONIALS ═══ -->
   <section class="bg-[#F4F6FA] px-4 py-20 md:py-24">
+    <div class="divider-glow-subtle mb-0"></div>
     <div class="mx-auto max-w-5xl">
-      <div class="mb-12 text-center">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Client Results</p>
+      <div class="reveal mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Client Results</p>
         <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Wisconsin Businesses Are Growing With Us</h2>
       </div>
       <div class="grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl bg-white p-8 shadow-sm">
-          <p class="text-sm font-bold text-[#2E8BFF]">★★★★★</p>
+        <div class="card-hover reveal rounded-2xl bg-white p-8 shadow-sm">
+          <p class="text-sm font-bold text-[#06D6FF]">★★★★★</p>
           <p class="mt-3 text-sm leading-relaxed text-[#44506A]">"Within the first month our phone was ringing more than ever. The new website looks incredibly professional and the follow-up system has been a game changer."</p>
           <p class="mt-4 text-xs font-bold text-[#0B2545]">— Mike R., Masonry Contractor</p>
           <p class="text-xs text-[#44506A]">Waukesha, WI</p>
         </div>
-        <div class="rounded-2xl bg-white p-8 shadow-sm">
-          <p class="text-sm font-bold text-[#2E8BFF]">★★★★★</p>
+        <div class="card-hover reveal rounded-2xl bg-white p-8 shadow-sm" style="transition-delay:0.15s">
+          <p class="text-sm font-bold text-[#06D6FF]">★★★★★</p>
           <p class="mt-3 text-sm leading-relaxed text-[#44506A]">"I had tried two other web companies and both were a waste of money. North Star actually showed me results. They know what they're doing."</p>
           <p class="mt-4 text-xs font-bold text-[#0B2545]">— Tom K., Landscaping Business</p>
           <p class="text-xs text-[#44506A]">Brookfield, WI</p>
         </div>
-        <div class="rounded-2xl bg-white p-8 shadow-sm">
-          <p class="text-sm font-bold text-[#2E8BFF]">★★★★★</p>
+        <div class="card-hover reveal rounded-2xl bg-white p-8 shadow-sm" style="transition-delay:0.3s">
+          <p class="text-sm font-bold text-[#06D6FF]">★★★★★</p>
           <p class="mt-3 text-sm leading-relaxed text-[#44506A]">"They set everything up and walked me through it. I'm not a tech person at all and it was easy. My Google reviews are way up and leads keep coming in."</p>
           <p class="mt-4 text-xs font-bold text-[#0B2545]">— Sarah M., Home Services</p>
           <p class="text-xs text-[#44506A]">Pewaukee, WI</p>
@@ -251,90 +249,197 @@ const phoneHref = 'tel:+12622540128';
   <!-- ═══ PRICING ═══ -->
   <section class="px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
-      <div class="mb-12 text-center">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Simple Pricing</p>
+      <div class="reveal mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Simple Pricing</p>
         <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">One Monthly Price. No Surprises.</h2>
         <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">Everything your business needs to grow online — website, SEO, CRM, automation — all bundled in.</p>
       </div>
       <div class="grid gap-6 md:grid-cols-3">
         <!-- Starter -->
-        <div class="rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Starter</p>
+        <div class="card-hover reveal rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Starter</p>
           <p class="mt-3 text-4xl font-bold text-[#0B2545]">$299<span class="text-lg font-normal text-[#44506A]">/mo</span></p>
           <p class="mt-2 text-sm text-[#44506A]">Get your business online & protected</p>
           <ul class="mt-6 space-y-2 text-sm text-[#304059]">
-            <li>✓ Professional website + hosting</li>
-            <li>✓ Mobile-ready & fast loading</li>
-            <li>✓ Basic SEO setup</li>
-            <li>✓ Email security protection</li>
-            <li>✓ Monthly performance report</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Professional website + hosting</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Mobile-ready & fast loading</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Basic SEO setup</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Email security protection</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Monthly performance report</li>
           </ul>
-          <a href={phoneHref} class="mt-8 block rounded-xl border border-[#2E8BFF] py-3 text-center text-sm font-bold text-[#2E8BFF] transition hover:bg-[#F0F6FF]">Call to Get Started</a>
+          <a href={phoneHref} class="mt-8 block rounded-xl border border-[#2E8BFF] py-3 text-center text-sm font-bold text-[#2E8BFF] transition-all duration-200 hover:bg-[#F0F6FF]">Call to Get Started</a>
         </div>
         <!-- Growth -->
-        <div class="relative rounded-2xl border-2 border-[#2E8BFF] bg-white p-8 shadow-lg">
-          <p class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#2E8BFF] px-4 py-1 text-xs font-bold text-white">Most Popular</p>
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Growth</p>
+        <div class="card-hover reveal relative rounded-2xl border-2 border-[#2E8BFF] bg-white p-8 shadow-lg" style="transition-delay:0.15s">
+          <p class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#2E8BFF] to-[#06D6FF] px-4 py-1 text-xs font-bold text-white">Most Popular</p>
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Growth</p>
           <p class="mt-3 text-4xl font-bold text-[#0B2545]">$499<span class="text-lg font-normal text-[#44506A]">/mo</span></p>
           <p class="mt-2 text-sm text-[#44506A]">Dominate locally & fill your pipeline</p>
           <ul class="mt-6 space-y-2 text-sm text-[#304059]">
-            <li>✓ Everything in Starter</li>
-            <li>✓ Local SEO & Google rankings</li>
-            <li>✓ CRM setup & lead tracking</li>
-            <li>✓ Automated follow-up sequences</li>
-            <li>✓ Social media management</li>
-            <li>✓ Monthly strategy call</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Everything in Starter</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Local SEO & Google rankings</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> CRM setup & lead tracking</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Automated follow-up sequences</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Social media management</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Monthly strategy call</li>
           </ul>
-          <a href={phoneHref} class="mt-8 block rounded-xl bg-[#2E8BFF] py-3 text-center text-sm font-bold text-white transition hover:bg-[#1E7AEB]">Call to Get Started</a>
+          <a href={phoneHref} class="mt-8 block rounded-xl bg-gradient-to-r from-[#2E8BFF] to-[#06D6FF] py-3 text-center text-sm font-bold text-white transition-all duration-200 hover:opacity-90">Call to Get Started</a>
         </div>
         <!-- Pro -->
-        <div class="rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Pro</p>
+        <div class="card-hover reveal rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm" style="transition-delay:0.3s">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Pro</p>
           <p class="mt-3 text-4xl font-bold text-[#0B2545]">$999<span class="text-lg font-normal text-[#44506A]">/mo</span></p>
           <p class="mt-2 text-sm text-[#44506A]">Full AI-powered business automation</p>
           <ul class="mt-6 space-y-2 text-sm text-[#304059]">
-            <li>✓ Everything in Growth</li>
-            <li>✓ Full AI automation workflows</li>
-            <li>✓ Custom app integrations</li>
-            <li>✓ AI lead generation</li>
-            <li>✓ Priority support</li>
-            <li>✓ Dedicated account manager</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Everything in Growth</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Full AI automation workflows</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Custom app integrations</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> AI lead generation</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Priority support</li>
+            <li class="flex items-center gap-2"><span class="text-[#06D6FF]">✓</span> Dedicated account manager</li>
           </ul>
-          <a href={phoneHref} class="mt-8 block rounded-xl border border-[#2E8BFF] py-3 text-center text-sm font-bold text-[#2E8BFF] transition hover:bg-[#F0F6FF]">Call to Get Started</a>
+          <a href={phoneHref} class="mt-8 block rounded-xl border border-[#2E8BFF] py-3 text-center text-sm font-bold text-[#2E8BFF] transition-all duration-200 hover:bg-[#F0F6FF]">Call to Get Started</a>
         </div>
       </div>
-      <p class="mt-8 text-center text-sm text-[#44506A]">Not sure which plan fits? <a href={phoneHref} class="font-semibold text-[#2E8BFF] hover:underline">Call us — {phone}</a> and we'll tell you honestly.</p>
+      <p class="reveal mt-8 text-center text-sm text-[#44506A]">Not sure which plan fits? <a href={phoneHref} class="font-semibold text-[#2E8BFF] hover:underline">Call us — {phone}</a> and we'll tell you honestly.</p>
     </div>
   </section>
 
   <!-- ═══ FINAL CTA ═══ -->
-  <section class="bg-[#0B2545] px-4 py-20 md:py-24">
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-3xl font-bold text-white md:text-5xl">
-        Ready to Get More Calls?
-      </h2>
-      <p class="mx-auto mt-6 max-w-xl text-lg text-[#8EA8C3]">
+  <section class="hero-glow relative overflow-hidden px-4 py-20 md:py-24">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="hero-grid absolute inset-0"></div>
+    </div>
+    <div class="pointer-events-none absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#06D6FF] opacity-10 blur-3xl"></div>
+    <div class="relative mx-auto max-w-3xl text-center">
+      <p class="reveal mb-4 text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Let's Talk</p>
+      <h2 class="reveal text-3xl font-bold text-white md:text-5xl">Ready to Get More Calls?</h2>
+      <p class="reveal mx-auto mt-6 max-w-xl text-lg text-[#8EA8C3]">
         Talk to a real person today. We'll take a look at your current online presence and tell you exactly what it would take to get your phone ringing more — no pressure, no pitch.
       </p>
-      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a
-          href={phoneHref}
-          class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-10 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-[#1E7AEB]"
-        >
+      <div class="reveal mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href={phoneHref} class="btn-glow inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-10 py-4 text-lg font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-[#1E7AEB]">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
           Call Now — {phone}
         </a>
-        <a
-          href="/contact"
-          class="inline-flex rounded-xl border-2 border-white/30 px-10 py-4 text-lg font-semibold text-white transition hover:border-white hover:bg-white/10"
-        >
+        <a href="/contact" class="inline-flex rounded-xl border-2 border-[#06D6FF]/40 px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:border-[#06D6FF] hover:bg-[#06D6FF]/10">
           Get a Free Quote
         </a>
       </div>
-      <p class="mt-6 text-sm text-[#8EA8C3]">
+      <p class="reveal mt-6 text-sm text-[#8EA8C3]">
         Serving Pewaukee · Waukesha · Brookfield · Milwaukee · and all of Southeast Wisconsin
       </p>
     </div>
   </section>
 
 </BaseLayout>
+
+<script>
+  // ── Star field ──
+  (function() {
+    const canvas = document.getElementById('star-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const STAR_COUNT = 160;
+    const stars = Array.from({ length: STAR_COUNT }, () => ({
+      x:       Math.random(),
+      y:       Math.random(),
+      r:       Math.random() * 1.2 + 0.2,
+      alpha:   Math.random(),
+      speed:   Math.random() * 0.003 + 0.001,
+      twinkle: Math.random() * Math.PI * 2,
+      color:   Math.random() > 0.6 ? '#06D6FF' : '#ffffff',
+    }));
+
+    let frame = 0;
+    function draw() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach(s => {
+        s.twinkle += s.speed * 2;
+        const opacity = (Math.sin(s.twinkle) * 0.4 + 0.6) * s.alpha;
+        ctx.beginPath();
+        ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = s.color;
+        ctx.globalAlpha = opacity;
+        ctx.fill();
+
+        // Tiny 4-point star shape for larger stars
+        if (s.r > 0.9) {
+          ctx.globalAlpha = opacity * 0.5;
+          ctx.strokeStyle = s.color;
+          ctx.lineWidth = 0.5;
+          const cx = s.x * canvas.width;
+          const cy = s.y * canvas.height;
+          const len = s.r * 3;
+          ctx.beginPath();
+          ctx.moveTo(cx - len, cy); ctx.lineTo(cx + len, cy);
+          ctx.moveTo(cx, cy - len); ctx.lineTo(cx, cy + len);
+          ctx.stroke();
+        }
+      });
+      ctx.globalAlpha = 1;
+      frame++;
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Fade canvas in after 300ms
+    setTimeout(() => { canvas.style.opacity = '1'; }, 300);
+
+    // Fade out after 6 seconds
+    setTimeout(() => {
+      canvas.style.transition = 'opacity 2.5s ease';
+      canvas.style.opacity = '0';
+    }, 6000);
+  })();
+
+  // ── Scroll reveal ──
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── Count-up ──
+  function countUp(el: HTMLElement) {
+    const target = parseInt(el.dataset.target || '0');
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.floor(current) + suffix;
+    }, 16);
+  }
+
+  const counters = document.querySelectorAll<HTMLElement>('.counter-num[data-target]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        countUp(entry.target as HTMLElement);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterObserver.observe(el));
+</script>
