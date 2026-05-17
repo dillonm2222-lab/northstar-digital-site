@@ -216,43 +216,18 @@ textarea:focus-visible {
   color: #06D6FF;
 }
 
-/* ── Techy grid scan lines ── */
-@keyframes scanDown {
-  0%   { top: -4px; opacity: 0; }
-  5%   { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
-}
-
-@keyframes scanRight {
-  0%   { left: -4px; opacity: 0; }
-  5%   { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-}
-
+/* ── Grid pulse (subtle glow breathe) ── */
 @keyframes gridLinePulse {
-  0%, 100% { opacity: 0.08; }
-  50%       { opacity: 0.18; }
-}
-
-.hero-scan-h {
-  animation: scanDown 5s linear infinite;
-  top: 0;
-}
-
-.hero-scan-v {
-  animation: scanRight 8s linear infinite;
-  animation-delay: 2s;
-  left: 0;
+  0%, 100% { opacity: 0.45; }
+  50%       { opacity: 0.75; }
 }
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(6, 214, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(6, 214, 255, 0.12) 1px, transparent 1px);
+    linear-gradient(rgba(6, 214, 255, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 214, 255, 0.10) 1px, transparent 1px);
   background-size: 48px 48px;
-  animation: gridLinePulse 3s ease-in-out infinite;
+  animation: gridLinePulse 4s ease-in-out infinite;
 }
 
 /* ── Counter ── */
