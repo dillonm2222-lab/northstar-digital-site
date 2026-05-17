@@ -1,0 +1,66 @@
+---
+// HeroGrid.astro
+// Subtle animated grid — tech atmosphere only, never a focal point.
+// No JS. Pure CSS. Zero dependencies.
+---
+
+<div class="nsd-hero-grid" aria-hidden="true">
+  <!-- Grid lines layer -->
+  <div class="nsd-grid-lines"></div>
+
+  <!-- Vignette — darkens edges, keeps focus on center headline -->
+  <div class="nsd-vignette"></div>
+</div>
+
+<style>
+  /* ─── Wrapper ─────────────────────────────────────── */
+  .nsd-hero-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  /* ─── Grid lines ──────────────────────────────────── */
+  /*
+     Base line color: rgba(46, 139, 255, 0.20) — the peak tint.
+     We animate the element's opacity between 0.45 → 0.85 so the
+     effective opacity of the lines stays in the 9–17 % range:
+       0.20 × 0.45 = 9 %   (rest state)
+       0.20 × 0.85 = 17 %  (peak glow)
+     This keeps lines as texture — never a feature.
+  */
+  .nsd-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(46, 139, 255, 0.20) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46, 139, 255, 0.20) 1px, transparent 1px);
+    background-size: 52px 52px;
+    animation: nsdGridPulse 5s ease-in-out infinite;
+    will-change: opacity;
+  }
+
+  @keyframes nsdGridPulse {
+    0%, 100% { opacity: 0.45; }   /* ~9 % effective  */
+    50%       { opacity: 0.85; }  /* ~17 % effective */
+  }
+
+  /* ─── Vignette ────────────────────────────────────── */
+  /*
+     Radial gradient darkens the perimeter.
+     Centre stays transparent so headline + CTAs are unobscured.
+     Outer navy overlay is subtle — 40 % opacity max at corners.
+  */
+  .nsd-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 75% 70% at 50% 45%,
+      transparent               35%,
+      rgba(11, 37, 69, 0.18)   65%,
+      rgba(11, 37, 69, 0.40)  100%
+    );
+  }
+</style>

@@ -216,19 +216,7 @@ textarea:focus-visible {
   color: #06D6FF;
 }
 
-/* ── Grid pulse (subtle glow breathe) ── */
-@keyframes gridLinePulse {
-  0%, 100% { opacity: 0.45; }
-  50%       { opacity: 0.75; }
-}
-
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(6, 214, 255, 0.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(6, 214, 255, 0.10) 1px, transparent 1px);
-  background-size: 48px 48px;
-  animation: gridLinePulse 4s ease-in-out infinite;
-}
+/* Grid styles now live in HeroGrid.astro (scoped) */
 
 /* ── Counter ── */
 .counter-num {

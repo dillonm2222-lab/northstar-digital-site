@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/site';
+import HeroGrid from '../components/HeroGrid.astro';
 
 const pageTitle = 'North Star Digital | Web Design & Digital Marketing — Pewaukee, WI';
 const description =
@@ -17,10 +18,9 @@ const phoneHref = 'tel:+12622540128';
     <!-- Star canvas — fades in on load, lasts 30s then smooth fade -->
     <canvas id="star-canvas" class="pointer-events-none absolute inset-0 h-full w-full opacity-0" style="transition: opacity 1.2s ease;"></canvas>
 
-    <!-- Original grid — hidden until stars fade, then fades in with subtle effects -->
-    <div id="hero-grid-container" class="pointer-events-none absolute inset-0 overflow-hidden opacity-0" style="transition: opacity 2.5s ease;">
-      <div class="hero-grid-perspective absolute inset-x-0 bottom-0 h-[60%]"></div>
-      <div class="hero-grid absolute inset-0"></div>
+    <!-- Animated grid — fades in after stars dissolve -->
+    <div id="hero-grid-container" class="pointer-events-none absolute inset-0 opacity-0" style="transition: opacity 2.5s ease;">
+      <HeroGrid />
     </div>
 
     <!-- Glow orbs (always visible) -->
