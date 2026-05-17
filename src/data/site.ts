@@ -1,8 +1,10 @@
 export const siteConfig = {
   name: 'North Star Digital',
   legalName: 'North Star Digital LLC',
-  baseUrl: 'https://northstardigital.com',
+  baseUrl: 'https://northstardigital.services',
   email: 'marketing@northstardigital.services',
+  phone: '(262) 254-0128',
+  phoneHref: 'tel:+12622540128',
   location: 'Pewaukee, Wisconsin',
   tagline: 'We handle the tech. You focus on growth.'
 };
