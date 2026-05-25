@@ -61,6 +61,15 @@ const schema = {
     <meta name="twitter:image" content={ogImageUrl} />
     <title>{title}</title>
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <!-- Google Analytics GA4 — replace G-YL55ZMVPWT with your real Measurement ID -->
+    <!-- Get your ID at: analytics.google.com → Admin → Create Property → Web Stream -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YL55ZMVPWT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YL55ZMVPWT');
+    </script>
   </head>
   <body class="bg-white text-[#1A1F2E] antialiased">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-[#0B2545]">
