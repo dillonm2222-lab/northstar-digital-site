@@ -244,3 +244,66 @@ textarea:focus-visible {
   box-shadow: 0 0 40px rgba(6, 214, 255, 0.2), 0 16px 40px rgba(11, 37, 69, 0.3);
   border-color: rgba(6, 214, 255, 0.6) !important;
 }
+
+/* ── Futuristic: pulsing live dot ── */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(6, 214, 255, 0.6); }
+  50% { opacity: 0.7; transform: scale(1.15); box-shadow: 0 0 0 6px rgba(6, 214, 255, 0); }
+}
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #06D6FF;
+  animation: livePulse 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ── Futuristic: CTA button shimmer sweep ── */
+@keyframes shimmerSweep {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.btn-glow {
+  background-size: 200% auto;
+  background-image: linear-gradient(90deg, #2E8BFF 0%, #06D6FF 40%, #2E8BFF 60%, #1E7AEB 100%);
+  animation: shimmerSweep 3s linear infinite;
+}
+.btn-glow:hover {
+  animation: none;
+  background-image: none;
+  background-color: #1E7AEB;
+}
+
+/* ── Futuristic: scan line on AI card ── */
+@keyframes scanLine {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.4; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+.ai-scan::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6,214,255,0.6), transparent);
+  animation: scanLine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Futuristic: floating orb glow ── */
+@keyframes orbFloat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.12; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+}
+.orb-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #06D6FF 0%, transparent 70%);
+  animation: orbFloat 5s ease-in-out infinite;
+  pointer-events: none;
+}

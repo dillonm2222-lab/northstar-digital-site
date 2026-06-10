@@ -2,9 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTA from '../components/CTA.astro';
 
-const pageTitle = 'About Us | North Star Digital — Waukesha, WI';
+const pageTitle = 'About Us | North Star Digital — Wisconsin';
 const description =
-  'North Star Digital is a father-son digital agency headquartered in Waukesha, Wisconsin. We help local contractors, plumbers, landscapers, and service businesses get more calls and grow online.';
+  'North Star Digital is a father-son digital agency headquartered in Wisconsin. We help local contractors, plumbers, landscapers, and service businesses get more calls and grow online.';
 
 const phone = '(262) 254-0128';
 const phoneHref = 'tel:+12622540128';
@@ -15,10 +15,10 @@ const phoneHref = 'tel:+12622540128';
   <!-- HERO -->
   <section class="bg-[#0B2545] px-4 py-16 md:py-20">
     <div class="mx-auto max-w-4xl text-center">
-      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Waukesha, Wisconsin</p>
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Wisconsin</p>
       <h1 class="text-4xl font-bold text-white md:text-5xl">A Local Team That Actually Cares</h1>
       <p class="mx-auto mt-5 max-w-2xl text-lg text-[#8EA8C3]">
-        We're not a faceless agency. We're Dillon and his Dad — two guys from Waukesha County who got tired of watching good local businesses get left behind online.
+        We're not a faceless agency. We're Dillon and his Dad — two guys from Wisconsin who got tired of watching good local businesses get left behind online.
       </p>
     </div>
   </section>
@@ -27,7 +27,7 @@ const phoneHref = 'tel:+12622540128';
   <section class="px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
       <div class="grid gap-12 md:grid-cols-2 md:items-center">
-        <div>
+        <div class="reveal-left">
           <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Our Story</p>
           <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Why We Started NSD</h2>
           <p class="mt-5 text-base leading-relaxed text-[#44506A]">
@@ -45,6 +45,27 @@ const phoneHref = 'tel:+12622540128';
             </a>
           </div>
         </div>
+        <div class="reveal space-y-4">
+          <div class="rounded-2xl border border-[#E3E8F1] bg-gradient-to-br from-[#0B2545] to-[#0d2f5e] p-8 text-white shadow-lg">
+            <p class="text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Who We Are</p>
+            <h3 class="mt-3 text-2xl font-bold">Father &amp; Son.<br/>Wisconsin Built.</h3>
+            <p class="mt-3 text-sm leading-relaxed text-[#8EA8C3]">Dillon and his Dad — two guys who got tired of watching good local businesses get left behind online. We're the team that actually picks up the phone.</p>
+            <div class="mt-6 grid grid-cols-2 gap-4">
+              <div class="rounded-xl bg-white/10 p-4 text-center">
+                <p class="text-2xl font-bold text-[#06D6FF]">30</p>
+                <p class="mt-1 text-xs text-[#8EA8C3]">Days to launch</p>
+              </div>
+              <div class="rounded-xl bg-white/10 p-4 text-center">
+                <p class="text-2xl font-bold text-[#06D6FF]">100%</p>
+                <p class="mt-1 text-xs text-[#8EA8C3]">Done for you</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+            <p class="text-sm font-bold text-[#0B2545]">📍 Based in Wisconsin</p>
+            <p class="mt-1 text-sm text-[#44506A]">Serving contractors, plumbers, landscapers, and service businesses across the state and nationwide.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -52,7 +73,7 @@ const phoneHref = 'tel:+12622540128';
   <!-- WHY LOCAL MATTERS -->
   <section class="bg-[#F4F6FA] px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
-      <div class="mb-12 text-center">
+      <div class="reveal mb-12 text-center">
         <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Why It Matters</p>
         <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Local Makes a Difference</h2>
         <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">Working with a local team isn't just nice — it changes the quality of the work.</p>
@@ -80,7 +101,7 @@ const phoneHref = 'tel:+12622540128';
   <!-- VALUES -->
   <section class="px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
-      <div class="mb-12 text-center">
+      <div class="reveal mb-12 text-center">
         <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">How We Operate</p>
         <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Our Non-Negotiables</h2>
       </div>
@@ -127,10 +148,34 @@ const phoneHref = 'tel:+12622540128';
           Call Now — {phone}
         </a>
         <a href="/contact" class="inline-flex rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition hover:border-white hover:bg-white/10">
-          Get a Free Quote
+          Apply for a Strategy Session
         </a>
       </div>
     </div>
   </section>
+
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelectorAll('.reveal, .reveal-left').forEach(el => {
+        if (!el.classList.contains('visible')) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight + 100) el.classList.add('visible');
+        }
+      });
+    }, 200);
+  });
+</script>
 
 </BaseLayout>
