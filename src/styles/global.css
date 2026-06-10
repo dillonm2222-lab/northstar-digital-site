@@ -260,20 +260,19 @@ textarea:focus-visible {
   flex-shrink: 0;
 }
 
-/* ── Futuristic: CTA button shimmer sweep ── */
-@keyframes shimmerSweep {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+/* ── CTA button: gentle breath glow ── */
+@keyframes btnBreath {
+  0%, 100% { box-shadow: 0 4px 18px rgba(46, 139, 255, 0.28); }
+  50%       { box-shadow: 0 4px 32px rgba(46, 139, 255, 0.52); }
 }
 .btn-glow {
-  background-size: 200% auto;
-  background-image: linear-gradient(90deg, #2E8BFF 0%, #06D6FF 40%, #2E8BFF 60%, #1E7AEB 100%);
-  animation: shimmerSweep 3s linear infinite;
+  background: #2E8BFF;
+  animation: btnBreath 3s ease-in-out infinite;
 }
 .btn-glow:hover {
   animation: none;
-  background-image: none;
-  background-color: #1E7AEB;
+  background: #1E7AEB;
+  box-shadow: 0 4px 28px rgba(46, 139, 255, 0.5);
 }
 
 /* ── Futuristic: scan line on AI card ── */
@@ -306,4 +305,36 @@ textarea:focus-visible {
   background: radial-gradient(circle, #06D6FF 0%, transparent 70%);
   animation: orbFloat 5s ease-in-out infinite;
   pointer-events: none;
+}
+
+/* ── Guarantee box: white splash pulse ── */
+/* 7s cycle: ~0.5s fade in, ~1s hold, ~0.5s fade out, ~5s rest */
+@keyframes guaranteeSplash {
+  0%   { opacity: 0;    transform: translate(-50%, -50%) scale(0.55); }
+  7%   { opacity: 0.28; transform: translate(-50%, -50%) scale(1);    }
+  21%  { opacity: 0.22; transform: translate(-50%, -50%) scale(1.1);  }
+  29%  { opacity: 0;    transform: translate(-50%, -50%) scale(1.18); }
+  100% { opacity: 0;    transform: translate(-50%, -50%) scale(0.55); }
+}
+.guarantee-splash {
+  position: relative;
+  overflow: hidden;
+}
+.guarantee-splash::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.85) 0%, rgba(46,139,255,0.08) 45%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0.55);
+  animation: guaranteeSplash 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.guarantee-splash > * {
+  position: relative;
+  z-index: 1;
 }
