@@ -1,9 +1,75 @@
 # NSD Site Session Log
-# Last updated: 2026-06-16
+# Last updated: 2026-06-16 (session 2)
 
 ---
 
-## SESSION SUMMARY — 2026-06-16
+## SESSION 2 SUMMARY — 2026-06-16 (continued)
+
+**4 more goals completed. Build clean throughout. All changes verified.**
+
+| Goal | Status | Commit |
+|------|--------|--------|
+| 5. Price consistency, fake client claim, robots.txt | ✅ Done | 34db33f |
+| 6. Install @tailwindcss/typography — blog prose rendering | ✅ Done | cf2c783 |
+| 7. Blog upgrades — related posts, CTA, internal links | ✅ Done | ea5e56b |
+| 8. Sitemap /offer exclusion + datetime attributes | ✅ Done | 81670f3 |
+
+---
+
+## GOAL 5 — Critical content fixes
+**Commit:** 34db33f
+
+- `services.astro`: website price was "$399 one-time" — contradicted homepage $1,499. Now reads "$1,499 one-time — or bundled into monthly plans" consistently.
+- `why-hvac-companies-losing-leads.md`: blog claimed "one of our clients — a masonry contractor..." — NSD has no clients. Rewrote as a clear hypothetical/illustrative scenario.
+- `robots.txt`: site URL was `northstardigital.com` (wrong). Fixed to `northstardigital.services`. Added `Disallow: /offer` so crawlers skip the noindex proposal page.
+
+Verified: $1,499 in built services HTML, "Disallow: /offer" and correct domain in built robots.txt.
+
+---
+
+## GOAL 6 — Blog typography plugin
+**Commit:** cf2c783
+
+`@tailwindcss/typography` was not installed. The blog post template uses `prose prose-lg prose-headings:*` etc. — all silently no-ops without the plugin. Installed the package and added `@plugin "@tailwindcss/typography"` to `global.css`. 166 `.prose` selectors confirmed in built CSS. Blog posts now render with proper heading sizes, paragraph spacing, list styles, and link colors.
+
+---
+
+## GOAL 7 — Blog upgrades
+**Commit:** ea5e56b
+
+`[...slug].astro`: 
+- Related posts section (up to 2 other posts, grid layout, hover card)
+- Mid-post free-audit CTA block (phone + contact form links)
+- Expanded author box with Services and FAQ navigation links
+- Byline now includes "North Star Digital, Waukesha, WI" for local SEO
+
+`5-signs-your-business-needs-a-new-website.md`: added `/services` and `/faq` internal links in closing CTA.
+`how-much-does-a-website-cost-waukesha.md`: linked "$299/mo" text to `/services`, added `/faq` link, corrected one-time price reference to $1,499.
+
+Verified: 5 internal link matches in built 5-signs post HTML.
+
+---
+
+## GOAL 8 — Sitemap and datetime
+**Commit:** 81670f3
+
+- `astro.config.mjs`: sitemap integration now filters out `/offer` — noindex pages shouldn't appear in the sitemap either (belt-and-suspenders with the meta noindex tag). Verified 0 occurrences of `/offer` in built sitemap.
+- `blog/index.astro` and `[...slug].astro`: all `<time>` elements now have `datetime="YYYY-MM-DD"` ISO attribute for semantic HTML and screen-reader compatibility. 3 datetime attrs confirmed in blog index.
+
+---
+
+## SESSION 2 REMAINING RECOMMENDATIONS
+
+1. **Write a 4th blog post** — target "local SEO for contractors Waukesha" or "how to get more masonry leads Wisconsin". Highest SEO value move still available.
+2. **Confirm and test Calendly link** — `contact.astro` links to `calendly.com/northstardigital-marketing/30min`. Verify the Calendly account is set up before publishing the site, or update the link.
+3. **Test the Formspree form ID** — `contact.astro` submits to `formspree.io/f/xzdowbrw`. Confirm this is a real, active form endpoint.
+4. **Swap founder-placeholder.svg for a real photo** — the About page now has the right 2-column layout but shows a placeholder image. A real photo converts better.
+5. **Replace GA4 placeholder ID** — `BaseLayout.astro` uses `G-YL55ZMVPWT`. Swap in the real Measurement ID from Google Analytics once the property is created.
+6. **Set up Calendly account** — contact page links to Calendly for booking. If the account doesn't exist yet, either create it or remove the booking section temporarily.
+
+---
+
+## SESSION 1 SUMMARY — 2026-06-16
 
 **4 goals completed. Build passes throughout. All pages verified in built HTML.**
 
