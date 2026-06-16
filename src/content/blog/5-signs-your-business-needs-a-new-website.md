@@ -44,4 +44,6 @@ If 2 or more of these apply to you, a new website isn't a luxury — it's a busi
 
 At North Star Digital, we build websites for Wisconsin service businesses that are fast, mobile-ready, and designed to get your phone ringing. We're a local, father-son team based in Waukesha, and we don't drag projects out for months.
 
-**[Call us at (262) 254-0128](tel:+12622540128) for a free website review — we'll tell you exactly what's wrong and what it would take to fix it.**
+**[Call us at (262) 254-0128](tel:+12622540128) for a free website review** — we'll tell you exactly what's wrong and what it would take to fix it.
+
+Want to see what we offer and what it costs? [View our services and pricing](/services). Have questions first? [Check our FAQ](/faq).

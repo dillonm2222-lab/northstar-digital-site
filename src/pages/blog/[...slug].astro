@@ -1,17 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { siteConfig } from '../../data/site';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
     params: { slug: post.id },
-    props: { post },
+    props: { post, allPosts: posts },
   }));
 }
 
-const { post } = Astro.props;
+const { post, allPosts } = Astro.props;
 const { Content } = await render(post);
+
+const related = allPosts
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 2);
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -31,7 +37,7 @@ function formatDate(date: Date) {
         ))}
       </div>
       <h1 class="text-3xl font-bold text-white md:text-4xl leading-tight">{post.data.title}</h1>
-      <p class="mt-2 text-sm text-[#8EA8C3]">By {post.data.author}</p>
+      <p class="mt-2 text-sm text-[#8EA8C3]">By {post.data.author} · North Star Digital, Waukesha, WI</p>
     </div>
   </section>
 
@@ -50,19 +56,59 @@ function formatDate(date: Date) {
         <Content />
       </article>
 
-      <!-- Author box -->
-      <div class="mt-14 rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
-        <p class="text-sm font-bold text-[#0B2545]">About North Star Digital</p>
-        <p class="mt-2 text-sm leading-relaxed text-[#44506A]">
-          We're a father-son digital agency based in Waukesha, Wisconsin. We help local service businesses get more calls, more customers, and more revenue through websites, local SEO, and automated follow-up systems.
-        </p>
-        <a href="tel:+12622540128" class="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
-          Call (262) 254-0128 — Free Consultation
-        </a>
+      <!-- Mid-post CTA box -->
+      <div class="my-12 rounded-2xl border-2 border-[#2E8BFF]/20 bg-[#F0F6FF] p-7 text-center">
+        <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Free for Wisconsin Businesses</p>
+        <h2 class="mt-2 text-xl font-bold text-[#0B2545]">Get a Free Audit of Your Online Presence</h2>
+        <p class="mx-auto mt-2 max-w-md text-sm text-[#44506A]">We'll look at your website, Google ranking, and local presence — and tell you exactly what's costing you leads. No pitch, no pressure.</p>
+        <div class="mt-5 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <a href={siteConfig.phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
+            📞 Call {siteConfig.phone}
+          </a>
+          <a href="/contact" class="inline-flex rounded-xl border border-[#2E8BFF]/40 px-6 py-3 text-sm font-semibold text-[#2E8BFF] transition hover:border-[#2E8BFF] hover:bg-white">
+            Send a Message →
+          </a>
+        </div>
       </div>
 
+      <!-- Author / About box -->
+      <div class="rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+        <p class="text-sm font-bold text-[#0B2545]">About North Star Digital</p>
+        <p class="mt-2 text-sm leading-relaxed text-[#44506A]">
+          We're a father-son digital agency based in Waukesha, Wisconsin. We help local contractors, plumbers, HVAC companies, landscapers, and service businesses get more calls through fast websites, local SEO, and automated follow-up.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href={siteConfig.phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
+            Call {siteConfig.phone}
+          </a>
+          <a href="/services" class="inline-flex rounded-xl border border-[#E3E8F1] px-5 py-2.5 text-sm font-semibold text-[#2E8BFF] transition hover:border-[#2E8BFF] hover:bg-white">
+            Our Services →
+          </a>
+          <a href="/faq" class="inline-flex rounded-xl border border-[#E3E8F1] px-5 py-2.5 text-sm font-semibold text-[#44506A] transition hover:border-[#2E8BFF] hover:text-[#2E8BFF] hover:bg-white">
+            FAQ →
+          </a>
+        </div>
+      </div>
+
+      <!-- Related posts -->
+      {related.length > 0 && (
+        <div class="mt-14">
+          <p class="mb-5 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">More from the Blog</p>
+          <div class="grid gap-5 sm:grid-cols-2">
+            {related.map((p) => (
+              <a href={`/blog/${p.id}`} class="group rounded-2xl border border-[#E3E8F1] bg-white p-5 shadow-sm transition hover:border-[#2E8BFF]/40 hover:shadow-md">
+                <time class="text-xs text-[#8EA8C3]">{formatDate(p.data.pubDate)}</time>
+                <p class="mt-2 text-sm font-bold text-[#0B2545] leading-snug group-hover:text-[#2E8BFF] transition-colors">{p.data.title}</p>
+                <p class="mt-2 text-xs leading-relaxed text-[#44506A]">{p.data.description}</p>
+                <span class="mt-3 inline-flex text-xs font-semibold text-[#2E8BFF]">Read more →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div class="mt-10 text-center">
-        <a href="/blog" class="text-sm font-semibold text-[#2E8BFF] hover:underline">← See all posts</a>
+        <a href="/blog" class="text-sm font-semibold text-[#2E8BFF] hover:underline">← All posts</a>
       </div>
     </div>
   </section>
