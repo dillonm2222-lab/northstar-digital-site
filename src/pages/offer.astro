@@ -1,0 +1,577 @@
+---
+import { siteConfig } from '../data/site';
+
+const pageTitle = 'Growth Package Proposal | North Star Digital';
+const description = 'Custom digital growth proposal from North Star Digital for local contractors.';
+
+const phone = siteConfig.phone;
+const phoneHref = siteConfig.phoneHref;
+const email = siteConfig.email;
+
+const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{pageTitle}</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f4f6fa;
+      color: #1a1f2e;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* Header */
+    .offer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0b2545;
+      color: white;
+      padding: 28px 36px;
+      border-radius: 16px 16px 0 0;
+    }
+    .offer-header .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .offer-header .logo-row span {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .offer-header .meta {
+      text-align: right;
+      font-size: 0.78rem;
+      color: #8ea8c3;
+      line-height: 1.7;
+    }
+    .offer-header .meta strong { color: #06d6ff; }
+
+    /* Main card */
+    .offer-body {
+      background: white;
+      padding: 40px 36px;
+      border-left: 1px solid #e3e8f1;
+      border-right: 1px solid #e3e8f1;
+    }
+
+    /* Section label */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #2e8bff;
+      margin-bottom: 6px;
+    }
+
+    h1 { font-size: 1.75rem; font-weight: 800; color: #0b2545; line-height: 1.2; }
+    h2 { font-size: 1.2rem; font-weight: 700; color: #0b2545; }
+    h3 { font-size: 1rem; font-weight: 700; color: #0b2545; }
+
+    .subhead { font-size: 1rem; color: #44506a; margin-top: 8px; max-width: 600px; }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e3e8f1, transparent);
+      margin: 32px 0;
+    }
+
+    /* Problem block */
+    .problem-block {
+      background: #f4f6fa;
+      border-left: 4px solid #2e8bff;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+    .problem-block p { font-size: 0.9rem; color: #44506a; margin-top: 6px; }
+
+    /* Deliverables */
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 600px) { .deliverables-grid { grid-template-columns: 1fr; } }
+
+    .deliverable-card {
+      border: 1px solid #e3e8f1;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .deliverable-card h3 { font-size: 0.9rem; margin-bottom: 8px; }
+    .deliverable-card ul { list-style: none; }
+    .deliverable-card li {
+      font-size: 0.82rem;
+      color: #44506a;
+      padding: 3px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+    .deliverable-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #2e8bff;
+      font-weight: 700;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    @media (max-width: 600px) { .timeline { grid-template-columns: 1fr; } }
+    .timeline-step {
+      border: 1px solid #e3e8f1;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .timeline-step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #f0f6ff;
+      color: #2e8bff;
+      font-weight: 800;
+      font-size: 1rem;
+      margin: 0 auto 8px;
+    }
+    .timeline-step h3 { font-size: 0.85rem; }
+    .timeline-step p { font-size: 0.78rem; color: #44506a; margin-top: 4px; }
+
+    /* Pricing */
+    .pricing-box {
+      background: #f0f6ff;
+      border: 2px solid #2e8bff;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-top: 16px;
+    }
+    .pricing-box .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .pricing-box .price-amount {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0b2545;
+    }
+    .pricing-box .price-label {
+      font-size: 0.85rem;
+      color: #44506a;
+    }
+    .pricing-box .decision-badge {
+      display: inline-block;
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      color: #856404;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .pricing-rows { margin-top: 16px; }
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #dde9ff;
+      font-size: 0.88rem;
+    }
+    .pricing-row:last-child { border-bottom: none; }
+    .pricing-row .label { color: #0b2545; font-weight: 600; }
+    .pricing-row .val { color: #2e8bff; font-weight: 700; }
+    .pricing-row .val.tbd {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      color: #856404;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+    }
+
+    /* Objections */
+    .faq-item {
+      border: 1px solid #e3e8f1;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-top: 12px;
+    }
+    .faq-item h3 { font-size: 0.9rem; color: #0b2545; }
+    .faq-item p { font-size: 0.85rem; color: #44506a; margin-top: 6px; }
+
+    /* Guarantee */
+    .guarantee-block {
+      background: linear-gradient(135deg, #f0f6ff, #ebf8ff);
+      border: 2px solid rgba(46,139,255,0.2);
+      border-radius: 16px;
+      padding: 28px 32px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .guarantee-block h2 { margin-bottom: 8px; }
+    .guarantee-block p { font-size: 0.9rem; color: #44506a; max-width: 520px; margin: 0 auto; }
+
+    /* CTA footer */
+    .offer-footer {
+      background: #0b2545;
+      border-radius: 0 0 16px 16px;
+      padding: 32px 36px;
+      text-align: center;
+    }
+    .offer-footer h2 { color: white; font-size: 1.3rem; margin-bottom: 8px; }
+    .offer-footer p { color: #8ea8c3; font-size: 0.88rem; margin-bottom: 20px; }
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #2e8bff;
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #1e7aeb; }
+    .btn-secondary {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: white; }
+
+    /* Print */
+    @media print {
+      body { background: white; }
+      .page { padding: 0; }
+      .offer-header, .offer-body, .offer-footer { border-radius: 0; }
+      .btn-primary, .btn-secondary { display: none; }
+    }
+
+    .note {
+      font-size: 0.78rem;
+      color: #44506a;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Header ── -->
+  <div class="offer-header">
+    <div class="logo-row">
+      <img src="/north-star-mark.svg" alt="North Star Digital" width="32" height="32" />
+      <span>North Star Digital</span>
+    </div>
+    <div class="meta">
+      <div>Date: <strong>{today}</strong></div>
+      <div>Prepared by: <strong>Dillon Michael</strong></div>
+      <div>Prepared for: <strong>[CLIENT NAME]</strong></div>
+      <div>Valid for: <strong>14 days</strong></div>
+    </div>
+  </div>
+
+  <!-- ── Body ── -->
+  <div class="offer-body">
+
+    <!-- Title -->
+    <div class="section-label">Digital Growth Proposal</div>
+    <h1>Get Found on Google.<br />Get More Calls.<br />Grow Your Business.</h1>
+    <p class="subhead">A custom proposal from North Star Digital for <strong>[CLIENT BUSINESS NAME]</strong> in <strong>[CITY], Wisconsin</strong>.</p>
+
+    <div class="divider"></div>
+
+    <!-- Problem -->
+    <div class="section-label">The Problem We're Solving</div>
+    <h2>Right Now, Your Competitors Are Getting Your Customers</h2>
+    <div class="problem-block">
+      <p>When someone in [CITY] searches for masonry or concrete work — they're not finding you. They're finding competitors who may do worse work but have a stronger online presence. Every week that continues is revenue you're leaving on the table.</p>
+      <p style="margin-top:10px;">Here's what we found when we looked at your current online presence:</p>
+      <ul style="margin-top:10px; padding-left:18px; font-size:0.88rem; color:#44506a; line-height:1.9;">
+        <li><strong>Website:</strong> [None / Outdated / Not mobile-friendly] — not converting visitors to calls</li>
+        <li><strong>Google Business Profile:</strong> [Missing / Incomplete / Not optimized]</li>
+        <li><strong>Local search rankings:</strong> Not appearing for "[SERVICE] [CITY]" searches</li>
+        <li><strong>Lead follow-up:</strong> No automated system to capture and nurture inquiries</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Deliverables -->
+    <div class="section-label">What We're Proposing</div>
+    <h2>Your Complete Digital Growth Package</h2>
+    <p style="margin-top:6px; font-size:0.88rem; color:#44506a;">Everything below is included. No hidden fees, no à la carte surprises.</p>
+
+    <div class="deliverables-grid">
+
+      <div class="deliverable-card">
+        <h3>🖥️ High-Converting Website</h3>
+        <ul>
+          <li>Custom design built for your industry</li>
+          <li>Mobile-first, loads in under 2 seconds</li>
+          <li>Phone CTA on every page</li>
+          <li>Before/after gallery section</li>
+          <li>Contact form connected to your email</li>
+          <li>You own it — no lock-in</li>
+        </ul>
+      </div>
+
+      <div class="deliverable-card">
+        <h3>📍 Local SEO + Google Maps</h3>
+        <ul>
+          <li>Google Business Profile setup & optimization</li>
+          <li>Local keyword targeting ("[SERVICE] [CITY]")</li>
+          <li>On-page SEO for all site pages</li>
+          <li>Citation building (directories & maps)</li>
+          <li>Review generation strategy</li>
+          <li>Monthly ranking report</li>
+        </ul>
+      </div>
+
+      <div class="deliverable-card">
+        <h3>📋 CRM & Lead Management</h3>
+        <ul>
+          <li>Simple dashboard to track every lead</li>
+          <li>Automatic follow-up texts and emails</li>
+          <li>Missed-call text-back automation</li>
+          <li>Appointment confirmation reminders</li>
+          <li>Lead pipeline organized by stage</li>
+          <li>Nothing falls through the cracks</li>
+        </ul>
+      </div>
+
+      <div class="deliverable-card">
+        <h3>⚡ Marketing Automation</h3>
+        <ul>
+          <li>Automated Google review requests</li>
+          <li>Lead nurture sequences (text + email)</li>
+          <li>Instant new-lead notifications</li>
+          <li>Seasonal campaign templates</li>
+          <li>Running 24/7 — no manual work</li>
+          <li>Monthly performance report</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Timeline -->
+    <div class="section-label">Timeline</div>
+    <h2>Up and Running in 3 Weeks</h2>
+
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="num">1</div>
+        <h3>Week 1</h3>
+        <p>Kickoff call, gather content, design approved, GBP claimed</p>
+      </div>
+      <div class="timeline-step">
+        <div class="num">2</div>
+        <h3>Week 2</h3>
+        <p>Website built and reviewed, CRM configured, automations set up</p>
+      </div>
+      <div class="timeline-step">
+        <div class="num">3</div>
+        <h3>Week 3</h3>
+        <p>Site goes live, SEO work begins, you start getting leads</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- What we need from you -->
+    <div class="section-label">What We Need From You</div>
+    <h2>Your Part Is Simple</h2>
+    <ul style="margin-top:12px; list-style:none;">
+      {[
+        'A 30-minute kickoff call to understand your business and goals',
+        'A few photos of your work (we can help if you don\'t have many)',
+        'Your business name, address, phone number, and hours',
+        'Access to your Google Business Profile (if you have one)',
+        'That\'s it — we handle everything else',
+      ].map(item => (
+        <li style="display:flex; gap:10px; align-items:flex-start; padding:8px 0; font-size:0.88rem; color:#44506a; border-bottom:1px solid #f0f4f9;">
+          <span style="color:#2e8bff; font-weight:700; margin-top:1px;">✓</span>
+          {item}
+        </li>
+      ))}
+    </ul>
+
+    <div class="divider"></div>
+
+    <!-- Pricing -->
+    <div class="section-label">Investment</div>
+    <h2>What This Costs</h2>
+
+    <div class="pricing-box">
+      <div class="price-row">
+        <span class="price-amount">[DECISION NEEDED]</span>
+        <span class="decision-badge">Price — Your Call</span>
+      </div>
+      <p style="font-size:0.85rem; color:#44506a; margin-bottom:16px;">
+        The final price is Dillon's decision. The structure below shows what's included at each line — fill in the numbers before sending.
+      </p>
+      <div class="pricing-rows">
+        <div class="pricing-row">
+          <span class="label">Website Build (one-time)</span>
+          <span class="val tbd">[DECISION NEEDED]</span>
+        </div>
+        <div class="pricing-row">
+          <span class="label">Monthly Retainer (SEO + CRM + Automation)</span>
+          <span class="val tbd">[DECISION NEEDED]</span>
+        </div>
+        <div class="pricing-row">
+          <span class="label">Setup Fee</span>
+          <span class="val tbd">[DECISION NEEDED]</span>
+        </div>
+        <div class="pricing-row">
+          <span class="label">Contract Length</span>
+          <span class="val">Month-to-month (no lock-in)</span>
+        </div>
+        <div class="pricing-row">
+          <span class="label">First payment due</span>
+          <span class="val">After you approve the site</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:12px;">
+      Note: Standard rates are Website $1,499 one-time · Local SEO $199/mo · CRM $149/mo · Automation $199/mo · Setup $299 one-time. Bundle discounts and first-client rates are Dillon's call.
+    </p>
+
+    <div class="divider"></div>
+
+    <!-- Objections -->
+    <div class="section-label">Common Questions</div>
+    <h2>What You're Probably Wondering</h2>
+
+    <div class="faq-item">
+      <h3>"I've paid for a website before and it didn't do anything."</h3>
+      <p>Most websites fail because they're built to look good, not to convert. We build every page around one goal: get your phone to ring. We also set up tracking so you can see exactly how many calls and leads your site generates. If it's not working, we'll tell you and fix it.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>"I don't have time to manage this stuff."</h3>
+      <p>That's exactly why we handle everything. After the kickoff call, your main job is to answer the phone when it rings. The website, SEO, CRM, and automations run on their own. We send you a monthly report so you always know what's happening without having to manage it yourself.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>"I'm not sure I'll get an ROI."</h3>
+      <p>Fair. A masonry job is typically $2,000–$15,000+. If our system generates even one additional job per month, it pays for itself many times over. We also back our work with a 30-day results guarantee — if you don't see measurable progress, we keep working at no extra charge.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>"Can I cancel if I want to?"</h3>
+      <p>Yes. No contracts, no lock-in, no cancellation fees. Month-to-month. We earn your business every single month by delivering results — not by trapping you in a contract.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>"Why should I work with you over a bigger agency?"</h3>
+      <p>Bigger agencies charge 3–5x more and hand your account to a junior employee you'll never speak to. With us, you get Dillon's direct number and our full attention. We're building our reputation one client at a time — your success is how we grow.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Guarantee -->
+    <div class="section-label">Our Promise</div>
+    <div class="guarantee-block">
+      <h2>30-Day Results Guarantee</h2>
+      <p style="margin-top:10px;">If you don't see measurable progress in your first 30 days — more traffic, better rankings, or more inquiries — we keep working at no extra charge until you do. No excuses. No runaround. We put our work where our mouth is.</p>
+      <div style="display:flex; justify-content:center; gap:24px; margin-top:20px; flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div style="font-size:1.8rem; font-weight:800; color:#2e8bff;">30</div>
+          <div style="font-size:0.78rem; color:#44506a;">Days to Results</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:1.8rem; font-weight:800; color:#2e8bff;">$0</div>
+          <div style="font-size:0.78rem; color:#44506a;">Risk to You</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:1.8rem; font-weight:800; color:#2e8bff;">0</div>
+          <div style="font-size:0.78rem; color:#44506a;">Contracts Required</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- About NSD -->
+    <div class="section-label">Why North Star Digital</div>
+    <h2>Who We Are</h2>
+    <p style="font-size:0.88rem; color:#44506a; margin-top:8px;">We're a father-son team from Waukesha, Wisconsin. Not a call center, not a big agency, not an offshore operation. We work with local contractors who are tired of being invisible online and ready to grow. When you work with us, you get real people who answer the phone, do the work themselves, and stand behind it.</p>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:16px;">
+      {[
+        ['📍', 'Based in Waukesha, WI — not a call center'],
+        ['⚡', 'Live in 2–3 weeks, not months'],
+        ['💰', 'Fair transparent pricing, no surprises'],
+        ['🤝', 'You get Dillon\'s direct number'],
+      ].map(([icon, text]) => (
+        <div style="display:flex; gap:10px; align-items:center; background:#f4f6fa; border-radius:10px; padding:12px 14px; font-size:0.83rem; color:#44506a;">
+          <span style="font-size:1.1rem;">{icon}</span>
+          {text}
+        </div>
+      ))}
+    </div>
+
+  </div><!-- /offer-body -->
+
+  <!-- ── Footer CTA ── -->
+  <div class="offer-footer">
+    <h2>Ready to Get More Calls?</h2>
+    <p>This proposal is valid for 14 days. Call or text Dillon directly to get started.</p>
+    <div class="cta-row">
+      <a href={phoneHref} class="btn-primary">📞 Call Now — {phone}</a>
+      <a href={`mailto:${email}?subject=Proposal%20—%20Ready%20to%20Get%20Started`} class="btn-secondary">Email Us →</a>
+    </div>
+    <p style="margin-top:20px; font-size:0.75rem; color:#4a6080;">
+      North Star Digital LLC · Waukesha, Wisconsin · {email}
+    </p>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
