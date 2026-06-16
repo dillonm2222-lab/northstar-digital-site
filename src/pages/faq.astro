@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const pageTitle = 'FAQ | North Star Digital — Web Design & SEO Waukesha, WI';
+const description =
+  'Questions about website cost, local SEO, CRM, and digital marketing for Wisconsin contractors? We answer the most common questions small business owners ask us.';
+
+const phone = siteConfig.phone;
+const phoneHref = siteConfig.phoneHref;
+
+const faqs = [
+  {
+    category: 'Websites',
+    items: [
+      {
+        q: 'How much does a website cost for a small business in Wisconsin?',
+        a: 'Our website build is a one-time fee of $1,499. That covers custom design, mobile-ready development, SEO foundations, a contact form, and your phone number on every page. If you want website hosting + ongoing updates bundled with SEO and CRM, our monthly plans start at $299/mo.',
+      },
+      {
+        q: 'How long does it take to build a website?',
+        a: 'Most clients are live within 2–3 weeks. We move fast. Week 1: kickoff call, content gathering, design. Week 2: build and your review. Week 3: launch. No waiting around for months.',
+      },
+      {
+        q: 'Do I own my website?',
+        a: 'Yes — always. You own your domain, your content, and your code. We don\'t lock you into proprietary platforms. If you ever leave us (we hope you won\'t), you take your website with you.',
+      },
+      {
+        q: 'Will my website work on phones?',
+        a: 'Absolutely. Every site we build is mobile-first. Over 70% of local searches happen on a phone — if your site isn\'t fast and clean on mobile, you\'re losing leads every day. We test every page on multiple devices before launch.',
+      },
+      {
+        q: 'Can you redesign my existing website?',
+        a: 'Yes. We can rebuild your existing site from scratch or revamp what you have. Either way, we audit your current site first and tell you honestly what\'s worth keeping and what needs to change.',
+      },
+    ],
+  },
+  {
+    category: 'Local SEO',
+    items: [
+      {
+        q: 'What is local SEO and why does it matter for contractors?',
+        a: 'Local SEO is the work that gets your business showing up when people in your area search for your service on Google — especially on Google Maps. For contractors, plumbers, landscapers, and other local service businesses, the top 3 Google Maps results get the majority of clicks and calls. If you\'re not there, you\'re invisible.',
+      },
+      {
+        q: 'How long does SEO take to show results?',
+        a: 'Honest answer: the first improvements (Google Business Profile, on-page fixes) often show up in 2–4 weeks. Climbing in organic search rankings takes 3–6 months of consistent work. We track your rankings and calls so you can see the progress — and we keep working until you do.',
+      },
+      {
+        q: 'Do you set up Google Business Profiles?',
+        a: 'Yes — that\'s one of the first things we do. We claim or fix your Google Business Profile, add photos, write your description, set your service areas and hours, and optimize every field that affects your local ranking.',
+      },
+      {
+        q: 'Can you get my suspended Google Business Profile reinstated?',
+        a: 'We can help with GBP suspensions and reinstatement requests. It\'s not guaranteed (Google makes the final call), but we know the process and have successfully helped businesses get their profiles back. Call us to discuss your specific situation.',
+      },
+    ],
+  },
+  {
+    category: 'CRM & Automation',
+    items: [
+      {
+        q: 'What is a CRM and do I really need one?',
+        a: 'CRM stands for Customer Relationship Manager. It\'s a simple system that tracks every lead that comes in — who they are, what they need, and where they are in your sales process. Most small businesses lose 40–60% of their leads simply because no one followed up. A CRM fixes that automatically.',
+      },
+      {
+        q: 'What does marketing automation actually do?',
+        a: 'It handles the follow-up work that you never have time for. When someone fills out your contact form, it sends them an automatic text. When a job is done, it sends a review request. When a lead goes cold, it follows up with a friendly message after a few days. All of this runs 24/7 without you lifting a finger.',
+      },
+      {
+        q: 'What happens if a customer calls and I miss it?',
+        a: 'We set up missed-call text-back automation. The second you miss a call, the system automatically texts the customer: "Hey, sorry I missed you — I\'ll call you back shortly. What can I help you with?" That text alone saves an enormous number of jobs.',
+      },
+    ],
+  },
+  {
+    category: 'Working With Us',
+    items: [
+      {
+        q: 'Do you require long-term contracts?',
+        a: 'No. We work month-to-month. You can cancel anytime with 30 days notice. We believe in earning your business every month with results — not trapping you in a contract.',
+      },
+      {
+        q: 'What is your 30-day results guarantee?',
+        a: 'If you don\'t see measurable progress in your first 30 days — more traffic, better rankings, or more inquiries — we keep working at no extra charge until you do. No runaround, no excuses. We put our work where our mouth is.',
+      },
+      {
+        q: 'Do you work with businesses outside of Waukesha?',
+        a: 'Yes. We\'re headquartered in Waukesha, Wisconsin, but we work with clients across Wisconsin and beyond. If you\'re a local service business that wants more calls from Google, we can help regardless of where you\'re located.',
+      },
+      {
+        q: 'What types of businesses do you work with?',
+        a: 'Primarily local service businesses and contractors: HVAC, plumbing, electrical, roofing, masonry, landscaping, painting, home services, and more. We also work with dentists, chiropractors, and local retailers. If you rely on local customers finding you online, we\'re built for you.',
+      },
+      {
+        q: 'How do I get started?',
+        a: `The fastest way is to call us at ${phone}. We\'ll spend 15–20 minutes looking at your current online presence and tell you exactly what we\'d fix first. No pressure, no pitch — just an honest conversation. Or fill out the form on our contact page and we\'ll reach out within one business day.`,
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={pageTitle} description={description} path="/faq">
+
+  <!-- HERO -->
+  <section class="bg-[#0B2545] px-4 py-16 md:py-20">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Got Questions?</p>
+      <h1 class="text-4xl font-bold text-white md:text-5xl">Frequently Asked Questions</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-[#8EA8C3]">
+        Straight answers about websites, local SEO, CRM, automation, pricing, and working with North Star Digital.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
+          📞 Call Us — {phone}
+        </a>
+        <a href="/contact" class="inline-flex rounded-xl border-2 border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
+          Send a Message
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTIONS -->
+  <section class="px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-3xl space-y-16">
+
+      {faqs.map((section) => (
+        <div>
+          <p class="mb-6 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">{section.category}</p>
+          <div class="space-y-4">
+            {section.items.map((item) => (
+              <details class="group rounded-2xl border border-[#E3E8F1] bg-white shadow-sm open:shadow-md transition-shadow">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
+                  <h2 class="text-base font-bold text-[#0B2545] leading-snug">{item.q}</h2>
+                  <span class="shrink-0 text-[#2E8BFF] transition-transform group-open:rotate-45">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="border-t border-[#E3E8F1] px-6 pb-6 pt-4">
+                  <p class="text-sm leading-relaxed text-[#44506A]">{item.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+  <!-- STILL HAVE QUESTIONS -->
+  <section class="bg-[#F4F6FA] px-4 py-16 md:py-20">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Still Have Questions?</p>
+      <h2 class="text-3xl font-bold text-[#0B2545]">Just Ask Us Directly</h2>
+      <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">
+        We're real people and we pick up the phone. Call us and we'll give you a straight answer — no sales pressure, no runaround.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
+          📞 {phone}
+        </a>
+        <a href="/contact" class="inline-flex rounded-xl border-2 border-[#2E8BFF]/30 px-8 py-4 text-base font-semibold text-[#2E8BFF] transition hover:border-[#2E8BFF] hover:bg-[#F0F6FF]">
+          Send a Message →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SCHEMA -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.flatMap(s => s.items).map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  })} />
+
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+</style>
