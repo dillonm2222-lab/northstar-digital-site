@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://northstardigital.com',
+  site: 'https://northstardigital.services',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
