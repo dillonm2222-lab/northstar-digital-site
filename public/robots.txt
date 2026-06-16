@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /offer
 
-Sitemap: https://northstardigital.com/sitemap-index.xml
+Sitemap: https://northstardigital.services/sitemap-index.xml

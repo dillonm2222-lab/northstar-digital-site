@@ -41,8 +41,10 @@ Your website should have:
 
 ## What This Looks Like Fixed
 
-One of our clients — a masonry contractor in the Waukesha area — went from getting sporadic inbound calls to having a consistent pipeline within 30 days of launching their new site with automated follow-up. The work was always there. They just weren't capturing it.
+Picture a masonry contractor in the Waukesha area. Great work, 15 years of experience, solid referrals — but nobody can find them on Google, and half their inbound calls go to voicemail with no follow-up. They're losing jobs to competitors who rank higher and respond faster.
 
-If your HVAC business is doing good work but struggling to find steady customers online, it's almost certainly a systems problem — not a quality problem.
+With a fast website, a fully optimized Google Business Profile, and a missed-call text-back automation, that contractor starts capturing the leads that were always there. The work doesn't change. The systems do.
+
+That's the exact situation most local HVAC companies are in right now. If you're doing good work but struggling to find steady customers online, it's almost certainly a systems problem — not a quality problem.
 
 **We can fix it. [Call us at (262) 254-0128](tel:+12622540128) for a free look at what's costing you leads.**
