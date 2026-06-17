@@ -58,6 +58,49 @@ Verified: 5 internal link matches in built 5-signs post HTML.
 
 ---
 
+---
+
+## SESSION 3 SUMMARY — 2026-06-16 (continued)
+
+**3 more goals completed. Build passes at 15 pages. All verified.**
+
+| Goal | Status | Commit |
+|------|--------|--------|
+| 9. Two new SEO blog posts (GBP guide + masonry leads) | ✅ Done | 7ed0301 |
+| 10. Service subpages /services/web-design + /services/local-seo | ✅ Done | 820523a |
+| 11. Privacy policy at /privacy + footer link | ✅ Done | 8382dd9 |
+
+---
+
+## GOAL 9 — Two new blog posts
+**Commit:** 7ed0301
+
+**`google-business-profile-for-contractors-waukesha.md`** — Step-by-step GBP setup guide for Wisconsin contractors. 5 sections: claim/create, fill out every field, add photos, get reviews systematically, keep it active. Targets "Google Business Profile contractor Waukesha" and similar queries. Ends with internal links to /services (local SEO) and /faq.
+
+**`how-masonry-contractors-get-more-customers-wisconsin.md`** — Directly targets the GM Masonry prospect segment. Explains the 3 gaps (website, GBP, missed-call follow-up), what ranking on Google looks like for masonry, honest cost comparison (DIY vs agency), and CTA. Tagged with "masonry waukesha wisconsin". Both posts get related posts + mid-post CTA from the blog template. 12 pages built, up from 10.
+
+---
+
+## GOAL 10 — Service subpages
+**Commit:** 820523a
+
+`/services/web-design`: Full detail page — includes list, not-included list, 3 stat cards (70% mobile / 3-sec bounce / 1st impression), 3-week timeline, trade list (Masonry, HVAC, Plumbing, Roofing, etc.), CTA. Targets "web design contractor Waukesha".
+
+`/services/local-seo`: Map pack explained, GBP vs organic vs reviews breakdown, monthly includes list, standalone $199/mo pricing with bundle upsell, timeline with honest expectations (4-stage: wk1-2 / month 1 / months 2-3 / month 3+), 30-day guarantee callout. Targets "local SEO Wisconsin contractor".
+
+`services.astro`: Added `slug` field to Website Build and Local SEO entries; service cards now render "Learn More →" links to subpages where a slug exists. 14 pages built, up from 12.
+
+---
+
+## GOAL 11 — Privacy Policy
+**Commit:** 8382dd9
+
+`/privacy`: Covers data collected (contact form via Formspree, GA4 cookies), how used, third-party services with links (Google Analytics, Formspree, Calendly), retention, user rights, contact details. Required since the site runs GA4 analytics, a Formspree form, and Calendly links — all of which process personal data.
+
+`Footer.astro`: Privacy Policy link added to copyright bar. 15 pages built total.
+
+---
+
 ## SESSION 2 REMAINING RECOMMENDATIONS
 
 1. **Write a 4th blog post** — target "local SEO for contractors Waukesha" or "how to get more masonry leads Wisconsin". Highest SEO value move still available.
