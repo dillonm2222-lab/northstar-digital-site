@@ -24,7 +24,8 @@ const services = [
     ],
     whoFor: 'Contractors, plumbers, landscapers, home service businesses, local retailers — anyone who needs a professional online presence that actually works.',
     price: '$1,499 one-time — or bundled into monthly plans',
-    cta: 'Get a Free Website Mockup'
+    cta: 'Get a Free Website Mockup',
+    slug: 'web-design'
   },
   {
     icon: '📍',
@@ -41,7 +42,8 @@ const services = [
     ],
     whoFor: 'Any local service business that wants to rank higher on Google and get more calls from customers in their area.',
     price: 'Included in Growth and Pro plans',
-    cta: 'Start Ranking Locally'
+    cta: 'Start Ranking Locally',
+    slug: 'local-seo'
   },
   {
     icon: '📋',
@@ -58,7 +60,8 @@ const services = [
     ],
     whoFor: 'Service businesses getting inbound leads who want to stop losing jobs to slow follow-up or disorganized pipelines.',
     price: 'Included in Growth and Pro plans',
-    cta: 'Stop Losing Leads'
+    cta: 'Stop Losing Leads',
+    slug: undefined
   },
   {
     icon: '⚡',
@@ -75,7 +78,8 @@ const services = [
     ],
     whoFor: 'Business owners who are too busy to follow up manually and want systems that run themselves.',
     price: 'Included in Pro plan',
-    cta: 'Automate Your Business'
+    cta: 'Automate Your Business',
+    slug: undefined
   }
 ];
 ---
@@ -113,9 +117,16 @@ const services = [
             <p class="mt-4 text-base leading-relaxed text-[#44506A]">{service.description}</p>
             <p class="mt-4 text-sm font-semibold text-[#44506A]"><span class="text-[#0B2545]">Best for:</span> {service.whoFor}</p>
             <p class="mt-3 text-sm font-bold text-[#2E8BFF]">{service.price}</p>
-            <a href={phoneHref} class="mt-6 inline-flex rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
-              {service.cta}
-            </a>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href={phoneHref} class="inline-flex rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
+                {service.cta}
+              </a>
+              {service.slug && (
+                <a href={`/services/${service.slug}`} class="inline-flex rounded-xl border border-[#2E8BFF]/40 px-6 py-3 text-sm font-semibold text-[#2E8BFF] transition hover:border-[#2E8BFF] hover:bg-[#F0F6FF]">
+                  Learn More →
+                </a>
+              )}
+            </div>
           </div>
           <div class="rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-8">
             <p class="mb-4 text-sm font-bold text-[#0B2545]">What's included:</p>
