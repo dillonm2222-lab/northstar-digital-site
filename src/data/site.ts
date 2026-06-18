@@ -6,7 +6,15 @@ export const siteConfig = {
   phone: '(262) 254-0128',
   phoneHref: 'tel:+12622540128',
   location: 'Pewaukee, Wisconsin',
-  tagline: 'We handle the tech. You focus on growth.'
+  city: 'Pewaukee',
+  region: 'WI',
+  postalCode: '53072',
+  serviceArea: 'Serving Pewaukee, Waukesha, Milwaukee & all of Wisconsin',
+  tagline: 'We handle the tech. You focus on growth.',
+  // Google Business Profile links. TODO(Dillon): replace with the real verified
+  // GBP listing + review URL once the Google Business Profile is verified.
+  googleMapsUrl: 'https://www.google.com/maps/search/North+Star+Digital+Pewaukee+WI',
+  googleReviewUrl: '' // empty = review button hidden until GBP is live
 };
 
 export const navLinks = [
@@ -15,6 +23,53 @@ export const navLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' }
+];
+
+// Single source of truth for pricing. Update numbers in ONE place after locking with Guy.
+export const plans = [
+  {
+    name: 'Starter',
+    price: '$299',
+    period: '/mo',
+    popular: false,
+    summary: 'Website + hosting, mobile-ready, basic SEO, Google Business Profile, monthly report.',
+    features: [
+      'Website + hosting',
+      'Mobile-ready, fast-loading',
+      'Basic SEO setup',
+      'Google Business Profile setup',
+      'Monthly report'
+    ]
+  },
+  {
+    name: 'Growth',
+    price: '$499',
+    period: '/mo',
+    popular: true,
+    summary: 'Everything in Starter + local SEO, CRM, automated follow-up, monthly strategy call.',
+    features: [
+      'Everything in Starter',
+      'Local SEO (fully managed)',
+      'CRM + lead tracking',
+      'Automated follow-up',
+      'Monthly strategy call'
+    ]
+  },
+  {
+    name: 'Pro',
+    price: '$999',
+    period: '/mo',
+    popular: false,
+    summary: 'Everything in Growth + full AI automation, AI Voice Agent, custom integrations, dedicated manager.',
+    features: [
+      'Everything in Growth',
+      'AI Voice Agent (24/7 call answering)',
+      'Full AI automation suite',
+      'Custom integrations',
+      'Priority support',
+      'Dedicated account manager'
+    ]
+  }
 ];
 
 export const services = [

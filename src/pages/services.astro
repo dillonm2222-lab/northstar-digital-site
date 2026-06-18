@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { plans } from '../data/site';
 
 const pageTitle = 'Services | North Star Digital — Wisconsin';
 const description =
@@ -123,7 +124,7 @@ const services = [
   <section class="px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl space-y-16">
       {services.map((service, i) => (
-        <div class={`grid gap-10 md:grid-cols-2 md:items-start ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}>
+        <div id={service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')} class={`scroll-mt-24 grid gap-10 md:grid-cols-2 md:items-start ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}>
           <div>
             <div class="mb-4 text-4xl">{service.icon}</div>
             <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">{service.tagline}</p>
@@ -152,7 +153,7 @@ const services = [
   </section>
 
   <!-- PRICING -->
-  <section class="bg-[#F0F6FF] px-4 py-20 md:py-24">
+  <section id="pricing" class="scroll-mt-24 bg-[#F0F6FF] px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
       <div class="mb-12 text-center">
         <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Simple Pricing</p>
@@ -160,44 +161,21 @@ const services = [
         <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">Pick a plan and get a complete done-for-you AI growth system. No à la carte confusion, no hidden fees, no contracts.</p>
       </div>
       <div class="grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Starter</p>
-          <p class="mt-3 text-4xl font-bold text-[#0B2545]">$299<span class="text-lg font-normal text-[#44506A]">/mo</span></p>
-          <ul class="mt-6 space-y-2 text-sm text-[#304059]">
-            <li>✓ Website + hosting</li>
-            <li>✓ Mobile-ready, fast-loading</li>
-            <li>✓ Basic SEO setup</li>
-            <li>✓ Google Business Profile setup</li>
-            <li>✓ Monthly report</li>
-          </ul>
-          <a href="/contact" class="mt-8 block rounded-xl border border-[#2E8BFF] py-3 text-center text-sm font-bold text-[#2E8BFF] transition hover:bg-[#F0F6FF]">Apply to Start</a>
-        </div>
-        <div class="relative rounded-2xl border-2 border-[#2E8BFF] bg-white p-8 shadow-lg">
-          <p class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#2E8BFF] px-4 py-1 text-xs font-bold text-white">Most Popular</p>
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Growth</p>
-          <p class="mt-3 text-4xl font-bold text-[#0B2545]">$499<span class="text-lg font-normal text-[#44506A]">/mo</span></p>
-          <ul class="mt-6 space-y-2 text-sm text-[#304059]">
-            <li>✓ Everything in Starter</li>
-            <li>✓ Local SEO (fully managed)</li>
-            <li>✓ CRM + lead tracking</li>
-            <li>✓ Automated follow-up</li>
-            <li>✓ Monthly strategy call</li>
-          </ul>
-          <a href="/contact" class="mt-8 block rounded-xl bg-[#2E8BFF] py-3 text-center text-sm font-bold text-white transition hover:bg-[#1E7AEB]">Apply to Start</a>
-        </div>
-        <div class="rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Pro</p>
-          <p class="mt-3 text-4xl font-bold text-[#0B2545]">$999<span class="text-lg font-normal text-[#44506A]">/mo</span></p>
-          <ul class="mt-6 space-y-2 text-sm text-[#304059]">
-            <li>✓ Everything in Growth</li>
-            <li>✓ AI Voice Agent (24/7 call answering)</li>
-            <li>✓ Full AI automation suite</li>
-            <li>✓ Custom integrations</li>
-            <li>✓ Priority support</li>
-            <li>✓ Dedicated account manager</li>
-          </ul>
-          <a href="/contact" class="mt-8 block rounded-xl border border-[#2E8BFF] py-3 text-center text-sm font-bold text-[#2E8BFF] transition hover:bg-[#F0F6FF]">Apply to Start</a>
-        </div>
+        {plans.map((plan) => (
+          <div class={`relative rounded-2xl bg-white p-8 ${plan.popular ? 'border-2 border-[#2E8BFF] shadow-lg' : 'border border-[#E3E8F1] shadow-sm'}`}>
+            {plan.popular && (
+              <p class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#2E8BFF] px-4 py-1 text-xs font-bold text-white">Most Popular</p>
+            )}
+            <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">{plan.name}</p>
+            <p class="mt-3 text-4xl font-bold text-[#0B2545]">{plan.price}<span class="text-lg font-normal text-[#44506A]">{plan.period}</span></p>
+            <ul class="mt-6 space-y-2 text-sm text-[#304059]">
+              {plan.features.map((feature) => (
+                <li>✓ {feature}</li>
+              ))}
+            </ul>
+            <a href="/contact" class={`mt-8 block rounded-xl py-3 text-center text-sm font-bold transition ${plan.popular ? 'bg-[#2E8BFF] text-white hover:bg-[#1E7AEB]' : 'border border-[#2E8BFF] text-[#2E8BFF] hover:bg-[#F0F6FF]'}`}>Apply to Start</a>
+          </div>
+        ))}
       </div>
       <p class="mt-8 text-center text-sm text-[#44506A]">Not sure which plan? <a href={phoneHref} class="font-semibold text-[#2E8BFF] hover:underline">Call us — {phone}</a> and we'll tell you honestly.</p>
     </div>

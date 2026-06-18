@@ -23,11 +23,12 @@ const schema = {
   email: siteConfig.email,
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Waukesha',
-    addressRegion: 'WI',
-    postalCode: '53072',
+    addressLocality: siteConfig.city,
+    addressRegion: siteConfig.region,
+    postalCode: siteConfig.postalCode,
     addressCountry: 'US',
   },
+  areaServed: ['Pewaukee WI', 'Waukesha WI', 'Milwaukee WI', 'Wisconsin'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Digital Business Services',
