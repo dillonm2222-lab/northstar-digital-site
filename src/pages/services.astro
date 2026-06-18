@@ -42,7 +42,7 @@ const services = [
     ],
     whoFor: 'Any local service business that wants to rank higher on Google and get more calls from customers in their area.',
     price: 'Included in Growth and Pro plans',
-    cta: 'Start Ranking Locally'
+    cta: ''
   },
   {
     icon: '📋',
@@ -59,7 +59,7 @@ const services = [
     ],
     whoFor: 'Service businesses getting inbound leads who want to stop losing jobs to slow follow-up or disorganized pipelines.',
     price: 'Included in Growth and Pro plans',
-    cta: 'Stop Losing Leads'
+    cta: ''
   },
   {
     icon: '⚡',
@@ -126,15 +126,16 @@ const services = [
       {services.map((service, i) => (
         <div id={service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')} class={`scroll-mt-24 grid gap-10 md:grid-cols-2 md:items-start ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}>
           <div>
-            <div class="mb-4 text-4xl">{service.icon}</div>
             <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">{service.tagline}</p>
             <h2 class="mt-2 text-3xl font-bold text-[#0B2545]">{service.title}</h2>
             <p class="mt-4 text-base leading-relaxed text-[#44506A]">{service.description}</p>
             <p class="mt-4 text-sm font-semibold text-[#44506A]"><span class="text-[#0B2545]">Best for:</span> {service.whoFor}</p>
             <p class="mt-3 text-sm font-bold text-[#2E8BFF]">{service.price}</p>
-            <a href="/contact" class="mt-6 inline-flex rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
-              {service.cta}
-            </a>
+            {service.cta && (
+              <a href="/contact" class="mt-6 inline-flex rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
+                {service.cta}
+              </a>
+            )}
           </div>
           <div class="rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-8">
             <p class="mb-4 text-sm font-bold text-[#0B2545]">What's included:</p>
