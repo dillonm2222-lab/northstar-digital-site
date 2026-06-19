@@ -257,4 +257,22 @@ const phoneHref = 'tel:+12622540128';
     }
   </script>
 
+
+<script is:inline>
+  (function () {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var needs = params.get('needs');
+      var details = params.get('details');
+      if (!needs && !details) return;
+      var msg = document.getElementById('message');
+      if (!msg) return;
+      var lines = [];
+      if (needs) lines.push('I need help with: ' + needs + '.');
+      if (details) lines.push(details);
+      var prefill = lines.join('\n');
+      msg.value = msg.value ? (prefill + '\n\n' + msg.value) : prefill;
+    } catch (e) {}
+  })();
+</script>
 </BaseLayout>
