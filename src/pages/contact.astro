@@ -94,7 +94,7 @@ const phoneHref = 'tel:+12622540128';
         <div class="rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
           <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">No Phone Call Needed</p>
           <p class="mb-6 text-2xl font-bold text-[#0B2545]">Send Us a Message — We'll Handle the Rest</p>
-          <form action="https://formspree.io/f/xzdowbrw" method="POST" class="space-y-5">
+          <form id="contact-form" action="https://formspree.io/f/xzdowbrw" method="POST" class="space-y-5">
             <div class="grid gap-4 sm:grid-cols-2">
               <div>
                 <label for="name" class="mb-1 block text-sm font-medium text-[#0B2545]">Your Name <span class="text-red-500">*</span></label>
@@ -116,18 +116,35 @@ const phoneHref = 'tel:+12622540128';
               </div>
             </div>
             <div>
-              <label for="help-with" class="mb-1 block text-sm font-medium text-[#0B2545]">What do you need help with? <span class="text-red-500">*</span></label>
-              <select id="help-with" name="What you need help with" required class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] focus:border-[#2E8BFF] focus:outline-none">
-                <option value="">Select one...</option>
-                <option value="New Website">New Website</option>
-                <option value="Website Redesign">Website Redesign</option>
-                <option value="Local SEO">Local SEO / Google Rankings</option>
-                <option value="CRM">CRM & Lead Management</option>
-                <option value="Automation">Marketing Automation</option>
-                <option value="AI Voice Agent">AI Voice Agent</option>
-                <option value="Full Package">Full Package (Website + SEO + CRM + AI)</option>
-                <option value="Not sure">Not sure — just want advice</option>
-              </select>
+              <label for="help-with-trigger" class="mb-1 block text-sm font-medium text-[#0B2545]">What do you need help with? <span class="text-red-500">*</span></label>
+              <div id="help-with" class="relative" data-multiselect>
+                <button
+                  type="button"
+                  id="help-with-trigger"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  class="flex w-full items-center justify-between gap-2 rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-left text-sm text-[#AAB4C4] focus:border-[#2E8BFF] focus:outline-none"
+                >
+                  <span data-ms-label>Select one or more...</span>
+                  <svg data-ms-chevron class="h-4 w-4 shrink-0 text-[#44506A] transition-transform" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul
+                  data-ms-panel
+                  role="listbox"
+                  aria-multiselectable="true"
+                  class="absolute z-20 mt-1 hidden max-h-64 w-full overflow-auto rounded-lg border border-[#D7DFEC] bg-white py-1 shadow-lg"
+                >
+                  <li role="option" data-value="New Website" class="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm text-[#1A1F2E] hover:bg-[#F0F6FF]"><span data-ms-check class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-[#AAB4C4] text-white"></span>New Website</li>
+                  <li role="option" data-value="Website Redesign" class="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm text-[#1A1F2E] hover:bg-[#F0F6FF]"><span data-ms-check class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-[#AAB4C4] text-white"></span>Website Redesign</li>
+                  <li role="option" data-value="Local SEO" class="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm text-[#1A1F2E] hover:bg-[#F0F6FF]"><span data-ms-check class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-[#AAB4C4] text-white"></span>Local SEO / Google Rankings</li>
+                  <li role="option" data-value="CRM" class="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm text-[#1A1F2E] hover:bg-[#F0F6FF]"><span data-ms-check class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-[#AAB4C4] text-white"></span>CRM &amp; Lead Management</li>
+                  <li role="option" data-value="Automation" class="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm text-[#1A1F2E] hover:bg-[#F0F6FF]"><span data-ms-check class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-[#AAB4C4] text-white"></span>Marketing Automation</li>
+                  <li role="option" data-value="AI Voice Agent" class="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm text-[#1A1F2E] hover:bg-[#F0F6FF]"><span data-ms-check class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-[#AAB4C4] text-white"></span>AI Voice Agent</li>
+                  <li role="option" data-value="Full Package" class="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm text-[#1A1F2E] hover:bg-[#F0F6FF]"><span data-ms-check class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-[#AAB4C4] text-white"></span>Full Package (Website + SEO + CRM + AI)</li>
+                  <li role="option" data-value="Not sure" class="flex cursor-pointer items-center gap-2.5 px-3 py-2 text-sm text-[#1A1F2E] hover:bg-[#F0F6FF]"><span data-ms-check class="flex h-4 w-4 shrink-0 items-center justify-center rounded border border-[#AAB4C4] text-white"></span>Not sure — just want advice</li>
+                </ul>
+                <div data-ms-inputs></div>
+              </div>
             </div>
             <div>
               <label for="message" class="mb-1 block text-sm font-medium text-[#0B2545]">Tell us about your business <span class="text-red-500">*</span></label>
@@ -173,5 +190,71 @@ const phoneHref = 'tel:+12622540128';
       </div>
     </div>
   </section>
+
+  <script>
+    // Multi-select dropdown for "What do you need help with?".
+    const form = document.getElementById('contact-form');
+    const ms = document.getElementById('help-with');
+    if (form && ms) {
+      const trigger = ms.querySelector('#help-with-trigger');
+      const panel = ms.querySelector('[data-ms-panel]');
+      const label = ms.querySelector('[data-ms-label]');
+      const chevron = ms.querySelector('[data-ms-chevron]');
+      const inputs = ms.querySelector('[data-ms-inputs]');
+      const options = Array.from(ms.querySelectorAll('[role="option"]'));
+      const selected = new Set();
+      const checkMark = '<svg viewBox="0 0 20 20" fill="currentColor" class="h-3 w-3"><path d="M16.7 5.3a1 1 0 010 1.4l-7 7a1 1 0 01-1.4 0l-3-3a1 1 0 011.4-1.4l2.3 2.3 6.3-6.3a1 1 0 011.4 0z"/></svg>';
+
+      const open = () => { panel.classList.remove('hidden'); trigger.setAttribute('aria-expanded', 'true'); chevron.classList.add('rotate-180'); };
+      const close = () => { panel.classList.add('hidden'); trigger.setAttribute('aria-expanded', 'false'); chevron.classList.remove('rotate-180'); };
+
+      const sync = () => {
+        const vals = [...selected];
+        if (vals.length) {
+          const names = options.filter((o) => selected.has(o.dataset.value)).map((o) => o.textContent.trim());
+          label.textContent = names.length > 2 ? names.length + ' selected' : names.join(', ');
+          label.classList.remove('text-[#AAB4C4]');
+          label.classList.add('text-[#1A1F2E]');
+        } else {
+          label.textContent = 'Select one or more...';
+          label.classList.add('text-[#AAB4C4]');
+          label.classList.remove('text-[#1A1F2E]');
+        }
+        inputs.innerHTML = vals.map((v) => '<input type="hidden" name="What you need help with[]" value="' + v.replace(/"/g, '&quot;') + '">').join('');
+        trigger.setCustomValidity(vals.length ? '' : 'Please select at least one option.');
+      };
+
+      options.forEach((o) => {
+        o.addEventListener('click', () => {
+          const v = o.dataset.value;
+          const box = o.querySelector('[data-ms-check]');
+          if (selected.has(v)) {
+            selected.delete(v);
+            o.classList.remove('bg-[#F0F6FF]');
+            box.classList.remove('border-[#2E8BFF]', 'bg-[#2E8BFF]');
+            box.classList.add('border-[#AAB4C4]');
+            box.innerHTML = '';
+          } else {
+            selected.add(v);
+            o.classList.add('bg-[#F0F6FF]');
+            box.classList.add('border-[#2E8BFF]', 'bg-[#2E8BFF]');
+            box.classList.remove('border-[#AAB4C4]');
+            box.innerHTML = checkMark;
+          }
+          sync();
+        });
+      });
+
+      trigger.addEventListener('click', () => {
+        panel.classList.contains('hidden') ? open() : close();
+      });
+      document.addEventListener('click', (e) => { if (!ms.contains(e.target)) close(); });
+      form.addEventListener('submit', (e) => {
+        sync();
+        if (!selected.size) { e.preventDefault(); open(); trigger.reportValidity(); }
+      });
+      sync();
+    }
+  </script>
 
 </BaseLayout>
