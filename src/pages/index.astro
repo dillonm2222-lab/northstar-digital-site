@@ -225,29 +225,6 @@ const phoneHref = 'tel:+12622540128';
     </div>
   </section>
 
-  <!-- ═══ SOCIAL PROOF ═══ -->
-  <section class="bg-[#F0F6FF] px-4 py-20 md:py-24">
-    <div class="divider-glow-subtle mb-0"></div>
-    <div class="mx-auto max-w-5xl">
-      <div class="reveal mb-12 text-center">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#06D6FF]">Social Proof</p>
-        <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Be Our First Success Story</h2>
-      </div>
-      <div class="reveal mx-auto max-w-2xl rounded-2xl bg-white p-10 text-center shadow-sm">
-        <p class="text-base font-semibold text-[#0B2545]">We're just getting started — and reviews are coming.</p>
-        <p class="mt-2 text-sm leading-relaxed text-[#44506A]">We'd rather earn your trust than fake it. Be our first success story.</p>
-        {siteConfig.googleReviewUrl && (
-          <a
-            href={siteConfig.googleReviewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1a6fcc]"
-          >Leave Us a Google Review →</a>
-        )}
-      </div>
-    </div>
-  </section>
-
   <!-- ═══ PRICING TEASER ═══ -->
   <section class="section-light px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
@@ -353,12 +330,9 @@ const phoneHref = 'tel:+12622540128';
       <p class="reveal mx-auto mt-6 max-w-xl text-lg text-[#8EA8C3]">
         Talk to a real person today. We'll review your current online presence and tell you exactly what it would take to get your phone ringing more — no pressure, no pitch, 100% honest.
       </p>
-      <div class="reveal mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+      <div class="reveal mt-8 flex justify-center">
         <a href="/contact" class="btn-glow inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-10 py-4 text-lg font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-[#1E7AEB]">
-          Apply for a Strategy Session
-        </a>
-        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl border-2 border-[#06D6FF]/40 px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:border-[#06D6FF] hover:bg-[#06D6FF]/10">
-          Call Now — {phone}
+          See How We Can Help
         </a>
       </div>
       <p class="reveal mt-6 text-sm text-[#8EA8C3]">Real people. Real results. No contracts required.</p>
