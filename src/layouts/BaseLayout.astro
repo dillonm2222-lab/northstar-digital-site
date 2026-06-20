@@ -47,6 +47,7 @@ const schema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>document.documentElement.classList.add('nsd-js');</script>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
@@ -97,5 +98,42 @@ const schema = {
 
     <!-- Spacer so footer isn't hidden behind sticky bar on mobile -->
     <div class="h-[64px] md:hidden"></div>
+
+    <!-- ── Shared scroll-reveal observer (site-wide) ──
+         .nsd-reveal       → each element reveals as it scrolls into view (cascade)
+         [data-reveal-group] → its .nsd-reveal-card children reveal together -->
+    <script>
+      const revealOne = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              revealOne.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+      );
+      document
+        .querySelectorAll('.nsd-reveal:not([data-reveal-group] .nsd-reveal-card)')
+        .forEach((el) => revealOne.observe(el));
+
+      const revealGroup = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target
+                .querySelectorAll('.nsd-reveal-card')
+                .forEach((card) => card.classList.add('is-in'));
+              revealGroup.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      document
+        .querySelectorAll('[data-reveal-group]')
+        .forEach((group) => revealGroup.observe(group));
+    </script>
   </body>
 </html>
