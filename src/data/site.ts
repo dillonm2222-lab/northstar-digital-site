@@ -11,10 +11,9 @@ export const siteConfig = {
   postalCode: '53072',
   serviceArea: 'Serving Pewaukee, Waukesha, Milwaukee & all of Wisconsin',
   tagline: 'We handle the tech. You focus on growth.',
-  // Google Business Profile links. TODO(Dillon): replace with the real verified
-  // GBP listing + review URL once the Google Business Profile is verified.
-  googleMapsUrl: 'https://www.google.com/maps/place/Pewaukee,+WI',
-  googleReviewUrl: '' // empty = review button hidden until GBP is live
+  // Google Business Profile links (verified listing, set 2026-06-20).
+  googleMapsUrl: 'https://maps.google.com/?cid=15454189059490509463',
+  googleReviewUrl: 'https://g.page/r/CZfyqN4RT3jWEBM/review'
 };
 
 // Booking link (Calendly). Single source of truth for the scheduling URL.
