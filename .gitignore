@@ -34,3 +34,4 @@ run-summary.md
 
 # graphify knowledge graph: keep graph.json + GRAPH_REPORT.md, ignore the rebuild cache
 graphify-out/cache/
+graphify-out/manifest.json
