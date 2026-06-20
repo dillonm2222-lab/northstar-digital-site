@@ -65,3 +65,18 @@ a real agency — not a generic Wix template.
 - Suggest real copy, not Lorem Ipsum. Specific is better than generic.
 - Flag anything that hurts performance or SEO.
 - Brand tone default: direct, local, unpretentious, confident without swagger.
+
+## Context Navigation (Graphify)
+
+Source of truth = the Obsidian vault (`C:\Users\dillo\iCloudDrive\iCloud~md~obsidian\Obsidian Vault`). On any conflict, the VAULT WINS. Answer questions in this order; only fall to the next layer if the current one cannot answer. Do NOT bulk-read raw source files first.
+
+1. CODE STRUCTURE -> query the knowledge graph (0 tokens, local AST):
+   `graphify query "<question>" --graph graphify-out/graph.json`
+   Also: `graphify explain "<node>"`, `graphify path "<A>" "<B>"`, `graphify affected "<node>"`.
+   Use for "where is X", "what calls Y", "what does this component depend on".
+2. BUSINESS / PROJECT FACTS -> query the vault (pricing, pipeline, clients, decisions):
+   search `00-MASTER-BRAIN.md` and the relevant vault notes (Smart Connections / vault search).
+   Example: "what does NSD charge?" -> vault `00-MASTER-BRAIN.md` NSD QUICK FACTS, NOT raw repo files.
+3. RAW FILES -> read individual source files only after layers 1 and 2 cannot answer.
+
+The graph rebuilds automatically on every commit (graphify git hook). It is code-only (AST, 0 tokens); docs/images are excluded via `.graphifyignore`.

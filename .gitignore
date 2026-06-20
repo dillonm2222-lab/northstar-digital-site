@@ -31,3 +31,6 @@ overnight-log.md
 overnight-summary.md
 run-log.md
 run-summary.md
+
+# graphify knowledge graph: keep graph.json + GRAPH_REPORT.md, ignore the rebuild cache
+graphify-out/cache/
