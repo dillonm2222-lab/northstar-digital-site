@@ -127,7 +127,7 @@ const faqs = [
     <div class="mx-auto max-w-3xl space-y-16">
 
       {faqs.map((section) => (
-        <div>
+        <div class="nsd-reveal">
           <p class="mb-6 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">{section.category}</p>
           <div class="space-y-4">
             {section.items.map((item) => (
@@ -154,7 +154,7 @@ const faqs = [
 
   <!-- STILL HAVE QUESTIONS -->
   <section class="bg-[#F4F6FA] px-4 py-16 md:py-20">
-    <div class="mx-auto max-w-3xl text-center">
+    <div class="nsd-reveal mx-auto max-w-3xl text-center">
       <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Still Have Questions?</p>
       <h2 class="text-3xl font-bold text-[#0B2545]">Just Ask Us Directly</h2>
       <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">

@@ -100,9 +100,6 @@ const services = [
 
 <BaseLayout title={pageTitle} description={description} path="/services">
 
-  <!-- Enable reveal animations only when JS is on (no-JS users see content normally) -->
-  <script is:inline>document.documentElement.classList.add('nsd-js');</script>
-
   <!-- HERO -->
   <section class="hero-glow relative overflow-hidden px-4 py-16 md:py-20">
     <div class="pointer-events-none absolute left-1/4 top-0 h-64 w-64 rounded-full bg-[#2E8BFF] opacity-10 blur-3xl"></div>
@@ -164,7 +161,7 @@ const services = [
         <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">One Plan. Everything Included.</h2>
         <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">Pick a plan and get a complete done-for-you AI growth system. No à la carte confusion, no hidden fees, no contracts.</p>
       </div>
-      <div id="pricing-grid" class="grid gap-6 md:grid-cols-3">
+      <div data-reveal-group class="grid gap-6 md:grid-cols-3">
         {plans.map((plan) => (
           <div class={`nsd-reveal-card relative rounded-2xl bg-white p-8 ${plan.popular ? 'border-2 border-[#2E8BFF] shadow-lg' : 'border border-[#E3E8F1] shadow-sm'}`}>
             {plan.popular && (
@@ -201,66 +198,5 @@ const services = [
       </div>
     </div>
   </section>
-
-  <style is:global>
-    /* Scroll-reveal: hidden state applies only when JS is enabled (html.nsd-js) */
-    html.nsd-js .nsd-reveal,
-    html.nsd-js .nsd-reveal-card {
-      opacity: 0;
-      transform: perspective(1200px) rotateX(12deg) translateY(34px) scale(0.94);
-      transform-origin: 50% 100%;
-      transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
-                  transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
-      will-change: opacity, transform;
-    }
-    html.nsd-js .nsd-reveal.is-in,
-    html.nsd-js .nsd-reveal-card.is-in {
-      opacity: 1;
-      transform: perspective(1200px) rotateX(0) translateY(0) scale(1);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html.nsd-js .nsd-reveal,
-      html.nsd-js .nsd-reveal-card {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
-
-  <script>
-    // 5 service boxes: reveal each one as it scrolls into view (natural cascade)
-    const rowObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-in');
-            rowObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
-    );
-    document.querySelectorAll('.nsd-reveal').forEach((el) => rowObserver.observe(el));
-
-    // 3 pricing cards: reveal all together when the grid enters view
-    const grid = document.getElementById('pricing-grid');
-    if (grid) {
-      const groupObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target
-                .querySelectorAll('.nsd-reveal-card')
-                .forEach((card) => card.classList.add('is-in'));
-              groupObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.25 }
-      );
-      groupObserver.observe(grid);
-    }
-  </script>
 
 </BaseLayout>

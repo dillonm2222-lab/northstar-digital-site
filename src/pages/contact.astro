@@ -30,7 +30,7 @@ const phoneHref = 'tel:+12622540128';
 
   <!-- BOOK A TIME — Calendly Embedded -->
   <section class="bg-[#F0F6FF] px-4 py-14">
-    <div class="mx-auto max-w-3xl text-center">
+    <div class="nsd-reveal mx-auto max-w-3xl text-center">
       <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Skip the Phone Tag</p>
       <h2 class="text-3xl font-bold text-[#0B2545]">Book a Time That Works for You</h2>
       <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">Pick a time on our calendar below. We'll have everything ready before we talk.</p>
@@ -50,7 +50,7 @@ const phoneHref = 'tel:+12622540128';
       <div class="grid gap-12 md:grid-cols-2 md:items-start">
 
         <!-- LEFT: What to expect -->
-        <div>
+        <div class="nsd-reveal">
           <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">What to Expect</p>
           <h2 class="text-3xl font-bold text-[#0B2545]">Here's How It Works</h2>
           <p class="mt-4 text-base leading-relaxed text-[#44506A]">
@@ -91,7 +91,7 @@ const phoneHref = 'tel:+12622540128';
         </div>
 
         <!-- RIGHT: Form -->
-        <div class="rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
+        <div class="nsd-reveal rounded-2xl border border-[#E3E8F1] bg-white p-8 shadow-sm">
           <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">No Phone Call Needed</p>
           <p class="mb-6 text-2xl font-bold text-[#0B2545]">Send Us a Message — We'll Handle the Rest</p>
           <form id="contact-form" action="https://formspree.io/f/xzdowbrw" method="POST" class="space-y-5">
@@ -174,16 +174,16 @@ const phoneHref = 'tel:+12622540128';
   <!-- TRUST BAR -->
   <section class="bg-[#F0F6FF] px-4 py-12">
     <div class="mx-auto max-w-4xl">
-      <div class="grid gap-6 text-center md:grid-cols-3">
-        <div>
+      <div data-reveal-group class="grid gap-6 text-center md:grid-cols-3">
+        <div class="nsd-reveal-card">
           <p class="text-3xl font-bold text-[#0B2545]">24 hrs</p>
           <p class="mt-1 text-sm text-[#44506A]">Response time or less</p>
         </div>
-        <div>
+        <div class="nsd-reveal-card">
           <p class="text-3xl font-bold text-[#0B2545]">2–3 wks</p>
           <p class="mt-1 text-sm text-[#44506A]">Average website launch time</p>
         </div>
-        <div>
+        <div class="nsd-reveal-card">
           <p class="text-3xl font-bold text-[#0B2545]">Local</p>
           <p class="mt-1 text-sm text-[#44506A]">Wisconsin — not a call center</p>
         </div>
