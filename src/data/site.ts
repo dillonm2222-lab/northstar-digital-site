@@ -143,17 +143,4 @@ export const services = [
     whatItIs:
       'Connected automation workflows for lead intake, segmentation, follow-up, and client communication.',
     whoItsFor:
-      'Teams that want to reduce manual tasks and maintain a consistent customer experience.',
-    included: [
-      'Workflow mapping and automation logic',
-      'Email/SMS follow-up sequences',
-      'Lead routing and assignment rules',
-      'QA and optimization checkpoints'
-    ],
-    outcomes: [
-      'Less manual admin work',
-      'Faster lead nurturing',
-      'More reliable customer follow-through'
-    ]
-  }
-];
+      'Teams that want to reduce manual tasks an

@@ -25,7 +25,8 @@ const services = [
     ],
     whoFor: 'Contractors, plumbers, landscapers, home service businesses, local retailers — anyone who needs a professional online presence that actually works.',
     price: 'Included in all monthly plans',
-    cta: 'Get Started Instantly'
+    cta: 'Get Started Instantly',
+    learnMore: '/services/web-design'
   },
   {
     icon: '📍',
@@ -42,7 +43,8 @@ const services = [
     ],
     whoFor: 'Any local service business that wants to rank higher on Google and get more calls from customers in their area.',
     price: 'Included in Growth and Pro plans',
-    cta: ''
+    cta: '',
+    learnMore: '/services/local-seo'
   },
   {
     icon: '📋',
@@ -134,6 +136,11 @@ const services = [
             {service.cta && (
               <a href="/contact" class="mt-6 inline-flex rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
                 {service.cta}
+              </a>
+            )}
+            {service.learnMore && (
+              <a href={service.learnMore} class="mt-6 ml-1 inline-flex items-center gap-1 px-4 py-3 text-sm font-bold text-[#2E8BFF] transition hover:underline">
+                Learn more &rarr;
               </a>
             )}
           </div>
