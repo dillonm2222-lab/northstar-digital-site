@@ -1,0 +1,14 @@
+# graphify scan exclusions (separate from .gitignore; never affects git/deploy)
+# Keep this a CODE-ONLY corpus so graphify runs in AST mode at 0 tokens / fully local.
+# Docs + images require semantic (LLM) extraction; excluded on purpose.
+# To include them later, run a local pass: graphify . --backend ollama
+*.md
+*.mdx
+*.txt
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico

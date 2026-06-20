@@ -17,6 +17,9 @@ export const siteConfig = {
   googleReviewUrl: '' // empty = review button hidden until GBP is live
 };
 
+// Booking link (Calendly). Single source of truth for the scheduling URL.
+export const bookingUrl = 'https://calendly.com/northstardigital-marketing/30min';
+
 export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },

@@ -1,0 +1,162 @@
+{
+  "communities": {
+    "0": [
+      "package",
+      "package_dependencies",
+      "package_dependencies_astro",
+      "package_dependencies_astrojs_sitemap",
+      "package_dependencies_tailwindcss",
+      "package_dependencies_tailwindcss_vite",
+      "package_engines",
+      "package_engines_node",
+      "package_name",
+      "package_type",
+      "package_version"
+    ],
+    "1": [
+      "astro_content",
+      "blog_index",
+      "blog_index_formatdate",
+      "blog_slug",
+      "blog_slug_formatdate",
+      "blog_slug_getstaticpaths",
+      "src_content_config_blog",
+      "src_content_config_collections",
+      "src_content_config_ts_content_config"
+    ],
+    "2": [
+      "components_herogrid",
+      "pages_index",
+      "pages_index_addbubble",
+      "pages_index_drawstars",
+      "pages_index_pickvoice",
+      "pages_index_resize",
+      "pages_index_run",
+      "pages_index_speak",
+      "pages_index_typeinto"
+    ],
+    "3": [
+      "c_users_dillo_documents_code_northstar_digital_site_src_styles_global_css",
+      "layouts_baselayout",
+      "layouts_baselayout_canonicalurl",
+      "layouts_baselayout_ogimageurl",
+      "layouts_baselayout_schema",
+      "pages_contact"
+    ],
+    "4": [
+      "data_site",
+      "data_site_navlinks",
+      "data_site_services",
+      "data_site_siteconfig",
+      "pages_about"
+    ],
+    "5": [
+      "package_scripts",
+      "package_scripts_astro",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_preview"
+    ],
+    "6": [
+      "tsconfig",
+      "tsconfig_exclude",
+      "tsconfig_extends",
+      "tsconfig_include"
+    ],
+    "7": [
+      "c_users_dillo_documents_code_northstar_digital_site_src_data_site",
+      "components_footer",
+      "components_navbar"
+    ],
+    "8": [
+      "data_site_plans",
+      "pages_services",
+      "pages_services_services"
+    ],
+    "9": [
+      "components_servicecard",
+      "components_servicecard_iconpaths"
+    ],
+    "10": [
+      "astro_config"
+    ],
+    "11": [
+      "components_cta"
+    ],
+    "12": [
+      "components_sectionheading"
+    ]
+  },
+  "cohesion": {
+    "0": 0.18181818181818182,
+    "1": 0.2222222222222222,
+    "2": 0.3055555555555556,
+    "3": 0.3333333333333333,
+    "4": 0.5,
+    "5": 0.4,
+    "6": 0.5,
+    "7": 0.6666666666666666,
+    "8": 0.6666666666666666,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0
+  },
+  "gods": [
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "data_site_siteconfig",
+      "label": "siteConfig",
+      "degree": 4
+    },
+    {
+      "id": "pages_index_run",
+      "label": "run()",
+      "degree": 4
+    },
+    {
+      "id": "data_site_plans",
+      "label": "plans",
+      "degree": 3
+    },
+    {
+      "id": "package_engines",
+      "label": "engines",
+      "degree": 2
+    },
+    {
+      "id": "pages_index_speak",
+      "label": "speak()",
+      "degree": 2
+    },
+    {
+      "id": "pages_index_addbubble",
+      "label": "addBubble()",
+      "degree": 2
+    },
+    {
+      "id": "pages_index_typeinto",
+      "label": "typeInto()",
+      "degree": 2
+    },
+    {
+      "id": "package_engines_node",
+      "label": "node",
+      "degree": 1
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "degree": 1
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
