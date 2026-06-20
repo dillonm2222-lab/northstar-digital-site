@@ -13,7 +13,7 @@ export const siteConfig = {
   tagline: 'We handle the tech. You focus on growth.',
   // Google Business Profile links. TODO(Dillon): replace with the real verified
   // GBP listing + review URL once the Google Business Profile is verified.
-  googleMapsUrl: 'https://www.google.com/maps/place/Waukesha,+WI',
+  googleMapsUrl: 'https://www.google.com/maps/place/Pewaukee,+WI',
   googleReviewUrl: '' // empty = review button hidden until GBP is live
 };
 
