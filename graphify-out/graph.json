@@ -9,10 +9,9 @@
       "source_file": "astro.config.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
-      "norm_label": "astro.config.mjs",
       "id": "astro_config",
-      "community_name": "Community 10"
+      "community": 10,
+      "norm_label": "astro.config.mjs"
     },
     {
       "label": "package.json",
@@ -20,10 +19,9 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "package.json",
       "id": "package",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "package.json"
     },
     {
       "label": "name",
@@ -31,10 +29,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "name",
       "id": "package_name",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "name"
     },
     {
       "label": "type",
@@ -42,10 +39,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "type",
       "id": "package_type",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "type"
     },
     {
       "label": "version",
@@ -53,10 +49,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "version",
       "id": "package_version",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "version"
     },
     {
       "label": "engines",
@@ -64,10 +59,9 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "engines",
       "id": "package_engines",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "engines"
     },
     {
       "label": "node",
@@ -75,10 +69,9 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "node",
       "id": "package_engines_node",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "node"
     },
     {
       "label": "scripts",
@@ -86,10 +79,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 5,
-      "norm_label": "scripts",
       "id": "package_scripts",
-      "community_name": "Community 5"
+      "community": 5,
+      "norm_label": "scripts"
     },
     {
       "label": "dev",
@@ -97,10 +89,9 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 5,
-      "norm_label": "dev",
       "id": "package_scripts_dev",
-      "community_name": "Community 5"
+      "community": 5,
+      "norm_label": "dev"
     },
     {
       "label": "build",
@@ -108,10 +99,9 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 5,
-      "norm_label": "build",
       "id": "package_scripts_build",
-      "community_name": "Community 5"
+      "community": 5,
+      "norm_label": "build"
     },
     {
       "label": "preview",
@@ -119,10 +109,9 @@
       "source_file": "package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 5,
-      "norm_label": "preview",
       "id": "package_scripts_preview",
-      "community_name": "Community 5"
+      "community": 5,
+      "norm_label": "preview"
     },
     {
       "label": "astro",
@@ -130,10 +119,9 @@
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 5,
-      "norm_label": "astro",
       "id": "package_scripts_astro",
-      "community_name": "Community 5"
+      "community": 5,
+      "norm_label": "astro"
     },
     {
       "label": "dependencies",
@@ -141,10 +129,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "dependencies",
       "id": "package_dependencies",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "dependencies"
     },
     {
       "label": "@astrojs/sitemap",
@@ -152,10 +139,9 @@
       "source_file": "package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "@astrojs/sitemap",
       "id": "package_dependencies_astrojs_sitemap",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "@astrojs/sitemap"
     },
     {
       "label": "@tailwindcss/vite",
@@ -163,10 +149,9 @@
       "source_file": "package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "@tailwindcss/vite",
       "id": "package_dependencies_tailwindcss_vite",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "@tailwindcss/vite"
     },
     {
       "label": "astro",
@@ -174,10 +159,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "astro",
       "id": "package_dependencies_astro",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "astro"
     },
     {
       "label": "tailwindcss",
@@ -185,10 +169,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "tailwindcss",
       "id": "package_dependencies_tailwindcss",
-      "community_name": "Community 0"
+      "community": 0,
+      "norm_label": "tailwindcss"
     },
     {
       "label": "CTA.astro",
@@ -196,21 +179,20 @@
       "source_file": "src/components/CTA.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
-      "norm_label": "cta.astro",
       "id": "components_cta",
-      "community_name": "Community 11"
+      "community": 11,
+      "norm_label": "cta.astro"
     },
     {
-      "label": "Footer.astro",
+      "label": "../components/Footer.astro",
       "file_type": "code",
       "source_file": "src/components/Footer.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
-      "norm_label": "footer.astro",
+      "confidence": "EXTRACTED",
       "id": "components_footer",
-      "community_name": "Community 7"
+      "community": 7,
+      "norm_label": "../components/footer.astro"
     },
     {
       "label": "../data/site",
@@ -218,32 +200,31 @@
       "source_file": "src/data/site",
       "confidence": "EXTRACTED",
       "_origin": "ast",
-      "community": 7,
-      "norm_label": "../data/site",
       "id": "c_users_dillo_documents_code_northstar_digital_site_src_data_site",
-      "community_name": "Community 7"
+      "community": 7,
+      "norm_label": "../data/site"
     },
     {
-      "label": "HeroGrid.astro",
+      "label": "../components/HeroGrid.astro",
       "file_type": "code",
       "source_file": "src/components/HeroGrid.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "herogrid.astro",
+      "confidence": "EXTRACTED",
       "id": "components_herogrid",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "../components/herogrid.astro"
     },
     {
-      "label": "Navbar.astro",
+      "label": "../components/Navbar.astro",
       "file_type": "code",
       "source_file": "src/components/Navbar.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
-      "norm_label": "navbar.astro",
+      "confidence": "EXTRACTED",
       "id": "components_navbar",
-      "community_name": "Community 7"
+      "community": 7,
+      "norm_label": "../components/navbar.astro"
     },
     {
       "label": "SectionHeading.astro",
@@ -251,10 +232,9 @@
       "source_file": "src/components/SectionHeading.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
-      "norm_label": "sectionheading.astro",
       "id": "components_sectionheading",
-      "community_name": "Community 12"
+      "community": 12,
+      "norm_label": "sectionheading.astro"
     },
     {
       "label": "ServiceCard.astro",
@@ -262,10 +242,9 @@
       "source_file": "src/components/ServiceCard.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
-      "norm_label": "servicecard.astro",
       "id": "components_servicecard",
-      "community_name": "Community 9"
+      "community": 9,
+      "norm_label": "servicecard.astro"
     },
     {
       "label": "iconPaths",
@@ -273,21 +252,19 @@
       "source_file": "src/components/ServiceCard.astro",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 9,
-      "norm_label": "iconpaths",
       "id": "components_servicecard_iconpaths",
-      "community_name": "Community 9"
+      "community": 9,
+      "norm_label": "iconpaths"
     },
     {
-      "label": "content.config.ts",
+      "label": "config.ts",
       "file_type": "code",
-      "source_file": "src/content.config.ts",
+      "source_file": "src/content/config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "content.config.ts",
       "id": "src_content_config_ts_content_config",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "config.ts"
     },
     {
       "label": "blog",
@@ -295,10 +272,9 @@
       "source_file": "src/content.config.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "blog",
       "id": "src_content_config_blog",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "blog"
     },
     {
       "label": "collections",
@@ -306,10 +282,9 @@
       "source_file": "src/content.config.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "collections",
       "id": "src_content_config_collections",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "collections"
     },
     {
       "label": "site.ts",
@@ -317,10 +292,9 @@
       "source_file": "src/data/site.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
-      "norm_label": "site.ts",
       "id": "data_site",
-      "community_name": "Community 4"
+      "community": 4,
+      "norm_label": "site.ts"
     },
     {
       "label": "siteConfig",
@@ -328,54 +302,50 @@
       "source_file": "src/data/site.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
-      "norm_label": "siteconfig",
       "id": "data_site_siteconfig",
-      "community_name": "Community 4"
+      "community": 4,
+      "norm_label": "siteconfig"
     },
     {
       "label": "navLinks",
       "file_type": "code",
       "source_file": "src/data/site.ts",
-      "source_location": "L20",
+      "source_location": "L23",
       "_origin": "ast",
-      "community": 4,
-      "norm_label": "navlinks",
       "id": "data_site_navlinks",
-      "community_name": "Community 4"
+      "community": 4,
+      "norm_label": "navlinks"
     },
     {
       "label": "plans",
       "file_type": "code",
       "source_file": "src/data/site.ts",
-      "source_location": "L29",
+      "source_location": "L32",
       "_origin": "ast",
-      "community": 8,
-      "norm_label": "plans",
       "id": "data_site_plans",
-      "community_name": "Community 8"
+      "community": 8,
+      "norm_label": "plans"
     },
     {
       "label": "services",
       "file_type": "code",
       "source_file": "src/data/site.ts",
-      "source_location": "L75",
+      "source_location": "L78",
       "_origin": "ast",
-      "community": 4,
-      "norm_label": "services",
       "id": "data_site_services",
-      "community_name": "Community 4"
+      "community": 4,
+      "norm_label": "services"
     },
     {
-      "label": "BaseLayout.astro",
+      "label": "../layouts/BaseLayout.astro",
       "file_type": "code",
       "source_file": "src/layouts/BaseLayout.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
-      "norm_label": "baselayout.astro",
+      "confidence": "EXTRACTED",
       "id": "layouts_baselayout",
-      "community_name": "Community 3"
+      "community": 3,
+      "norm_label": "../layouts/baselayout.astro"
     },
     {
       "label": "canonicalUrl",
@@ -383,10 +353,9 @@
       "source_file": "src/layouts/BaseLayout.astro",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 3,
-      "norm_label": "canonicalurl",
       "id": "layouts_baselayout_canonicalurl",
-      "community_name": "Community 3"
+      "community": 3,
+      "norm_label": "canonicalurl"
     },
     {
       "label": "ogImageUrl",
@@ -394,10 +363,9 @@
       "source_file": "src/layouts/BaseLayout.astro",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 3,
-      "norm_label": "ogimageurl",
       "id": "layouts_baselayout_ogimageurl",
-      "community_name": "Community 3"
+      "community": 3,
+      "norm_label": "ogimageurl"
     },
     {
       "label": "schema",
@@ -405,10 +373,9 @@
       "source_file": "src/layouts/BaseLayout.astro",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 3,
-      "norm_label": "schema",
       "id": "layouts_baselayout_schema",
-      "community_name": "Community 3"
+      "community": 3,
+      "norm_label": "schema"
     },
     {
       "label": "../styles/global.css",
@@ -416,10 +383,9 @@
       "source_file": "src/styles/global.css",
       "confidence": "EXTRACTED",
       "_origin": "ast",
-      "community": 3,
-      "norm_label": "../styles/global.css",
       "id": "c_users_dillo_documents_code_northstar_digital_site_src_styles_global_css",
-      "community_name": "Community 3"
+      "community": 3,
+      "norm_label": "../styles/global.css"
     },
     {
       "label": "about.astro",
@@ -427,10 +393,9 @@
       "source_file": "src/pages/about.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
-      "norm_label": "about.astro",
       "id": "pages_about",
-      "community_name": "Community 4"
+      "community": 4,
+      "norm_label": "about.astro"
     },
     {
       "label": "[...slug].astro",
@@ -438,10 +403,9 @@
       "source_file": "src/pages/blog/[...slug].astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "[...slug].astro",
       "id": "blog_slug",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "[...slug].astro"
     },
     {
       "label": "getStaticPaths()",
@@ -449,10 +413,9 @@
       "source_file": "src/pages/blog/[...slug].astro",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "getstaticpaths()",
       "id": "blog_slug_getstaticpaths",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "getstaticpaths()"
     },
     {
       "label": "formatDate()",
@@ -460,10 +423,9 @@
       "source_file": "src/pages/blog/[...slug].astro",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "formatdate()",
       "id": "blog_slug_formatdate",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "formatdate()"
     },
     {
       "label": "astro:content",
@@ -471,10 +433,9 @@
       "source_file": "astro:content",
       "confidence": "EXTRACTED",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "astro:content",
       "id": "astro_content",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "astro:content"
     },
     {
       "label": "index.astro",
@@ -482,10 +443,9 @@
       "source_file": "src/pages/blog/index.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "index.astro",
       "id": "blog_index",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "index.astro"
     },
     {
       "label": "formatDate()",
@@ -493,10 +453,9 @@
       "source_file": "src/pages/blog/index.astro",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "formatdate()",
       "id": "blog_index_formatdate",
-      "community_name": "Community 1"
+      "community": 1,
+      "norm_label": "formatdate()"
     },
     {
       "label": "contact.astro",
@@ -504,10 +463,9 @@
       "source_file": "src/pages/contact.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
-      "norm_label": "contact.astro",
       "id": "pages_contact",
-      "community_name": "Community 3"
+      "community": 3,
+      "norm_label": "contact.astro"
     },
     {
       "label": "index.astro",
@@ -515,10 +473,9 @@
       "source_file": "src/pages/index.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "index.astro",
       "id": "pages_index",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "index.astro"
     },
     {
       "label": "resize()",
@@ -526,10 +483,9 @@
       "source_file": "src/pages/index.astro",
       "source_location": "L474",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "resize()",
       "id": "pages_index_resize",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "resize()"
     },
     {
       "label": "drawStars()",
@@ -537,10 +493,9 @@
       "source_file": "src/pages/index.astro",
       "source_location": "L492",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "drawstars()",
       "id": "pages_index_drawstars",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "drawstars()"
     },
     {
       "label": "pickVoice()",
@@ -548,10 +503,9 @@
       "source_file": "src/pages/index.astro",
       "source_location": "L753",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "pickvoice()",
       "id": "pages_index_pickvoice",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "pickvoice()"
     },
     {
       "label": "speak()",
@@ -559,10 +513,9 @@
       "source_file": "src/pages/index.astro",
       "source_location": "L764",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "speak()",
       "id": "pages_index_speak",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "speak()"
     },
     {
       "label": "addBubble()",
@@ -570,10 +523,9 @@
       "source_file": "src/pages/index.astro",
       "source_location": "L780",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "addbubble()",
       "id": "pages_index_addbubble",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "addbubble()"
     },
     {
       "label": "typeInto()",
@@ -581,10 +533,9 @@
       "source_file": "src/pages/index.astro",
       "source_location": "L795",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "typeinto()",
       "id": "pages_index_typeinto",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "typeinto()"
     },
     {
       "label": "run()",
@@ -592,10 +543,9 @@
       "source_file": "src/pages/index.astro",
       "source_location": "L803",
       "_origin": "ast",
-      "community": 2,
-      "norm_label": "run()",
       "id": "pages_index_run",
-      "community_name": "Community 2"
+      "community": 2,
+      "norm_label": "run()"
     },
     {
       "label": "services.astro",
@@ -603,10 +553,9 @@
       "source_file": "src/pages/services.astro",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
-      "norm_label": "services.astro",
       "id": "pages_services",
-      "community_name": "Community 8"
+      "community": 8,
+      "norm_label": "services.astro"
     },
     {
       "label": "services",
@@ -614,10 +563,9 @@
       "source_file": "src/pages/services.astro",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 8,
-      "norm_label": "services",
       "id": "pages_services_services",
-      "community_name": "Community 8"
+      "community": 8,
+      "norm_label": "services"
     },
     {
       "label": "tsconfig.json",
@@ -625,10 +573,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
-      "norm_label": "tsconfig.json",
       "id": "tsconfig",
-      "community_name": "Community 6"
+      "community": 6,
+      "norm_label": "tsconfig.json"
     },
     {
       "label": "extends",
@@ -636,10 +583,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 6,
-      "norm_label": "extends",
       "id": "tsconfig_extends",
-      "community_name": "Community 6"
+      "community": 6,
+      "norm_label": "extends"
     },
     {
       "label": "include",
@@ -647,10 +593,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 6,
-      "norm_label": "include",
       "id": "tsconfig_include",
-      "community_name": "Community 6"
+      "community": 6,
+      "norm_label": "include"
     },
     {
       "label": "exclude",
@@ -658,10 +603,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 6,
-      "norm_label": "exclude",
       "id": "tsconfig_exclude",
-      "community_name": "Community 6"
+      "community": 6,
+      "norm_label": "exclude"
     }
   ],
   "links": [
@@ -1359,5 +1303,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c0253e2284724e1e23b23bbd105e5929efc2c02c"
+  "built_at_commit": "8da275f1beb500b3b674a9edc700d65c02b8ba0b"
 }

@@ -60,9 +60,9 @@
     "semantic_hash": "2be75c0b095d9dbc6c3c714d8ce79a53"
   },
   "src/data/site.ts": {
-    "mtime": 1781912493.560426,
-    "ast_hash": "de3e8232f8b543bfe2efdb3031aacb07",
-    "semantic_hash": "de3e8232f8b543bfe2efdb3031aacb07"
+    "mtime": 1781939811.1185682,
+    "ast_hash": "69cc476070d18ac205babc72c4b27b10",
+    "semantic_hash": ""
   },
   "src/layouts/BaseLayout.astro": {
     "mtime": 1781939212.9088125,

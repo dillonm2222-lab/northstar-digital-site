@@ -1,15 +1,16 @@
-# Graph Report - .  (2026-06-20)
+# Graph Report - northstar-digital-site  (2026-06-20)
 
 ## Corpus Check
-- cluster-only mode — file stats not available
+- 21 files · ~11,400 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 60 nodes · 70 edges · 13 communities (9 shown, 4 thin omitted)
+- 60 nodes · 70 edges · 13 communities (10 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c0253e22`
+- Built from commit: `8da275f1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -26,16 +27,16 @@
 - [[_COMMUNITY_Community 9|Community 9]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `scripts` - 5 edges
-2. `siteConfig` - 4 edges
-3. `run()` - 4 edges
-4. `plans` - 3 edges
-5. `engines` - 2 edges
-6. `speak()` - 2 edges
-7. `addBubble()` - 2 edges
-8. `typeInto()` - 2 edges
-9. `node` - 1 edges
-10. `dev` - 1 edges
+1. `../layouts/BaseLayout.astro` - 15 edges
+2. `scripts` - 5 edges
+3. `siteConfig` - 4 edges
+4. `run()` - 4 edges
+5. `plans` - 3 edges
+6. `engines` - 2 edges
+7. `../components/Footer.astro` - 2 edges
+8. `../components/Navbar.astro` - 2 edges
+9. `speak()` - 2 edges
+10. `addBubble()` - 2 edges
 
 ## Surprising Connections (you probably didn't know these)
 - None detected - all connections are within the same source files.
@@ -43,7 +44,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (13 total, 4 thin omitted)
+## Communities (13 total, 3 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.18
@@ -51,11 +52,11 @@ Nodes (10): dependencies, astro, @astrojs/sitemap, tailwindcss, @tailwindcss/vit
 
 ### Community 2 - "Community 2"
 Cohesion: 0.31
-Nodes (4): addBubble(), run(), speak(), typeInto()
+Nodes (5): ../components/HeroGrid.astro, addBubble(), run(), speak(), typeInto()
 
 ### Community 3 - "Community 3"
 Cohesion: 0.33
-Nodes (4): ../styles/global.css, canonicalUrl, ogImageUrl, schema
+Nodes (5): ../styles/global.css, ../layouts/BaseLayout.astro, canonicalUrl, ogImageUrl, schema
 
 ### Community 4 - "Community 4"
 Cohesion: 0.50
@@ -69,15 +70,21 @@ Nodes (5): scripts, astro, build, dev, preview
 Cohesion: 0.50
 Nodes (3): exclude, extends, include
 
+### Community 7 - "Community 7"
+Cohesion: 0.67
+Nodes (3): ../data/site, ../components/Footer.astro, ../components/Navbar.astro
+
 ## Knowledge Gaps
-- **25 isolated node(s):** `name`, `type`, `version`, `node`, `dev` (+20 more)
+- **26 isolated node(s):** `name`, `type`, `version`, `node`, `dev` (+21 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `../layouts/BaseLayout.astro` connect `Community 3` to `Community 1`, `Community 2`, `Community 4`, `Community 7`, `Community 8`?**
+  _High betweenness centrality (0.216) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 5` to `Community 0`?**
   _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **What connects `name`, `type`, `version` to the rest of the system?**
-  _25 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _26 weakly-connected nodes found - possible documentation gaps or missing edges._
