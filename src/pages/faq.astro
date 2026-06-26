@@ -94,7 +94,7 @@ const faqs = [
       },
       {
         q: 'How do I get started?',
-        a: `The fastest way is to call us at ${phone}. We\'ll spend 15–20 minutes looking at your current online presence and tell you exactly what we\'d fix first. No pressure, no pitch — just an honest conversation. Or fill out the form on our contact page and we\'ll reach out within one business day.`,
+        a: 'The fastest way is to call us at ' + phone + '. We\'ll spend 15–20 minutes looking at your current online presence and tell you exactly what we\'d fix first. No pressure, no pitch — just an honest conversation. Or fill out the form on our contact page and we\'ll reach out within one business day.',
       },
     ],
   },
@@ -126,28 +126,24 @@ const faqs = [
   <section class="px-4 py-20 md:py-24">
     <div class="mx-auto max-w-3xl space-y-16">
 
-      {faqs.map((section) => (
-        <div>
-          <p class="mb-6 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">{section.category}</p>
-          <div class="space-y-4">
-            {section.items.map((item) => (
-              <details class="group rounded-2xl border border-[#E3E8F1] bg-white shadow-sm open:shadow-md transition-shadow">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
-                  <h2 class="text-base font-bold text-[#0B2545] leading-snug">{item.q}</h2>
-                  <span class="shrink-0 text-[#2E8BFF] transition-transform group-open:rotate-45">
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                    </svg>
-                  </span>
-                </summary>
-                <div class="border-t border-[#E3E8F1] px-6 pb-6 pt-4">
-                  <p class="text-sm leading-relaxed text-[#44506A]">{item.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
+      {faqs.map(section => <div>
+        <p class="mb-6 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">{section.category}</p>
+        <div class="space-y-4">
+          {section.items.map(item => <details class="group rounded-2xl border border-[#E3E8F1] bg-white shadow-sm open:shadow-md transition-shadow">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
+              <h2 class="text-base font-bold text-[#0B2545] leading-snug">{item.q}</h2>
+              <span class="shrink-0 text-[#2E8BFF] transition-transform group-open:rotate-45">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </span>
+            </summary>
+            <div class="border-t border-[#E3E8F1] px-6 pb-6 pt-4">
+              <p class="text-sm leading-relaxed text-[#44506A]">{item.a}</p>
+            </div>
+          </details>)}
         </div>
-      ))}
+      </div>)}
 
     </div>
   </section>

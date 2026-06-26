@@ -792,4 +792,51 @@ const phoneHref = 'tel:+12622540128';
       const bubble = document.createElement('div');
       bubble.className = who === 'ai'
         ? 'max-w-[92%] rounded-2xl rounded-tl-sm border border-[#06D6FF]/30 bg-[#06D6FF]/10 px-4 py-2.5 leading-relaxed text-[#dbe9ff]'
-        : 'max-w-[92%] rounded-2xl round
+        : 'max-w-[92%] rounded-2xl rounded-tr-sm border border-white/10 bg-white/5 px-4 py-2.5 leading-relaxed text-[#cdd9ea]';
+      wrap.appendChild(label); wrap.appendChild(bubble);
+      transcript.appendChild(wrap);
+      return bubble;
+    }
+
+    async function typeInto(el, text, perChar) {
+      for (let i = 0; i < text.length; i++) {
+        el.textContent += text[i];
+        transcript.scrollTop = transcript.scrollHeight;
+        await wait(perChar);
+      }
+    }
+
+    async function run() {
+      if (playing) return;
+      playing = true;
+      playBtn.setAttribute('disabled', 'true');
+      playBtn.classList.add('opacity-60', 'pointer-events-none');
+      if (labelEl) labelEl.textContent = 'Playing…';
+      if (hintEl) hintEl.textContent = 'Live call in progress…';
+      transcript.innerHTML = '';
+      if (statusEl) statusEl.textContent = 'Call connected';
+      if (dotEl) dotEl.className = 'h-2 w-2 rounded-full bg-[#22c55e] animate-pulse';
+
+      for (const line of lines) {
+        const bubble = addBubble(line.who);
+        if (line.who === 'ai') {
+          await Promise.all([ typeInto(bubble, line.text, 16), speak(line.text) ]);
+          await wait(250);
+        } else {
+          await typeInto(bubble, line.text, 26);
+          await wait(450);
+        }
+      }
+
+      if (statusEl) statusEl.textContent = 'Appointment booked';
+      if (dotEl) dotEl.className = 'h-2 w-2 rounded-full bg-[#22c55e]';
+      if (labelEl) labelEl.textContent = 'Replay Demo';
+      if (hintEl) hintEl.textContent = "That entire call was handled with no human involved.";
+      playBtn.removeAttribute('disabled');
+      playBtn.classList.remove('opacity-60', 'pointer-events-none');
+      playing = false;
+    }
+
+    playBtn.addEventListener('click', () => { if (synth) try { synth.cancel(); } catch (e) {} run(); });
+  })();
+</script>
