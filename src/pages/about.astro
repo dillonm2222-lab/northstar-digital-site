@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/site';
@@ -163,62 +164,4 @@ const phoneHref = 'tel:+12622540128';
   <section class="bg-[#F0F6FF] px-4 py-20 md:py-24">
     <div class="mx-auto max-w-5xl">
       <div class="reveal mb-12 text-center">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Social Proof</p>
-        <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Be Our First Success Story</h2>
-      </div>
-      <div class="reveal mx-auto max-w-2xl rounded-2xl bg-white p-10 text-center shadow-sm">
-        <p class="text-base font-semibold text-[#0B2545]">We're just getting started — and reviews are coming.</p>
-        <p class="mt-2 text-sm leading-relaxed text-[#44506A]">We'd rather earn your trust than fake it. Be our first success story.</p>
-        {siteConfig.googleReviewUrl && (
-          <a
-            href={siteConfig.googleReviewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1a6fcc]"
-          >Leave Us a Google Review →</a>
-        )}
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="bg-[#0B2545] px-4 py-20 md:py-24">
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-3xl font-bold text-white md:text-4xl">Ready to Work With a Team You Can Trust?</h2>
-      <p class="mx-auto mt-5 max-w-xl text-lg text-[#8EA8C3]">Give us a call or fill out the form. We'll take a look at your current online presence and tell you honestly what it would take to get your phone ringing more.</p>
-      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
-          Call Now — {phone}
-        </a>
-        <a href="/contact" class="inline-flex rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition hover:border-white hover:bg-white/10">
-          Apply for a Strategy Session
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-<script>
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => revealObserver.observe(el));
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.querySelectorAll('.reveal, .reveal-left').forEach(el => {
-        if (!el.classList.contains('visible')) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight + 100) el.classList.add('visible');
-        }
-      });
-    }, 200);
-  });
-</script>
-
-</BaseLayout>
+        <p class="mb-2 text-xs font-semibold uppercase tracking-

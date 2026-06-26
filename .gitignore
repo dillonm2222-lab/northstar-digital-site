@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # build output
 dist/
 # generated types
@@ -24,4 +25,3 @@ pnpm-debug.log*
 .idea/
 
 <<<<<<< HEAD
-# agent / op
