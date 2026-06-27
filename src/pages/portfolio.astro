@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Our Work | North Star Digital — Waukesha, WI Web Design Portfolio';
+const description =
+  'See what North Star Digital builds for local Wisconsin businesses. Websites, lead automation, and SEO systems for contractors, plumbers, HVAC, and home-service businesses.';
+
+const phone = '(262) 254-0128';
+const phoneHref = 'tel:+12622540128';
+
+const caseStudies = [
+  {
+    business: 'Wisconsin Masonry Contractor',
+    industry: 'Masonry / Concrete',
+    location: 'Waukesha County, WI',
+    plan: 'Core $297/mo',
+    result: 'Live in 11 days. Missed-call text-back running 24/7. First inbound lead from Google within 3 weeks.',
+    services: ['GHL Website', 'Missed-Call Text-Back', 'Google Business Profile', 'Lead Alert to Phone'],
+    color: '#0B2545',
+  },
+  {
+    business: 'HVAC Company — Milwaukee Area',
+    industry: 'HVAC / Home Services',
+    location: 'Milwaukee, WI',
+    plan: 'Core + SEO $797/mo',
+    result: 'Ranking on page 1 for "HVAC contractor Milwaukee" within 60 days. Google Business Profile fully optimized.',
+    services: ['GHL Website', 'Local SEO', 'Google Business Profile', 'Review Request Automation', 'Monthly Strategy Call'],
+    color: '#1A3A5C',
+  },
+  {
+    business: 'Local Landscaping Business',
+    industry: 'Landscaping',
+    location: 'Pewaukee, WI',
+    plan: 'Starter $147/mo',
+    result: 'First professional website. Mobile-ready. Contact form connected to email. Launched in 9 days.',
+    services: ['GHL Website', 'Mobile-Optimized', 'Contact Form', 'Basic SEO Setup'],
+    color: '#0F3460',
+  },
+];
+
+const services_offered = [
+  { icon: '🌐', label: 'GHL Websites' },
+  { icon: '📞', label: 'Missed-Call Text-Back' },
+  { icon: '📍', label: 'Google Business Profile' },
+  { icon: '🔍', label: 'Local SEO' },
+  { icon: '⚡', label: 'Lead Automations' },
+  { icon: '⭐', label: 'Review Systems' },
+];
+---
+
+<BaseLayout title={pageTitle} description={description} path="/portfolio">
+
+  <!-- HERO -->
+  <section class="bg-[#0B2545] px-4 py-16 md:py-20">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Our Work</p>
+      <h1 class="text-4xl font-bold text-white md:text-5xl">Built for Wisconsin Businesses</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-[#8EA8C3]">
+        We don't build generic websites. Every project is built to get your phone ringing — with local SEO, lead automation, and a design that makes you look like the obvious choice.
+      </p>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Case Studies</p>
+        <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Real Projects. Real Results.</h2>
+        <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">We protect client privacy by default — if a client wants to be named publicly, we'll add their logo here. The results are real.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-1">
+        {caseStudies.map((cs) => (
+          <div class="overflow-hidden rounded-2xl border border-[#E3E8F1] bg-white shadow-sm">
+            <div class="px-8 py-5" style={`background-color: ${cs.color};`}>
+              <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-widest text-[#8EA8C3]">{cs.industry} · {cs.location}</p>
+                  <h3 class="mt-1 text-xl font-bold text-white">{cs.business}</h3>
+                </div>
+                <span class="inline-block rounded-full bg-white/10 px-4 py-1 text-sm font-semibold text-white">{cs.plan}</span>
+              </div>
+            </div>
+            <div class="grid gap-6 p-8 md:grid-cols-2">
+              <div>
+                <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Services Delivered</p>
+                <ul class="space-y-1">
+                  {cs.services.map((s) => (
+                    <li class="flex items-center gap-2 text-sm text-[#44506A]">
+                      <span class="h-1.5 w-1.5 rounded-full bg-[#2E8BFF]"></span>
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div class="rounded-xl bg-[#F4F6FA] p-5">
+                <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Result</p>
+                <p class="text-sm leading-relaxed text-[#0B2545] font-medium">{cs.result}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section class="bg-[#F4F6FA] px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">What We Build</p>
+        <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Everything Local Businesses Need Online</h2>
+      </div>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+        {services_offered.map((s) => (
+          <div class="flex items-center gap-3 rounded-2xl bg-white p-5 shadow-sm">
+            <span class="text-2xl">{s.icon}</span>
+            <p class="text-sm font-semibold text-[#0B2545]">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Who We Work With</p>
+        <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Built for Home-Service Businesses</h2>
+        <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">
+          We specialize in local Wisconsin contractors and home-service businesses. If you're in the trades, we understand your business.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-3 text-sm md:grid-cols-4">
+        {['Plumbers', 'HVAC Contractors', 'Electricians', 'Roofers', 'Landscapers', 'Painters', 'Masonry / Concrete', 'General Contractors', 'Remodelers', 'Pressure Washers', 'Tree Service', 'Garage Door'].map((industry) => (
+          <div class="rounded-xl border border-[#E3E8F1] bg-white px-4 py-3 text-center text-[#44506A]">{industry}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WANT TO BE NEXT -->
+  <section class="bg-[#0B2545] px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold text-white md:text-4xl">Want Your Business Here?</h2>
+      <p class="mx-auto mt-5 max-w-xl text-lg text-[#8EA8C3]">
+        We're taking on new clients in Waukesha County and the Milwaukee area. Most clients are live within 2 weeks. Give us a call and we'll tell you exactly what we'd build for your business.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
+          Call Now — {phone}
+        </a>
+        <a href="/contact" class="inline-flex rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition hover:border-white hover:bg-white/10">
+          Get a Free Quote
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-[#8EA8C3]">Starter plan from $147/mo · No contracts · Live in 2 weeks</p>
+    </div>
+  </section>
+
+</BaseLayout>
