@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = 'Google Business Profile Management | North Star Digital — Wisconsin';
+const description =
+  'Get your Google Business Profile ranking in the Waukesha and Milwaukee map pack. NSD manages GBP for local contractors — optimization, reinstatement, reviews, and monthly maintenance.';
+
+const phone = '(262) 254-0128';
+const phoneHref = 'tel:+12622540128';
+
+const services = [
+  {
+    icon: '🔧',
+    name: 'Full Profile Optimization',
+    description: 'We audit and fix every element of your GBP — categories, service areas, business description, attributes, hours, and photos. Most profiles we take over are missing 40–60% of what Google wants to see.',
+  },
+  {
+    icon: '📍',
+    name: 'Local Map Pack Ranking',
+    description: 'The map pack (top 3 local results) gets the most clicks on any local search. We optimize your profile to compete for those spots in your specific service area.',
+  },
+  {
+    icon: '⭐',
+    name: 'Review Strategy & Management',
+    description: 'Reviews are the #1 ranking factor in local search. We set up automated review requests and respond to all reviews on your behalf — positive and negative.',
+  },
+  {
+    icon: '📸',
+    name: 'Photo & Post Management',
+    description: 'Google rewards active profiles. We upload job photos and publish weekly posts so your profile stays fresh without you thinking about it.',
+  },
+  {
+    icon: '🚨',
+    name: 'GBP Reinstatement',
+    description: 'Suspended profile? We handle the full reinstatement process — documentation, appeal, and follow-up. Flat $500, refunded if we can\'t get it reinstated.',
+  },
+  {
+    icon: '📊',
+    name: 'Monthly Ranking Reports',
+    description: 'You see exactly where you rank for your target keywords each month — "plumber Waukesha," "HVAC contractor Milwaukee," whatever matters to your business.',
+  },
+];
+
+const reasons = [
+  { stat: '46%', label: 'of all Google searches are looking for local information' },
+  { stat: '76%', label: 'of local searches result in a call or visit within 24 hours' },
+  { stat: '97%', label: 'of consumers look up a business online before visiting' },
+  { stat: '3.5x', label: 'more website clicks for businesses in the map pack vs. below it' },
+];
+---
+
+<BaseLayout title={pageTitle} description={description} path="/services/google-business-profile">
+
+  <!-- HERO -->
+  <section class="bg-[#0B2545] px-4 py-16 md:py-20">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Google Business Profile</p>
+      <h1 class="text-4xl font-bold text-white md:text-5xl">Show Up When People Search for You</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-[#8EA8C3]">
+        When someone searches "plumber near me" in Waukesha, there are 3 businesses that show up before everything else. We get you into those 3 spots — and keep you there.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
+          Call Now — {phone}
+        </a>
+        <a href="/contact" class="inline-flex rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition hover:border-white hover:bg-white/10">
+          Free GBP Audit
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="px-4 py-16">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid gap-4 md:grid-cols-4">
+        {reasons.map((r) => (
+          <div class="rounded-2xl bg-[#F4F6FA] p-6 text-center">
+            <p class="text-4xl font-bold text-[#0B2545]">{r.stat}</p>
+            <p class="mt-2 text-sm leading-snug text-[#44506A]">{r.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="bg-[#F4F6FA] px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">What We Do</p>
+        <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Full Google Business Profile Management</h2>
+        <p class="mx-auto mt-4 max-w-xl text-base text-[#44506A]">
+          We handle everything — setup, optimization, reviews, posts, and monthly maintenance. You focus on the work, we handle the visibility.
+        </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        {services.map((s) => (
+          <div class="rounded-2xl bg-white p-7 shadow-sm">
+            <div class="mb-3 flex items-center gap-3">
+              <span class="text-2xl">{s.icon}</span>
+              <h3 class="font-bold text-[#0B2545]">{s.name}</h3>
+            </div>
+            <p class="text-sm leading-relaxed text-[#44506A]">{s.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- REINSTATEMENT CALLOUT -->
+  <section class="px-4 py-16">
+    <div class="mx-auto max-w-4xl">
+      <div class="rounded-2xl border-2 border-[#FF4444]/30 bg-[#FFF5F5] p-8 md:p-10">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center">
+          <div class="flex-1">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#FF4444]">Profile Suspended?</p>
+            <h2 class="text-2xl font-bold text-[#0B2545]">We Reinstate Suspended Google Business Profiles</h2>
+            <p class="mt-3 text-base leading-relaxed text-[#44506A]">
+              A suspended GBP can cost you hundreds of calls a week. Most business owners try to fix it themselves and get denied — because Google's appeal process is designed to be opaque. We know what Google actually wants to see.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-sm text-[#44506A]">
+              <li class="flex items-center gap-2"><span class="font-bold text-[#0B2545]">$500 flat</span> — one-time, no monthly commitment</li>
+              <li class="flex items-center gap-2"><span class="font-bold text-[#0B2545]">Refund</span> if we can't get it reinstated</li>
+              <li class="flex items-center gap-2"><span class="font-bold text-[#0B2545]">1–2 weeks</span> typical turnaround</li>
+            </ul>
+          </div>
+          <div class="shrink-0">
+            <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#0B2545] px-7 py-4 text-base font-bold text-white transition hover:bg-[#1A3A5C]">
+              Call About Reinstatement
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDED IN -->
+  <section class="bg-[#0B2545] px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">How to Get Started</p>
+        <h2 class="text-3xl font-bold text-white md:text-4xl">GBP Is Included in Our Core + SEO Plan</h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg text-[#8EA8C3]">
+          Full GBP management is part of our Core + SEO plan at $797/month — which also includes a website, all lead automations, and fully managed local SEO. Or we can discuss GBP as a standalone service.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        {[
+          { label: 'GBP Reinstatement', price: '$500', note: 'One-time. Refundable if we fail.' },
+          { label: 'GBP Setup & Optimization', price: '$297', note: 'One-time. Included free in any plan.' },
+          { label: 'Ongoing GBP Management', price: '$797/mo', note: 'Included in Core + SEO plan.' },
+        ].map((item) => (
+          <div class="rounded-2xl bg-white/10 p-6 text-center">
+            <p class="text-sm font-semibold text-[#8EA8C3]">{item.label}</p>
+            <p class="mt-2 text-3xl font-bold text-white">{item.price}</p>
+            <p class="mt-1 text-xs text-[#8EA8C3]">{item.note}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
+          Call Now — {phone}
+        </a>
+        <a href="/pricing" class="inline-flex rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition hover:border-white hover:bg-white/10">
+          See All Plans
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

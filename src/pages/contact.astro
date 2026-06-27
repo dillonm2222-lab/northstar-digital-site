@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = 'Contact | North Star Digital — Wisconsin';
 const description =
-  'Apply for a free strategy session with North Star Digital. We help small businesses grow online with AI-powered systems. Call (262) 254-0128 or fill out the form.';
+  'Get a free 10-minute audit of your online presence. North Star Digital helps Waukesha and Milwaukee area contractors get more calls. Call (262) 254-0128 or fill out the form.';
 
 const phone = '(262) 254-0128';
 const phoneHref = 'tel:+12622540128';
@@ -107,8 +107,8 @@ const phoneHref = 'tel:+12622540128';
             </div>
             <div class="grid gap-4 sm:grid-cols-2">
               <div>
-                <label for="phone" class="mb-1 block text-sm font-medium text-[#0B2545]">Phone Number</label>
-                <input id="phone" name="Phone" type="tel" placeholder="(262) 000-0000" class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] placeholder:text-[#AAB4C4] focus:border-[#2E8BFF] focus:outline-none" />
+                <label for="phone" class="mb-1 block text-sm font-medium text-[#0B2545]">Phone Number <span class="text-red-500">*</span></label>
+                <input id="phone" name="Phone" type="tel" required placeholder="(262) 000-0000" class="w-full rounded-lg border border-[#D7DFEC] px-3 py-2.5 text-sm text-[#1A1F2E] placeholder:text-[#AAB4C4] focus:border-[#2E8BFF] focus:outline-none" />
               </div>
               <div>
                 <label for="email" class="mb-1 block text-sm font-medium text-[#0B2545]">Email <span class="text-red-500">*</span></label>
