@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = 'Lead Automation & CRM for Local Businesses | North Star Digital — Wisconsin';
+const description =
+  'Never lose a lead again. North Star Digital builds missed-call text-back, automated follow-up, and review systems for Wisconsin contractors and home-service businesses. Core plan from $297/mo.';
+
+const phone = '(262) 254-0128';
+const phoneHref = 'tel:+12622540128';
+
+const automations = [
+  {
+    icon: '📞',
+    name: 'Missed-Call Text-Back',
+    tagline: 'Never lose a lead to voicemail again.',
+    description: "When you miss a call, a text goes out from your number within 30 seconds. Callers get an instant response, you get the lead in writing. Works 24/7 without you lifting a finger.",
+    stat: '70%',
+    statLabel: 'of callers who don\'t get an answer call a competitor instead',
+  },
+  {
+    icon: '⚡',
+    name: 'Instant Lead Alerts',
+    tagline: 'Know the second someone wants to hire you.',
+    description: 'Every form submission, every contact, every new lead — you get a text or email to your phone immediately. No logging into dashboards. No waiting.',
+    stat: '5 min',
+    statLabel: 'response time increases close rate by 400%',
+  },
+  {
+    icon: '🔁',
+    name: 'Automated Follow-Up',
+    tagline: 'Chase leads automatically so you don\'t have to.',
+    description: "When a lead comes in and you haven't contacted them in 24 hours, the system sends a friendly follow-up. You stay top of mind without adding to your plate.",
+    stat: '80%',
+    statLabel: 'of sales require 5+ follow-ups. Most contractors stop after 1.',
+  },
+  {
+    icon: '⭐',
+    name: 'Google Review Requests',
+    tagline: 'Build your reputation on autopilot.',
+    description: 'After a job is complete, the system sends a personalized text asking for a Google review. Most clients collect 3–6 new reviews per month without asking a single customer manually.',
+    stat: '47x',
+    statLabel: 'more reviews than competitors — that\'s what ranks you #1 locally',
+  },
+  {
+    icon: '📊',
+    name: 'Unified Lead Inbox',
+    tagline: 'All your leads in one place.',
+    description: 'Form submissions, text conversations, missed calls — everything shows up in one dashboard. No more juggling apps or missing messages buried in email.',
+    stat: '1 inbox',
+    statLabel: 'instead of 5 disconnected apps',
+  },
+  {
+    icon: '📅',
+    name: 'Appointment Booking',
+    tagline: 'Let leads book directly into your calendar.',
+    description: 'Optional booking widget on your website and in your text conversations. Clients pick a time, you get the appointment — no back-and-forth.',
+    stat: '3x',
+    statLabel: 'more bookings when customers can self-schedule 24/7',
+  },
+];
+---
+
+<BaseLayout title={pageTitle} description={description} path="/services/automation">
+
+  <!-- HERO -->
+  <section class="bg-[#0B2545] px-4 py-16 md:py-20">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Lead Automation & CRM</p>
+      <h1 class="text-4xl font-bold text-white md:text-5xl">Your Business, Running on Autopilot</h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-[#8EA8C3]">
+        Most contractors lose 3–5 leads a week to missed calls and slow follow-ups. We fix that with automations that work 24/7 — so you capture every lead without adding to your workload.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
+          Call Now — {phone}
+        </a>
+        <a href="/contact" class="inline-flex rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition hover:border-white hover:bg-white/10">
+          Get a Free Audit
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CORE PROBLEM -->
+  <section class="px-4 py-16">
+    <div class="mx-auto max-w-4xl">
+      <div class="rounded-2xl border-2 border-[#E3E8F1] bg-white p-8 md:p-12">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">The Problem</p>
+        <h2 class="text-2xl font-bold text-[#0B2545] md:text-3xl">You're on a job. Your phone rings. You can't answer.</h2>
+        <p class="mt-4 text-base leading-relaxed text-[#44506A]">
+          Under 30% of callers leave a voicemail. The other 70% hang up and call the next contractor on Google. You lose the lead and never know it happened.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-[#44506A]">
+          For a contractor getting 20 missed calls a week, closing 20% as jobs at $400 average — that's <strong class="text-[#0B2545]">$1,600/week walking out the door</strong>. The automations we build stop that leak.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOMATIONS GRID -->
+  <section class="bg-[#F4F6FA] px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">What We Build</p>
+        <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Six Systems That Work While You Work</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        {automations.map((a) => (
+          <div class="rounded-2xl bg-white p-7 shadow-sm">
+            <div class="mb-4 flex items-start gap-4">
+              <span class="text-3xl">{a.icon}</span>
+              <div>
+                <h3 class="text-lg font-bold text-[#0B2545]">{a.name}</h3>
+                <p class="text-sm font-medium text-[#2E8BFF]">{a.tagline}</p>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed text-[#44506A]">{a.description}</p>
+            <div class="mt-5 flex items-center gap-3 rounded-xl bg-[#F4F6FA] px-4 py-3">
+              <p class="text-xl font-bold text-[#0B2545]">{a.stat}</p>
+              <p class="text-xs text-[#44506A]">{a.statLabel}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-12 text-center">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">How It Works</p>
+        <h2 class="text-3xl font-bold text-[#0B2545] md:text-4xl">Set Up in 20 Minutes. Runs Forever.</h2>
+      </div>
+      <div class="space-y-6">
+        {[
+          { step: '1', title: 'You sign up for Core ($297/mo)', body: "We send you a short onboarding form — takes 5 minutes. Your business info, phone number, what you do, where you work." },
+          { step: '2', title: 'We build your system in 1–2 days', body: "We configure your GHL account, set up missed-call text-back, lead alerts, follow-up sequences, and review requests. You don't touch anything." },
+          { step: '3', title: 'We test everything before going live', body: "We send a test form, a test missed call, and confirm all notifications are firing correctly. We show you how to check your leads in the dashboard." },
+          { step: '4', title: 'You start capturing leads you were losing', body: "The system runs in the background. You get a text every time a new lead comes in. Missed callers get a text-back automatically. Reviews get requested after jobs. All of it, without you managing it." },
+        ].map((item) => (
+          <div class="flex gap-5">
+            <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#2E8BFF] text-base font-bold text-white">{item.step}</div>
+            <div class="pt-1">
+              <h3 class="font-bold text-[#0B2545]">{item.title}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-[#44506A]">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDED IN CORE -->
+  <section class="bg-[#0B2545] px-4 py-20 md:py-24">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Included in Core Plan</p>
+      <h2 class="text-3xl font-bold text-white md:text-4xl">Everything Above for $297/month</h2>
+      <p class="mx-auto mt-5 max-w-xl text-lg text-[#8EA8C3]">No setup fees. No contracts. Cancel anytime. Most clients are fully live within 2 weeks.</p>
+      <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
+          Call Now — {phone}
+        </a>
+        <a href="/services" class="inline-flex rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition hover:border-white hover:bg-white/10">
+          See All Plans
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
