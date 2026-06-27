@@ -39,7 +39,7 @@ A $500 template website usually has none of this built in.
 
 We're a local, father-son agency based in Waukesha. We build websites for contractors, plumbers, HVAC companies, and other service businesses in the Milwaukee metro area.
 
-Our monthly plans start at $299/month and include your website, hosting, basic SEO, and ongoing support. No surprise bills. No contracts.
+Our monthly plans start at $147/month and include your website, hosting, basic SEO, and ongoing support. No surprise bills. No contracts.
 
 If you want to know what your current site is doing wrong — or if you don't have a site at all — call us. We'll take a look for free and give you an honest answer.
 

@@ -25,49 +25,50 @@ export const navLinks = [
   { label: 'Contact', href: '/contact' }
 ];
 
-// Single source of truth for pricing. Update numbers in ONE place after locking with Guy.
+// Single source of truth for pricing. Locked 2026-06-22, confirmed by Guy 2026-06-23.
+// NEVER quote: $299/$499/$999 retainers or any old tier.
 export const plans = [
   {
     name: 'Starter',
-    price: '$299',
+    price: '$147',
     period: '/mo',
     popular: false,
-    summary: 'Website + hosting, mobile-ready, basic SEO, Google Business Profile, monthly report.',
+    summary: 'A professional GHL website that captures leads and looks great on any device.',
     features: [
-      'Website + hosting',
-      'Mobile-ready, fast-loading',
+      'GHL website (mobile-ready)',
+      'Contact form → email alerts',
+      'Fast hosting included',
       'Basic SEO setup',
-      'Google Business Profile setup',
-      'Monthly report'
+      'Monthly performance report'
     ]
   },
   {
-    name: 'Growth',
-    price: '$499',
+    name: 'Core',
+    price: '$297',
     period: '/mo',
     popular: true,
-    summary: 'Everything in Starter + local SEO, CRM, automated follow-up, monthly strategy call.',
+    summary: 'The full local marketing system — website, automations, and lead follow-up working 24/7.',
     features: [
       'Everything in Starter',
-      'Local SEO (fully managed)',
-      'CRM + lead tracking',
-      'Automated follow-up',
+      'Missed-call text-back (never lose a lead)',
+      'Instant lead alerts to your phone',
+      'Automated lead follow-up sequences',
+      'Google review request system',
       'Monthly strategy call'
     ]
   },
   {
-    name: 'Pro',
-    price: '$999',
+    name: 'Core + SEO',
+    price: '$797',
     period: '/mo',
     popular: false,
-    summary: 'Everything in Growth + full AI automation, AI Voice Agent, custom integrations, dedicated manager.',
+    summary: 'The Core system plus fully managed local SEO — so you rank when people search.',
     features: [
-      'Everything in Growth',
-      'AI Voice Agent (24/7 call answering)',
-      'Full AI automation suite',
-      'Custom integrations',
-      'Priority support',
-      'Dedicated account manager'
+      'Everything in Core',
+      'Fully managed local SEO',
+      'Google Business Profile optimization',
+      'Local citation building',
+      'Monthly ranking report'
     ]
   }
 ];

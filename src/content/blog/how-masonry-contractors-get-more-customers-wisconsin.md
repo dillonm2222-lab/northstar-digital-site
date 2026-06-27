@@ -84,7 +84,7 @@ Here's an honest breakdown:
 
 **DIY approach:** A Google Business Profile is free to set up. If you're willing to put in the time — writing your own content, taking your own photos, building your own website on Squarespace or similar — you can do this for under $500/year. The trade-off is your time, and most contractors don't have extra hours to spare.
 
-**Hiring a local agency:** A professional agency handles everything — website, GBP optimization, monthly SEO work, and lead follow-up automation. At [North Star Digital](/services), this starts at $299/month for a website and basic SEO, or $499/month for the full package including CRM and automated follow-up.
+**Hiring a local agency:** A professional agency handles everything — website, GBP optimization, monthly SEO work, and lead follow-up automation. At [North Star Digital](/services), this starts at $147/month for a website and basic SEO, or $297/month for the full package including CRM and automated follow-up.
 
 One additional masonry job per month more than pays for either option. Two jobs a month and it's not even close.
 
