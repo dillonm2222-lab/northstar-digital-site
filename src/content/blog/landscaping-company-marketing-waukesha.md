@@ -78,14 +78,14 @@ North Star Digital is a local Wisconsin agency. We're a father-son team from Pew
 
 We build local marketing systems for landscaping businesses that want to stop relying purely on word of mouth and start getting found online.
 
-**Our Core plan at $297/month includes:**
+**Our Core plan at $447/month includes:**
 - Website built for Waukesha County landscaping searches
 - Missed-call text-back — never lose a seasonal lead to voicemail
 - Automated review requests after every job
 - Instant lead alerts to your phone
 - Monthly check-in with us
 
-We also have a **Starter plan at $147/month** — a professional website with basic SEO, perfect if you're just getting started online.
+We also have a **Starter plan at $247/month** — a professional website with basic SEO, perfect if you're just getting started online.
 
 **Call us: (262) 254-0128**
 Or fill out the form at northstardigital.com and we'll do a free 10-minute audit of your current online presence.

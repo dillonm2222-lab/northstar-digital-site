@@ -62,14 +62,14 @@ A few blog posts targeting "HVAC tune-up Waukesha" or "furnace maintenance befor
 
 North Star Digital builds local marketing systems for HVAC contractors across Waukesha County and the Milwaukee metro.
 
-**Core plan at $297/month includes:**
+**Core plan at $447/month includes:**
 - Website built to rank for local HVAC searches
 - Missed-call text-back for emergency calls
 - Automated review requests after every job
 - Instant lead alerts to your phone
 - Monthly strategy call
 
-**Core + SEO at $797/month adds:**
+**Core + SEO at $849/month adds:**
 - Fully managed local SEO each month
 - Google Business Profile management
 - Monthly ranking reports

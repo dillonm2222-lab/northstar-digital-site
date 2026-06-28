@@ -76,7 +76,7 @@ We automate this for clients. Most see 3–6 new reviews per month without any m
 
 North Star Digital is a Wisconsin-based agency (Pewaukee, WI) that builds local marketing systems specifically for home-service businesses. We're not a national company — we're local, we're reachable, and we know the Milwaukee and Waukesha County market.
 
-Our **Core plan at $297/month** includes everything an electrician in Milwaukee needs to compete online:
+Our **Core plan at $447/month** includes everything an electrician in Milwaukee needs to compete online:
 - Website optimized for local Milwaukee searches
 - Missed-call text-back (never lose a lead to voicemail again)
 - Automated Google review requests

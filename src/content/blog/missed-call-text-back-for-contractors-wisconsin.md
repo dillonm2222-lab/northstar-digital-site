@@ -44,7 +44,7 @@ The ROI math is easy: if you're getting 20 missed calls a week and closing even 
 
 ## How We Set This Up
 
-At North Star Digital, missed-call text-back is included in our **Core plan ($297/mo)** — it's part of the full lead management system we build for Wisconsin contractors.
+At North Star Digital, missed-call text-back is included in our **Core plan ($447/mo)** — it's part of the full lead management system we build for Wisconsin contractors.
 
 When we set it up for you:
 
@@ -75,4 +75,4 @@ If you're a contractor in Waukesha, Milwaukee, or anywhere in Wisconsin and you'
 
 **North Star Digital — (262) 254-0128**
 
-Core plan: $297/month. Includes website, missed-call text-back, lead alerts to your phone, automated follow-up sequences, and Google review requests. Cancel anytime.
+Core plan: $447/month. Includes website, missed-call text-back, lead alerts to your phone, automated follow-up sequences, and Google review requests. Cancel anytime.

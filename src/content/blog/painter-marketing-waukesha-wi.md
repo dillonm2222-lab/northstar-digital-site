@@ -72,13 +72,13 @@ Your marketing should be running in January and February so that when homeowners
 
 North Star Digital builds local marketing systems for painting contractors in Waukesha County and the Milwaukee area. We're a father-son team from Pewaukee — we know the market and we know what homeowners here respond to.
 
-**Starter plan at $147/month:**
+**Starter plan at $247/month:**
 - Professional website with photos of your work
 - Mobile-optimized, fast-loading
 - Contact form connected to your email
 - Basic local SEO
 
-**Core plan at $297/month adds:**
+**Core plan at $447/month adds:**
 - Missed-call text-back (never lose a lead while on a job)
 - Automated review requests after every project
 - Instant lead alerts to your phone
