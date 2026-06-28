@@ -28,7 +28,7 @@ The "set it and forget it" website doesn't exist. Things break. Google updates i
 
 Watch out for low upfront prices with hidden monthly fees. Hosting, SSL, domain, email, plugin licenses — these all add up. Get a clear number for what you'll pay month over month.
 
-At North Star Digital, we're transparent: **Starter plan is $147/month**. That covers your website, hosting, basic SEO, and a contact form that sends leads to your phone. No surprises.
+At North Star Digital, we're transparent: **Starter plan is $247/month**. That covers your website, hosting, basic SEO, and a contact form that sends leads to your phone. No surprises.
 
 ## 5. Can They Show You Results?
 

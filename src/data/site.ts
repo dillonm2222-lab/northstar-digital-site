@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'North Star Digital',
   legalName: 'North Star Digital LLC',
-  baseUrl: 'https://northstardigital.services',
+  baseUrl: 'https://www.northstardigital.services',
   email: 'marketing@northstardigital.services',
   phone: '(262) 254-0128',
   phoneHref: 'tel:+12622540128',
@@ -27,12 +27,12 @@ export const navLinks = [
   { label: 'Contact', href: '/contact' }
 ];
 
-// Single source of truth for pricing. Locked 2026-06-22, confirmed by Guy 2026-06-23.
-// NEVER quote: $299/$499/$999 retainers or any old tier.
+// Single source of truth for pricing. Raised 2026-06-27 (was $147/$297/$797).
+// NEVER quote old tiers: $147/$297/$797 or $299/$499/$999.
 export const plans = [
   {
     name: 'Starter',
-    price: '$147',
+    price: '$247',
     period: '/mo',
     popular: false,
     summary: 'A professional GHL website that captures leads and looks great on any device.',
@@ -46,7 +46,7 @@ export const plans = [
   },
   {
     name: 'Core',
-    price: '$297',
+    price: '$447',
     period: '/mo',
     popular: true,
     summary: 'The full local marketing system — website, automations, and lead follow-up working 24/7.',
@@ -61,7 +61,7 @@ export const plans = [
   },
   {
     name: 'Core + SEO',
-    price: '$797',
+    price: '$849',
     period: '/mo',
     popular: false,
     summary: 'The Core system plus fully managed local SEO — so you rank when people search.',

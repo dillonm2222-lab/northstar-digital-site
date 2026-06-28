@@ -72,14 +72,14 @@ These aren't storm-driven searches but they bring in homeowners planning ahead â
 
 North Star Digital is a Wisconsin-based agency (Pewaukee, WI) that builds local marketing systems for roofing contractors across Milwaukee, Waukesha County, and the surrounding area.
 
-**Core plan at $297/month:**
+**Core plan at $447/month:**
 - Website built to rank for Milwaukee roofing searches
 - Missed-call text-back â€” capture leads during storm rushes
 - Automated review requests after every job
 - Instant lead alerts when someone contacts you
 - Monthly strategy call
 
-**Core + SEO at $797/month adds:**
+**Core + SEO at $849/month adds:**
 - Fully managed local SEO
 - Google Business Profile management
 - Storm-season content strategy

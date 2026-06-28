@@ -76,7 +76,7 @@ Once that engine is running, paid ads become a multiplier — not a crutch.
 
 At North Star Digital, we specialize in exactly this: local marketing systems for Wisconsin home-service businesses. We're a father-son team from Pewaukee — we know Waukesha County, and we know what works for trade businesses here.
 
-Our Core plan at $297/month includes everything above: a website built for local search, missed-call text-back, lead alerts to your phone, and an automated review request system.
+Our Core plan at $447/month includes everything above: a website built for local search, missed-call text-back, lead alerts to your phone, and an automated review request system.
 
 **Give us a call: (262) 254-0128**
 
