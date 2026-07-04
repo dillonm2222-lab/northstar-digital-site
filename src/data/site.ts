@@ -29,6 +29,8 @@ export const navLinks = [
 
 // Single source of truth for pricing. Raised 2026-06-27 (was $147/$297/$797).
 // NEVER quote old tiers: $147/$297/$797 or $299/$499/$999.
+// Add-ons (AI Voice, standalone SEO, LSA) are CALLS-ONLY — quoted post-close, never on the site.
+// Canonical source: vault Finance/NSD-Pricing-CANONICAL.md (20-service matrix, §3b).
 export const plans = [
   {
     name: 'Starter',
@@ -41,6 +43,8 @@ export const plans = [
       'Contact form → email alerts',
       'Fast hosting included',
       'Basic SEO setup',
+      'Google Business Profile setup',
+      'Analytics & conversion tracking',
       'Monthly performance report'
     ]
   },
@@ -56,6 +60,8 @@ export const plans = [
       'Instant lead alerts to your phone',
       'Automated lead follow-up sequences',
       'Google review request system',
+      'CRM setup & pipeline management',
+      'Marketing automation workflows',
       'Monthly strategy call'
     ]
   },
