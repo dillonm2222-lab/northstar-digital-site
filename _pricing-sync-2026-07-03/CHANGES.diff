@@ -1,0 +1,132 @@
+diff --git a/src/data/site.ts b/src/data/site.ts
+index 29030ae..fdf9d97 100644
+--- a/src/data/site.ts
++++ b/src/data/site.ts
+@@ -29,6 +29,8 @@ export const navLinks = [
+ 
+ // Single source of truth for pricing. Raised 2026-06-27 (was $147/$297/$797).
+ // NEVER quote old tiers: $147/$297/$797 or $299/$499/$999.
++// Add-ons (AI Voice, standalone SEO, LSA) are CALLS-ONLY — quoted post-close, never on the site.
++// Canonical source: vault Finance/NSD-Pricing-CANONICAL.md (20-service matrix, §3b).
+ export const plans = [
+   {
+     name: 'Starter',
+@@ -41,6 +43,8 @@ export const plans = [
+       'Contact form → email alerts',
+       'Fast hosting included',
+       'Basic SEO setup',
++      'Google Business Profile setup',
++      'Analytics & conversion tracking',
+       'Monthly performance report'
+     ]
+   },
+@@ -56,6 +60,8 @@ export const plans = [
+       'Instant lead alerts to your phone',
+       'Automated lead follow-up sequences',
+       'Google review request system',
++      'CRM setup & pipeline management',
++      'Marketing automation workflows',
+       'Monthly strategy call'
+     ]
+   },
+diff --git a/src/pages/about.astro b/src/pages/about.astro
+index 4fe7a15..879fd03 100644
+--- a/src/pages/about.astro
++++ b/src/pages/about.astro
+@@ -125,7 +125,7 @@ const phoneHref = 'tel:+12622540128';
+           <span class="text-2xl">💰</span>
+           <div>
+             <h3 class="font-bold text-[#0B2545]">Fair Pricing</h3>
+-            <p class="mt-1 text-sm leading-relaxed text-[#44506A]">One monthly price covers everything. No surprise invoices, no upsells you didn't ask for, no confusing add-ons.</p>
++            <p class="mt-1 text-sm leading-relaxed text-[#44506A]">One monthly price covers everything. No surprise invoices, no upsells you didn't ask for, no hidden fees.</p>
+           </div>
+         </div>
+         <div class="flex gap-5 rounded-2xl border border-[#E3E8F1] p-6">
+diff --git a/src/pages/index.astro b/src/pages/index.astro
+index e6b7aec..9624315 100644
+--- a/src/pages/index.astro
++++ b/src/pages/index.astro
+@@ -209,7 +209,7 @@ const phoneHref = 'tel:+12622540128';
+           </div>
+           <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+             <p class="text-sm font-bold text-[#0B2545]">Fair — Transparent Pricing</p>
+-            <p class="mt-1 text-sm text-[#44506A]">One monthly price covers everything. No surprise bills. No confusing add-ons. No contracts.</p>
++            <p class="mt-1 text-sm text-[#44506A]">One monthly price covers everything. No surprise bills. No hidden fees. No contracts.</p>
+           </div>
+           <div class="card-hover rounded-2xl border border-[#E3E8F1] bg-[#F4F6FA] p-6">
+             <p class="text-sm font-bold text-[#0B2545]">Honest — We'll Tell You the Truth</p>
+diff --git a/src/pages/pricing.astro b/src/pages/pricing.astro
+index d105cfd..51c3984 100644
+--- a/src/pages/pricing.astro
++++ b/src/pages/pricing.astro
+@@ -41,11 +41,15 @@ const compare = [
+   { feature: 'Contact form → email alerts', starter: true, core: true, seo: true },
+   { feature: 'Fast hosting included', starter: true, core: true, seo: true },
+   { feature: 'Basic local SEO setup', starter: true, core: true, seo: true },
++  { feature: 'Google Business Profile setup', starter: true, core: true, seo: true },
++  { feature: 'Analytics & conversion tracking', starter: true, core: true, seo: true },
+   { feature: 'Monthly performance report', starter: true, core: true, seo: true },
+   { feature: 'Missed-call text-back', starter: false, core: true, seo: true },
+   { feature: 'Instant lead alerts to phone', starter: false, core: true, seo: true },
+   { feature: 'Automated lead follow-up', starter: false, core: true, seo: true },
+   { feature: 'Google review request system', starter: false, core: true, seo: true },
++  { feature: 'CRM setup & pipeline management', starter: false, core: true, seo: true },
++  { feature: 'Marketing automation workflows', starter: false, core: true, seo: true },
+   { feature: 'Monthly strategy call', starter: false, core: true, seo: true },
+   { feature: 'Fully managed local SEO', starter: false, core: false, seo: true },
+   { feature: 'Google Business Profile management', starter: false, core: false, seo: true },
+@@ -62,7 +66,7 @@ const compare = [
+       <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Transparent Pricing</p>
+       <h1 class="text-4xl font-bold text-white md:text-5xl">Simple Plans. No Surprises.</h1>
+       <p class="mx-auto mt-5 max-w-2xl text-lg text-[#8EA8C3]">
+-        One monthly price covers everything. No setup fees, no contracts, no confusing add-ons. Most clients are live in 2 weeks.
++        One monthly price covers everything. No setup fees, no contracts, no hidden fees. Most clients are live in 2 weeks.
+       </p>
+     </div>
+   </section>
+diff --git a/src/pages/services.astro b/src/pages/services.astro
+index 544c10e..e5f8941 100644
+--- a/src/pages/services.astro
++++ b/src/pages/services.astro
+@@ -42,7 +42,7 @@ const services = [
+       'Review generation strategy'
+     ],
+     whoFor: 'Any local service business that wants to rank higher on Google and get more calls from customers in their area.',
+-    price: 'Included in Core and Core + SEO plans',
++    price: 'Included in the Core + SEO plan',
+     cta: '',
+     learnMore: '/services/local-seo'
+   },
+@@ -77,7 +77,7 @@ const services = [
+       'Custom workflows for your business'
+     ],
+     whoFor: 'Business owners who are too busy to follow up manually and want systems that run themselves.',
+-    price: 'Included in Core + SEO plan',
++    price: 'Included in Core and Core + SEO plans',
+     cta: 'Automate Your Business'
+   },
+   {
+@@ -94,7 +94,7 @@ const services = [
+       'Monthly performance review'
+     ],
+     whoFor: 'Service businesses that get inbound calls and can\'t always answer — HVAC, plumbing, roofing, landscaping, and any trade business that wants to capture every lead.',
+-    price: 'Included in Core + SEO plan',
++    price: 'Available as an add-on with any plan — call for pricing',
+     cta: 'Get the AI Voice Agent'
+   }
+ ];
+diff --git a/src/pages/services/google-business-profile.astro b/src/pages/services/google-business-profile.astro
+index 5d27590..caa2837 100644
+--- a/src/pages/services/google-business-profile.astro
++++ b/src/pages/services/google-business-profile.astro
+@@ -148,8 +148,8 @@ const reasons = [
+       <div class="mt-10 grid gap-4 md:grid-cols-3">
+         {[
+           { label: 'GBP Reinstatement', price: '$500', note: 'One-time. Refundable if we fail.' },
+-          { label: 'GBP Setup & Optimization', price: '$447', note: 'One-time. Included free in any plan.' },
+-          { label: 'Ongoing GBP Management', price: '$849/mo', note: 'Included in Core + SEO plan.' },
++          { label: 'GBP Setup & Optimization', price: 'Included', note: 'Free with any monthly plan.' },
++          { label: 'Ongoing GBP Management', price: '$849/mo', note: 'Part of Core + SEO — website, automations, SEO & full GBP management.' },
+         ].map((item) => (
+           <div class="rounded-2xl bg-white/10 p-6 text-center">
+             <p class="text-sm font-semibold text-[#8EA8C3]">{item.label}</p>

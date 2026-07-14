@@ -66,7 +66,7 @@ export const plans = [
     ]
   },
   {
-    name: 'Premium',
+    name: 'Core + SEO',
     price: '$849',
     period: '/mo',
     popular: false,

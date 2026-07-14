@@ -1,0 +1,24 @@
+From cdb4f6412cd434b4a21764f391004b21cdfe7610 Mon Sep 17 00:00:00 2001
+From: Dillon Michael <dillonm2222@gmail.com>
+Date: Sun, 28 Jun 2026 02:41:00 +0000
+Subject: [PATCH] Add Google Search Console verification meta tag
+
+---
+ src/layouts/BaseLayout.astro | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/layouts/BaseLayout.astro b/src/layouts/BaseLayout.astro
+index 4f2cb80..00e38e2 100644
+--- a/src/layouts/BaseLayout.astro
++++ b/src/layouts/BaseLayout.astro
+@@ -47,6 +47,7 @@ const schema = {
+   <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <meta name="google-site-verification" content="cZMIzAvy8f2odwGsaY6KGvPd2Dbh4OMqb4ybX2O8LQc" />
+     <meta name="description" content={description} />
+     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+     <link rel="canonical" href={canonicalUrl} />
+-- 
+2.34.1
+

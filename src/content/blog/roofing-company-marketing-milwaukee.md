@@ -79,7 +79,7 @@ North Star Digital is a Wisconsin-based agency (Pewaukee, WI) that builds local 
 - Instant lead alerts when someone contacts you
 - Monthly strategy call
 
-**Core + SEO at $849/month adds:**
+**Premium at $849/month adds:**
 - Fully managed local SEO
 - Google Business Profile management
 - Storm-season content strategy

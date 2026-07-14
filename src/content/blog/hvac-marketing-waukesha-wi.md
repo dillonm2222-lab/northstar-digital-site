@@ -69,7 +69,7 @@ North Star Digital builds local marketing systems for HVAC contractors across Wa
 - Instant lead alerts to your phone
 - Monthly strategy call
 
-**Core + SEO at $849/month adds:**
+**Premium at $849/month adds:**
 - Fully managed local SEO each month
 - Google Business Profile management
 - Monthly ranking reports

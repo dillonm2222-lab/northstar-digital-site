@@ -1,0 +1,503 @@
+From 912605d667c21a5a9b8c237a2c432fdfc2591d13 Mon Sep 17 00:00:00 2001
+From: Dillon Michael <dillonm2222@gmail.com>
+Date: Sun, 28 Jun 2026 01:40:05 +0000
+Subject: [PATCH] Raise pricing to $247/$447/$849; fix robots sitemap, www
+ canonical, footer NAP
+
+---
+ astro.config.mjs                                     |  2 +-
+ public/robots.txt                                    |  8 ++++----
+ src/components/Footer.astro                          |  4 ++--
+ .../blog/best-web-design-company-waukesha-wi.md      |  2 +-
+ .../blog/electrician-marketing-milwaukee-wi.md       |  2 +-
+ ...sonry-contractors-get-more-customers-wisconsin.md |  2 +-
+ .../blog/how-much-does-a-website-cost-waukesha.md    |  2 +-
+ src/content/blog/hvac-marketing-waukesha-wi.md       |  4 ++--
+ .../blog/landscaping-company-marketing-waukesha.md   |  4 ++--
+ ...issed-call-text-back-for-contractors-wisconsin.md |  4 ++--
+ src/content/blog/painter-marketing-waukesha-wi.md    |  4 ++--
+ src/content/blog/plumber-marketing-waukesha-wi.md    |  2 +-
+ .../blog/roofing-company-marketing-milwaukee.md      |  4 ++--
+ src/data/site.ts                                     | 12 ++++++------
+ src/pages/about.astro                                |  2 +-
+ src/pages/faq.astro                                  |  2 +-
+ src/pages/index.astro                                |  4 ++--
+ src/pages/portfolio.astro                            |  8 ++++----
+ src/pages/pricing.astro                              |  8 ++++----
+ src/pages/services.astro                             |  2 +-
+ src/pages/services/automation.astro                  |  6 +++---
+ src/pages/services/google-business-profile.astro     |  6 +++---
+ src/pages/services/local-seo.astro                   |  2 +-
+ src/pages/services/web-design.astro                  |  2 +-
+ 24 files changed, 49 insertions(+), 49 deletions(-)
+
+diff --git a/astro.config.mjs b/astro.config.mjs
+index dc64bd2..9197bc6 100644
+--- a/astro.config.mjs
++++ b/astro.config.mjs
+@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
+ 
+ // https://astro.build/config
+ export default defineConfig({
+-  site: 'https://northstardigital.services',
++  site: 'https://www.northstardigital.services',
+   integrations: [sitemap()],
+   vite: {
+     plugins: [tailwindcss()]
+diff --git a/public/robots.txt b/public/robots.txt
+index 14291fa..8a79db0 100644
+--- a/public/robots.txt
++++ b/public/robots.txt
+@@ -1,4 +1,4 @@
+-User-agent: *
+-Allow: /
+-
+-Sitemap: https://northstardigital.com/sitemap-index.xml
++User-agent: *
++Allow: /
++
++Sitemap: https://www.northstardigital.services/sitemap-index.xml
+diff --git a/src/components/Footer.astro b/src/components/Footer.astro
+index feadfba..c7fe84f 100644
+--- a/src/components/Footer.astro
++++ b/src/components/Footer.astro
+@@ -13,7 +13,7 @@ import { siteConfig, navLinks } from '../data/site';
+         <span class="text-lg font-bold">{siteConfig.name}</span>
+       </div>
+       <p class="text-sm text-[#8EA8C3]">{siteConfig.tagline}</p>
+-      <p class="text-xs text-[#8EA8C3]">📍 Wisconsin</p>
++      <p class="text-xs text-[#8EA8C3]">📍 {siteConfig.location}</p>
+     </div>
+ 
+     <!-- Pages -->
+@@ -62,6 +62,6 @@ import { siteConfig, navLinks } from '../data/site';
+ 
+   </div>
+   <div class="border-t border-[#1A3A5C] px-4 py-5 text-center text-xs text-[#8EA8C3] md:px-6">
+-    © 2026 North Star Digital LLC · Wisconsin · All rights reserved · <a href="/privacy" class="hover:text-white transition underline-offset-2 hover:underline">Privacy Policy</a>
++    © 2026 North Star Digital LLC · Pewaukee, WI · All rights reserved · <a href="/privacy" class="hover:text-white transition underline-offset-2 hover:underline">Privacy Policy</a>
+   </div>
+ </footer>
+diff --git a/src/content/blog/best-web-design-company-waukesha-wi.md b/src/content/blog/best-web-design-company-waukesha-wi.md
+index 38d4772..9d87d88 100644
+--- a/src/content/blog/best-web-design-company-waukesha-wi.md
++++ b/src/content/blog/best-web-design-company-waukesha-wi.md
+@@ -28,7 +28,7 @@ The "set it and forget it" website doesn't exist. Things break. Google updates i
+ 
+ Watch out for low upfront prices with hidden monthly fees. Hosting, SSL, domain, email, plugin licenses — these all add up. Get a clear number for what you'll pay month over month.
+ 
+-At North Star Digital, we're transparent: **Starter plan is $147/month**. That covers your website, hosting, basic SEO, and a contact form that sends leads to your phone. No surprises.
++At North Star Digital, we're transparent: **Starter plan is $247/month**. That covers your website, hosting, basic SEO, and a contact form that sends leads to your phone. No surprises.
+ 
+ ## 5. Can They Show You Results?
+ 
+diff --git a/src/content/blog/electrician-marketing-milwaukee-wi.md b/src/content/blog/electrician-marketing-milwaukee-wi.md
+index 6c2bfcd..035e1eb 100644
+--- a/src/content/blog/electrician-marketing-milwaukee-wi.md
++++ b/src/content/blog/electrician-marketing-milwaukee-wi.md
+@@ -76,7 +76,7 @@ We automate this for clients. Most see 3–6 new reviews per month without any m
+ 
+ North Star Digital is a Wisconsin-based agency (Pewaukee, WI) that builds local marketing systems specifically for home-service businesses. We're not a national company — we're local, we're reachable, and we know the Milwaukee and Waukesha County market.
+ 
+-Our **Core plan at $297/month** includes everything an electrician in Milwaukee needs to compete online:
++Our **Core plan at $447/month** includes everything an electrician in Milwaukee needs to compete online:
+ - Website optimized for local Milwaukee searches
+ - Missed-call text-back (never lose a lead to voicemail again)
+ - Automated Google review requests
+diff --git a/src/content/blog/how-masonry-contractors-get-more-customers-wisconsin.md b/src/content/blog/how-masonry-contractors-get-more-customers-wisconsin.md
+index 24fd0be..97d413b 100644
+--- a/src/content/blog/how-masonry-contractors-get-more-customers-wisconsin.md
++++ b/src/content/blog/how-masonry-contractors-get-more-customers-wisconsin.md
+@@ -84,7 +84,7 @@ Here's an honest breakdown:
+ 
+ **DIY approach:** A Google Business Profile is free to set up. If you're willing to put in the time — writing your own content, taking your own photos, building your own website on Squarespace or similar — you can do this for under $500/year. The trade-off is your time, and most contractors don't have extra hours to spare.
+ 
+-**Hiring a local agency:** A professional agency handles everything — website, GBP optimization, monthly SEO work, and lead follow-up automation. At [North Star Digital](/services), this starts at $147/month for a website and basic SEO, or $297/month for the full package including CRM and automated follow-up.
++**Hiring a local agency:** A professional agency handles everything — website, GBP optimization, monthly SEO work, and lead follow-up automation. At [North Star Digital](/services), this starts at $247/month for a website and basic SEO, or $447/month for the full package including CRM and automated follow-up.
+ 
+ One additional masonry job per month more than pays for either option. Two jobs a month and it's not even close.
+ 
+diff --git a/src/content/blog/how-much-does-a-website-cost-waukesha.md b/src/content/blog/how-much-does-a-website-cost-waukesha.md
+index 7f859d1..93fcb26 100644
+--- a/src/content/blog/how-much-does-a-website-cost-waukesha.md
++++ b/src/content/blog/how-much-does-a-website-cost-waukesha.md
+@@ -39,7 +39,7 @@ A $500 template website usually has none of this built in.
+ 
+ We're a local, father-son agency based in Waukesha. We build websites for contractors, plumbers, HVAC companies, and other service businesses in the Milwaukee metro area.
+ 
+-Our monthly plans start at $147/month and include your website, hosting, basic SEO, and ongoing support. No surprise bills. No contracts.
++Our monthly plans start at $247/month and include your website, hosting, basic SEO, and ongoing support. No surprise bills. No contracts.
+ 
+ If you want to know what your current site is doing wrong — or if you don't have a site at all — call us. We'll take a look for free and give you an honest answer.
+ 
+diff --git a/src/content/blog/hvac-marketing-waukesha-wi.md b/src/content/blog/hvac-marketing-waukesha-wi.md
+index a638766..865ee11 100644
+--- a/src/content/blog/hvac-marketing-waukesha-wi.md
++++ b/src/content/blog/hvac-marketing-waukesha-wi.md
+@@ -62,14 +62,14 @@ A few blog posts targeting "HVAC tune-up Waukesha" or "furnace maintenance befor
+ 
+ North Star Digital builds local marketing systems for HVAC contractors across Waukesha County and the Milwaukee metro.
+ 
+-**Core plan at $297/month includes:**
++**Core plan at $447/month includes:**
+ - Website built to rank for local HVAC searches
+ - Missed-call text-back for emergency calls
+ - Automated review requests after every job
+ - Instant lead alerts to your phone
+ - Monthly strategy call
+ 
+-**Core + SEO at $797/month adds:**
++**Core + SEO at $849/month adds:**
+ - Fully managed local SEO each month
+ - Google Business Profile management
+ - Monthly ranking reports
+diff --git a/src/content/blog/landscaping-company-marketing-waukesha.md b/src/content/blog/landscaping-company-marketing-waukesha.md
+index 50c633f..590f3c8 100644
+--- a/src/content/blog/landscaping-company-marketing-waukesha.md
++++ b/src/content/blog/landscaping-company-marketing-waukesha.md
+@@ -78,14 +78,14 @@ North Star Digital is a local Wisconsin agency. We're a father-son team from Pew
+ 
+ We build local marketing systems for landscaping businesses that want to stop relying purely on word of mouth and start getting found online.
+ 
+-**Our Core plan at $297/month includes:**
++**Our Core plan at $447/month includes:**
+ - Website built for Waukesha County landscaping searches
+ - Missed-call text-back — never lose a seasonal lead to voicemail
+ - Automated review requests after every job
+ - Instant lead alerts to your phone
+ - Monthly check-in with us
+ 
+-We also have a **Starter plan at $147/month** — a professional website with basic SEO, perfect if you're just getting started online.
++We also have a **Starter plan at $247/month** — a professional website with basic SEO, perfect if you're just getting started online.
+ 
+ **Call us: (262) 254-0128**
+ Or fill out the form at northstardigital.com and we'll do a free 10-minute audit of your current online presence.
+diff --git a/src/content/blog/missed-call-text-back-for-contractors-wisconsin.md b/src/content/blog/missed-call-text-back-for-contractors-wisconsin.md
+index ef00761..eb50b13 100644
+--- a/src/content/blog/missed-call-text-back-for-contractors-wisconsin.md
++++ b/src/content/blog/missed-call-text-back-for-contractors-wisconsin.md
+@@ -44,7 +44,7 @@ The ROI math is easy: if you're getting 20 missed calls a week and closing even
+ 
+ ## How We Set This Up
+ 
+-At North Star Digital, missed-call text-back is included in our **Core plan ($297/mo)** — it's part of the full lead management system we build for Wisconsin contractors.
++At North Star Digital, missed-call text-back is included in our **Core plan ($447/mo)** — it's part of the full lead management system we build for Wisconsin contractors.
+ 
+ When we set it up for you:
+ 
+@@ -75,4 +75,4 @@ If you're a contractor in Waukesha, Milwaukee, or anywhere in Wisconsin and you'
+ 
+ **North Star Digital — (262) 254-0128**
+ 
+-Core plan: $297/month. Includes website, missed-call text-back, lead alerts to your phone, automated follow-up sequences, and Google review requests. Cancel anytime.
++Core plan: $447/month. Includes website, missed-call text-back, lead alerts to your phone, automated follow-up sequences, and Google review requests. Cancel anytime.
+diff --git a/src/content/blog/painter-marketing-waukesha-wi.md b/src/content/blog/painter-marketing-waukesha-wi.md
+index efae23d..fd3056d 100644
+--- a/src/content/blog/painter-marketing-waukesha-wi.md
++++ b/src/content/blog/painter-marketing-waukesha-wi.md
+@@ -72,13 +72,13 @@ Your marketing should be running in January and February so that when homeowners
+ 
+ North Star Digital builds local marketing systems for painting contractors in Waukesha County and the Milwaukee area. We're a father-son team from Pewaukee — we know the market and we know what homeowners here respond to.
+ 
+-**Starter plan at $147/month:**
++**Starter plan at $247/month:**
+ - Professional website with photos of your work
+ - Mobile-optimized, fast-loading
+ - Contact form connected to your email
+ - Basic local SEO
+ 
+-**Core plan at $297/month adds:**
++**Core plan at $447/month adds:**
+ - Missed-call text-back (never lose a lead while on a job)
+ - Automated review requests after every project
+ - Instant lead alerts to your phone
+diff --git a/src/content/blog/plumber-marketing-waukesha-wi.md b/src/content/blog/plumber-marketing-waukesha-wi.md
+index d1edc69..b731985 100644
+--- a/src/content/blog/plumber-marketing-waukesha-wi.md
++++ b/src/content/blog/plumber-marketing-waukesha-wi.md
+@@ -76,7 +76,7 @@ Once that engine is running, paid ads become a multiplier — not a crutch.
+ 
+ At North Star Digital, we specialize in exactly this: local marketing systems for Wisconsin home-service businesses. We're a father-son team from Pewaukee — we know Waukesha County, and we know what works for trade businesses here.
+ 
+-Our Core plan at $297/month includes everything above: a website built for local search, missed-call text-back, lead alerts to your phone, and an automated review request system.
++Our Core plan at $447/month includes everything above: a website built for local search, missed-call text-back, lead alerts to your phone, and an automated review request system.
+ 
+ **Give us a call: (262) 254-0128**
+ 
+diff --git a/src/content/blog/roofing-company-marketing-milwaukee.md b/src/content/blog/roofing-company-marketing-milwaukee.md
+index c9cb0d6..3adc35b 100644
+--- a/src/content/blog/roofing-company-marketing-milwaukee.md
++++ b/src/content/blog/roofing-company-marketing-milwaukee.md
+@@ -72,14 +72,14 @@ These aren't storm-driven searches but they bring in homeowners planning ahead 
+ 
+ North Star Digital is a Wisconsin-based agency (Pewaukee, WI) that builds local marketing systems for roofing contractors across Milwaukee, Waukesha County, and the surrounding area.
+ 
+-**Core plan at $297/month:**
++**Core plan at $447/month:**
+ - Website built to rank for Milwaukee roofing searches
+ - Missed-call text-back — capture leads during storm rushes
+ - Automated review requests after every job
+ - Instant lead alerts when someone contacts you
+ - Monthly strategy call
+ 
+-**Core + SEO at $797/month adds:**
++**Core + SEO at $849/month adds:**
+ - Fully managed local SEO
+ - Google Business Profile management
+ - Storm-season content strategy
+diff --git a/src/data/site.ts b/src/data/site.ts
+index 436838f..29030ae 100644
+--- a/src/data/site.ts
++++ b/src/data/site.ts
+@@ -1,7 +1,7 @@
+ export const siteConfig = {
+   name: 'North Star Digital',
+   legalName: 'North Star Digital LLC',
+-  baseUrl: 'https://northstardigital.services',
++  baseUrl: 'https://www.northstardigital.services',
+   email: 'marketing@northstardigital.services',
+   phone: '(262) 254-0128',
+   phoneHref: 'tel:+12622540128',
+@@ -27,12 +27,12 @@ export const navLinks = [
+   { label: 'Contact', href: '/contact' }
+ ];
+ 
+-// Single source of truth for pricing. Locked 2026-06-22, confirmed by Guy 2026-06-23.
+-// NEVER quote: $299/$499/$999 retainers or any old tier.
++// Single source of truth for pricing. Raised 2026-06-27 (was $147/$297/$797).
++// NEVER quote old tiers: $147/$297/$797 or $299/$499/$999.
+ export const plans = [
+   {
+     name: 'Starter',
+-    price: '$147',
++    price: '$247',
+     period: '/mo',
+     popular: false,
+     summary: 'A professional GHL website that captures leads and looks great on any device.',
+@@ -46,7 +46,7 @@ export const plans = [
+   },
+   {
+     name: 'Core',
+-    price: '$297',
++    price: '$447',
+     period: '/mo',
+     popular: true,
+     summary: 'The full local marketing system — website, automations, and lead follow-up working 24/7.',
+@@ -61,7 +61,7 @@ export const plans = [
+   },
+   {
+     name: 'Core + SEO',
+-    price: '$797',
++    price: '$849',
+     period: '/mo',
+     popular: false,
+     summary: 'The Core system plus fully managed local SEO — so you rank when people search.',
+diff --git a/src/pages/about.astro b/src/pages/about.astro
+index 3b81024..4fe7a15 100644
+--- a/src/pages/about.astro
++++ b/src/pages/about.astro
+@@ -37,7 +37,7 @@ const phoneHref = 'tel:+12622540128';
+             We started NSD because we got tired of the same story: a great plumber losing jobs to a worse plumber with a better website. A landscaper with 20 years of experience getting buried under a chain with a $10,000/month ad budget. A contractor who gets 100% of his work from word of mouth — wondering why it's gotten harder.
+           </p>
+           <p class="mt-4 text-base leading-relaxed text-[#44506A]">
+-            Our answer: give local businesses the same digital tools the big guys use — at a price that actually makes sense. Website, lead automation, SEO, and AI systems for $147–$797/month. No contracts. No fluff. Just results.
++            Our answer: give local businesses the same digital tools the big guys use — at a price that actually makes sense. Website, lead automation, SEO, and AI systems for $247–$849/month. No contracts. No fluff. Just results.
+           </p>
+           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+             <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
+diff --git a/src/pages/faq.astro b/src/pages/faq.astro
+index 8efb1d1..967a244 100644
+--- a/src/pages/faq.astro
++++ b/src/pages/faq.astro
+@@ -15,7 +15,7 @@ const faqs = [
+     items: [
+       {
+         q: 'How much does a website cost for a small business in Wisconsin?',
+-        a: 'We work on simple monthly plans that start at $147/mo and bundle your website, hosting, mobile-ready design, basic SEO, and Google Business Profile setup into one predictable price \u2014 no big upfront website fee. Higher tiers add fully-managed local SEO, a CRM, and automation. See our Services page for the full Starter, Core, and Core + SEO breakdown.',
++        a: 'We work on simple monthly plans that start at $247/mo and bundle your website, hosting, mobile-ready design, basic SEO, and Google Business Profile setup into one predictable price \u2014 no big upfront website fee. Higher tiers add fully-managed local SEO, a CRM, and automation. See our Services page for the full Starter, Core, and Core + SEO breakdown.',
+       },
+       {
+         q: 'How long does it take to build a website?',
+diff --git a/src/pages/index.astro b/src/pages/index.astro
+index a427ce0..e6b7aec 100644
+--- a/src/pages/index.astro
++++ b/src/pages/index.astro
+@@ -5,7 +5,7 @@ import { plans, siteConfig } from '../data/site';
+ 
+ const pageTitle = 'North Star Digital | AI-Powered Growth Systems — Wisconsin';
+ const description =
+-  'North Star Digital builds, manages, and runs complete AI-powered websites, SEO, and automated lead follow-up systems for Wisconsin contractors and service businesses — 100% done for you. Plans starting at $147/mo.';
++  'North Star Digital builds, manages, and runs complete AI-powered websites, SEO, and automated lead follow-up systems for Wisconsin contractors and service businesses — 100% done for you. Plans starting at $247/mo.';
+ 
+ const phone = '(262) 254-0128';
+ const phoneHref = 'tel:+12622540128';
+@@ -56,7 +56,7 @@ const phoneHref = 'tel:+12622540128';
+           <p class="mt-1 text-xs text-[#8EA8C3]">Results guarantee</p>
+         </div>
+         <div>
+-          <p class="text-2xl font-bold text-[#06D6FF]">$147<span class="text-base font-normal text-[#8EA8C3]">/mo</span></p>
++          <p class="text-2xl font-bold text-[#06D6FF]">$247<span class="text-base font-normal text-[#8EA8C3]">/mo</span></p>
+           <p class="mt-1 text-xs text-[#8EA8C3]">Plans starting from</p>
+         </div>
+         <div>
+diff --git a/src/pages/portfolio.astro b/src/pages/portfolio.astro
+index 69743c0..86ca996 100644
+--- a/src/pages/portfolio.astro
++++ b/src/pages/portfolio.astro
+@@ -13,7 +13,7 @@ const caseStudies = [
+     business: 'Wisconsin Masonry Contractor',
+     industry: 'Masonry / Concrete',
+     location: 'Waukesha County, WI',
+-    plan: 'Core $297/mo',
++    plan: 'Core $447/mo',
+     result: 'Live in 11 days. Missed-call text-back running 24/7. First inbound lead from Google within 3 weeks.',
+     services: ['GHL Website', 'Missed-Call Text-Back', 'Google Business Profile', 'Lead Alert to Phone'],
+     color: '#0B2545',
+@@ -22,7 +22,7 @@ const caseStudies = [
+     business: 'HVAC Company — Milwaukee Area',
+     industry: 'HVAC / Home Services',
+     location: 'Milwaukee, WI',
+-    plan: 'Core + SEO $797/mo',
++    plan: 'Core + SEO $849/mo',
+     result: 'Ranking on page 1 for "HVAC contractor Milwaukee" within 60 days. Google Business Profile fully optimized.',
+     services: ['GHL Website', 'Local SEO', 'Google Business Profile', 'Review Request Automation', 'Monthly Strategy Call'],
+     color: '#1A3A5C',
+@@ -31,7 +31,7 @@ const caseStudies = [
+     business: 'Local Landscaping Business',
+     industry: 'Landscaping',
+     location: 'Pewaukee, WI',
+-    plan: 'Starter $147/mo',
++    plan: 'Starter $247/mo',
+     result: 'First professional website. Mobile-ready. Contact form connected to email. Launched in 9 days.',
+     services: ['GHL Website', 'Mobile-Optimized', 'Contact Form', 'Basic SEO Setup'],
+     color: '#0F3460',
+@@ -155,7 +155,7 @@ const services_offered = [
+           Get a Free Quote
+         </a>
+       </div>
+-      <p class="mt-6 text-sm text-[#8EA8C3]">Starter plan from $147/mo · No contracts · Live in 2 weeks</p>
++      <p class="mt-6 text-sm text-[#8EA8C3]">Starter plan from $247/mo · No contracts · Live in 2 weeks</p>
+     </div>
+   </section>
+ 
+diff --git a/src/pages/pricing.astro b/src/pages/pricing.astro
+index 8b4dcf3..d105cfd 100644
+--- a/src/pages/pricing.astro
++++ b/src/pages/pricing.astro
+@@ -4,7 +4,7 @@ import { plans } from '../data/site';
+ 
+ const pageTitle = 'Pricing | North Star Digital — Waukesha & Milwaukee Web Design';
+ const description =
+-  'Transparent pricing for local Wisconsin businesses. Website + lead automation starting at $147/month. No setup fees, no contracts, live in 2 weeks. North Star Digital, Pewaukee WI.';
++  'Transparent pricing for local Wisconsin businesses. Website + lead automation starting at $247/month. No setup fees, no contracts, live in 2 weeks. North Star Digital, Pewaukee WI.';
+ 
+ const phone = '(262) 254-0128';
+ const phoneHref = 'tel:+12622540128';
+@@ -119,9 +119,9 @@ const compare = [
+           <thead>
+             <tr class="border-b border-[#E3E8F1] bg-[#0B2545]">
+               <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-widest text-[#8EA8C3]">Feature</th>
+-              <th class="px-4 py-4 text-center text-xs font-bold uppercase tracking-widest text-white">Starter<br/><span class="text-[#8EA8C3] font-normal normal-case tracking-normal">$147/mo</span></th>
+-              <th class="px-4 py-4 text-center text-xs font-bold uppercase tracking-widest text-[#2E8BFF]">Core<br/><span class="text-[#8EA8C3] font-normal normal-case tracking-normal">$297/mo</span></th>
+-              <th class="px-4 py-4 text-center text-xs font-bold uppercase tracking-widest text-white">Core + SEO<br/><span class="text-[#8EA8C3] font-normal normal-case tracking-normal">$797/mo</span></th>
++              <th class="px-4 py-4 text-center text-xs font-bold uppercase tracking-widest text-white">Starter<br/><span class="text-[#8EA8C3] font-normal normal-case tracking-normal">$247/mo</span></th>
++              <th class="px-4 py-4 text-center text-xs font-bold uppercase tracking-widest text-[#2E8BFF]">Core<br/><span class="text-[#8EA8C3] font-normal normal-case tracking-normal">$447/mo</span></th>
++              <th class="px-4 py-4 text-center text-xs font-bold uppercase tracking-widest text-white">Core + SEO<br/><span class="text-[#8EA8C3] font-normal normal-case tracking-normal">$849/mo</span></th>
+             </tr>
+           </thead>
+           <tbody>
+diff --git a/src/pages/services.astro b/src/pages/services.astro
+index eb06d68..544c10e 100644
+--- a/src/pages/services.astro
++++ b/src/pages/services.astro
+@@ -4,7 +4,7 @@ import { plans } from '../data/site';
+ 
+ const pageTitle = 'Services | North Star Digital — Wisconsin';
+ const description =
+-  'North Star Digital offers done-for-you AI-powered websites, local SEO, CRM, marketing automation, and AI Voice Agent for Wisconsin small businesses. Plans starting at $147/month.';
++  'North Star Digital offers done-for-you AI-powered websites, local SEO, CRM, marketing automation, and AI Voice Agent for Wisconsin small businesses. Plans starting at $247/month.';
+ 
+ const phone = '(262) 254-0128';
+ const phoneHref = 'tel:+12622540128';
+diff --git a/src/pages/services/automation.astro b/src/pages/services/automation.astro
+index f8b6d04..fc82b6e 100644
+--- a/src/pages/services/automation.astro
++++ b/src/pages/services/automation.astro
+@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
+ 
+ const pageTitle = 'Lead Automation & CRM for Local Businesses | North Star Digital — Wisconsin';
+ const description =
+-  'Never lose a lead again. North Star Digital builds missed-call text-back, automated follow-up, and review systems for Wisconsin contractors and home-service businesses. Core plan from $297/mo.';
++  'Never lose a lead again. North Star Digital builds missed-call text-back, automated follow-up, and review systems for Wisconsin contractors and home-service businesses. Core plan from $447/mo.';
+ 
+ const phone = '(262) 254-0128';
+ const phoneHref = 'tel:+12622540128';
+@@ -134,7 +134,7 @@ const automations = [
+       </div>
+       <div class="space-y-6">
+         {[
+-          { step: '1', title: 'You sign up for Core ($297/mo)', body: "We send you a short onboarding form — takes 5 minutes. Your business info, phone number, what you do, where you work." },
++          { step: '1', title: 'You sign up for Core ($447/mo)', body: "We send you a short onboarding form — takes 5 minutes. Your business info, phone number, what you do, where you work." },
+           { step: '2', title: 'We build your system in 1–2 days', body: "We configure your GHL account, set up missed-call text-back, lead alerts, follow-up sequences, and review requests. You don't touch anything." },
+           { step: '3', title: 'We test everything before going live', body: "We send a test form, a test missed call, and confirm all notifications are firing correctly. We show you how to check your leads in the dashboard." },
+           { step: '4', title: 'You start capturing leads you were losing', body: "The system runs in the background. You get a text every time a new lead comes in. Missed callers get a text-back automatically. Reviews get requested after jobs. All of it, without you managing it." },
+@@ -155,7 +155,7 @@ const automations = [
+   <section class="bg-[#0B2545] px-4 py-20 md:py-24">
+     <div class="mx-auto max-w-4xl text-center">
+       <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Included in Core Plan</p>
+-      <h2 class="text-3xl font-bold text-white md:text-4xl">Everything Above for $297/month</h2>
++      <h2 class="text-3xl font-bold text-white md:text-4xl">Everything Above for $447/month</h2>
+       <p class="mx-auto mt-5 max-w-xl text-lg text-[#8EA8C3]">No setup fees. No contracts. Cancel anytime. Most clients are fully live within 2 weeks.</p>
+       <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+         <a href={phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-8 py-4 text-base font-bold text-white transition hover:bg-[#1E7AEB]">
+diff --git a/src/pages/services/google-business-profile.astro b/src/pages/services/google-business-profile.astro
+index f3e62f5..5d27590 100644
+--- a/src/pages/services/google-business-profile.astro
++++ b/src/pages/services/google-business-profile.astro
+@@ -142,14 +142,14 @@ const reasons = [
+         <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">How to Get Started</p>
+         <h2 class="text-3xl font-bold text-white md:text-4xl">GBP Is Included in Our Core + SEO Plan</h2>
+         <p class="mx-auto mt-5 max-w-xl text-lg text-[#8EA8C3]">
+-          Full GBP management is part of our Core + SEO plan at $797/month — which also includes a website, all lead automations, and fully managed local SEO. Or we can discuss GBP as a standalone service.
++          Full GBP management is part of our Core + SEO plan at $849/month — which also includes a website, all lead automations, and fully managed local SEO. Or we can discuss GBP as a standalone service.
+         </p>
+       </div>
+       <div class="mt-10 grid gap-4 md:grid-cols-3">
+         {[
+           { label: 'GBP Reinstatement', price: '$500', note: 'One-time. Refundable if we fail.' },
+-          { label: 'GBP Setup & Optimization', price: '$297', note: 'One-time. Included free in any plan.' },
+-          { label: 'Ongoing GBP Management', price: '$797/mo', note: 'Included in Core + SEO plan.' },
++          { label: 'GBP Setup & Optimization', price: '$447', note: 'One-time. Included free in any plan.' },
++          { label: 'Ongoing GBP Management', price: '$849/mo', note: 'Included in Core + SEO plan.' },
+         ].map((item) => (
+           <div class="rounded-2xl bg-white/10 p-6 text-center">
+             <p class="text-sm font-semibold text-[#8EA8C3]">{item.label}</p>
+diff --git a/src/pages/services/local-seo.astro b/src/pages/services/local-seo.astro
+index 455894a..d07b888 100644
+--- a/src/pages/services/local-seo.astro
++++ b/src/pages/services/local-seo.astro
+@@ -97,7 +97,7 @@ const includes = [
+           <div class="mt-6 rounded-2xl border-2 border-[#2E8BFF]/20 bg-white p-6 shadow-sm">
+             <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Included In Your Plan</p>
+             <p class="mt-2 text-2xl font-bold text-[#0B2545]">Fully-managed local SEO, every month</p>
+-            <p class="mt-2 text-sm text-[#44506A]">Local SEO is built into our Core and Core + SEO plans \u2014 not a separate line item. Plans start at $147/mo.</p>
++            <p class="mt-2 text-sm text-[#44506A]">Local SEO is built into our Core and Core + SEO plans \u2014 not a separate line item. Plans start at $247/mo.</p>
+             <a href="/services" class="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
+               See Plans & Pricing \u2192
+             </a>
+diff --git a/src/pages/services/web-design.astro b/src/pages/services/web-design.astro
+index e8201f2..131b5df 100644
+--- a/src/pages/services/web-design.astro
++++ b/src/pages/services/web-design.astro
+@@ -67,7 +67,7 @@ const notIncludes = [
+           <div class="mt-6 rounded-2xl border-2 border-[#2E8BFF]/20 bg-[#F0F6FF] p-6">
+             <p class="text-xs font-semibold uppercase tracking-widest text-[#2E8BFF]">Included In Every Plan</p>
+             <p class="mt-2 text-2xl font-bold text-[#0B2545]">Your website is built into your monthly plan</p>
+-            <p class="mt-2 text-sm text-[#44506A]">We design, build, host, and maintain your site as part of one predictable monthly price \u2014 plans start at $147/mo. No big upfront bill.</p>
++            <p class="mt-2 text-sm text-[#44506A]">We design, build, host, and maintain your site as part of one predictable monthly price \u2014 plans start at $247/mo. No big upfront bill.</p>
+             <a href="/services" class="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#2E8BFF] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E7AEB]">
+               See Plans & Pricing \u2192
+             </a>
+-- 
+2.34.1
+
