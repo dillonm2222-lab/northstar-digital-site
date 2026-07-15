@@ -30,7 +30,7 @@ To rank in the Milwaukee map pack as an electrician, you need:
 
 **Regular activity.** Google rewards profiles that get updated. Post a photo of a job you just finished. Answer a question. Update your hours. Even once a month matters.
 
-We manage GBP for electricians as part of our Core + SEO plan. Clients typically see meaningful improvement in map pack visibility within 45–90 days.
+We manage GBP for electricians as part of our Premium plan. Clients typically see meaningful improvement in map pack visibility within 45–90 days.
 
 ## The Lead You're Losing Right Now
 

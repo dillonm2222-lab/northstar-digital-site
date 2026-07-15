@@ -23,7 +23,7 @@ To compete in Waukesha County, your GBP needs:
 - Photos of your truck, your team, your work
 - Answered Q&A section
 
-We manage Google Business Profiles for local contractors as part of our Core + SEO plan. Most clients see a measurable improvement in their map pack position within 60 days.
+We manage Google Business Profiles for local contractors as part of our Premium plan. Most clients see a measurable improvement in their map pack position within 60 days.
 
 ## 2. Stop Losing Calls You Can't Answer
 
