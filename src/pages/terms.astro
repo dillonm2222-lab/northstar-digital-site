@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const pageTitle = 'Terms of Service | North Star Digital';
+const description = 'Terms of service for northstardigital.services — the terms that govern use of our website and services.';
+const updated = 'July 31, 2026';
+---
+
+<BaseLayout title={pageTitle} description={description} path="/terms">
+
+  <section class="bg-[#0B2545] px-4 py-14 md:py-16">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-3xl font-bold text-white md:text-4xl">Terms of Service</h1>
+      <p class="mt-3 text-sm text-[#8EA8C3]">Last updated: {updated}</p>
+    </div>
+  </section>
+
+  <section class="px-4 py-16 md:py-20">
+    <div class="mx-auto max-w-3xl text-[#44506A]">
+
+      <p class="leading-relaxed">These Terms of Service ("Terms") govern your use of <strong class="text-[#0B2545]">northstardigital.services</strong> (the "Site"), operated by North Star Digital LLC ("we," "us," or "our"). By using the Site, you agree to these Terms. If you do not agree, please do not use the Site.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Our Services</h2>
+      <p class="mb-4 leading-relaxed">North Star Digital LLC provides digital marketing services for local businesses, including website design, local SEO, CRM systems, marketing automation, and related services. Information on this Site describes our services generally. Specific deliverables, pricing, and timelines for client work are defined in the individual agreement or proposal between us and each client, which controls over anything on this Site.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Use of the Site</h2>
+      <p class="mb-4 leading-relaxed">You agree to use the Site only for lawful purposes. You may not attempt to interfere with the Site's operation, access areas not intended for public use, or use automated tools to scrape or overload the Site.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">SMS / Text Messaging Terms</h2>
+      <p class="mb-4 leading-relaxed">If you voluntarily provide your mobile phone number through the chat widget on our Site and check the corresponding consent box, you agree to receive text messages from North Star Digital LLC. Depending on the consent you give, these may include customer care messages (responses to your inquiry, appointment coordination, service updates) and/or promotional messages (offers and announcements).</p>
+      <ul class="mb-4 list-disc space-y-1 pl-6 leading-relaxed">
+        <li>Consent to receive text messages is not a condition of purchasing any goods or services.</li>
+        <li>Message frequency varies. Message and data rates may apply.</li>
+        <li>Reply <strong class="text-[#0B2545]">STOP</strong> at any time to unsubscribe. Reply <strong class="text-[#0B2545]">HELP</strong> for help.</li>
+        <li>Your mobile phone number and text messaging opt-in data will not be shared with or sold to third parties or affiliates for marketing purposes.</li>
+      </ul>
+      <p class="mb-4 leading-relaxed">See our <a class="text-[#2E8BFF] hover:underline" href="/privacy">Privacy Policy</a> for details on how we handle your information.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Intellectual Property</h2>
+      <p class="mb-4 leading-relaxed">The content on this Site — including text, graphics, logos, and design — is owned by North Star Digital LLC and protected by applicable intellectual property laws. You may not copy, reproduce, or distribute Site content without our written permission.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Third-Party Links and Services</h2>
+      <p class="mb-4 leading-relaxed">The Site may contain links to third-party websites and services (such as scheduling and form tools). We are not responsible for the content or practices of third-party sites. Your use of those services is governed by their own terms and policies.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Disclaimers</h2>
+      <p class="mb-4 leading-relaxed">The Site and its content are provided "as is" without warranties of any kind, express or implied. While we work hard to keep information accurate and current, we do not guarantee that the Site is error-free or uninterrupted. Results described on the Site (such as marketing outcomes) depend on many factors and are not guaranteed for any particular business.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Limitation of Liability</h2>
+      <p class="mb-4 leading-relaxed">To the fullest extent permitted by law, North Star Digital LLC will not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Site. Nothing in these Terms limits liability that cannot be limited under applicable law.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Governing Law</h2>
+      <p class="mb-4 leading-relaxed">These Terms are governed by the laws of the State of Wisconsin, without regard to conflict-of-law principles. Any disputes arising from these Terms or the Site will be resolved in the state or federal courts located in Wisconsin.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Changes to These Terms</h2>
+      <p class="mb-4 leading-relaxed">We may update these Terms from time to time. The "Last updated" date at the top of this page reflects the most recent version. Continued use of the Site after changes means you accept the updated Terms.</p>
+
+      <h2 class="mt-10 mb-3 text-xl font-bold text-[#0B2545]">Contact Us</h2>
+      <p class="mb-4 leading-relaxed">Questions about these Terms? Contact us at:</p>
+      <p class="mb-4 leading-relaxed">
+        <strong class="text-[#0B2545]">North Star Digital LLC</strong><br />
+        Pewaukee, Wisconsin<br />
+        <a class="text-[#2E8BFF] hover:underline" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><br />
+        <a class="text-[#2E8BFF] hover:underline" href={siteConfig.phoneHref}>{siteConfig.phone}</a>
+      </p>
+
+    </div>
+  </section>
+
+</BaseLayout>
